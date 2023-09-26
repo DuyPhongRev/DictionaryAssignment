@@ -1,4 +1,4 @@
-module com.example.dictionaryassignment {
+module app.DictionaryFX {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -6,6 +6,7 @@ module com.example.dictionaryassignment {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
 
-    opens com.example.dictionaryassignment to javafx.fxml;
-    exports com.example.dictionaryassignment;
+    opens app to javafx.fxml;
+    exports app;
+    opens app.controllers to javafx.fxml;
 }
