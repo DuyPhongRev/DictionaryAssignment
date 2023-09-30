@@ -9,16 +9,16 @@
    <children>
       <VBox prefHeight="480.0" prefWidth="120.0">
          <children>
-            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="90.0" prefWidth="120.0" text="HOME" textAlignment="CENTER" />
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="65.0" prefWidth="120.0" text="SEARCH" />
-            <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="65.0" prefWidth="120.0" text="EDIT" />
-            <Button fx:id="translateButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="65.0" prefWidth="120.0" text="TRANSLATE" />
-            <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="65.0" prefWidth="120.0" text="FAVORITE" textAlignment="CENTER" />
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="65.0" prefWidth="120.0" text="HISTORY" />
-            <Button fx:id="gameButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="65.0" prefWidth="120.0" text="GAME" />
+            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="80.0" prefWidth="120.0" text="HOME" textAlignment="CENTER" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="SEARCH" />
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="EDIT" />
+            <Button fx:id="translateButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="TRANSLATE" />
+            <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="FAVORITE" textAlignment="CENTER" />
+            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="HISTORY" />
+            <Button fx:id="gameButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="GAME" />
          </children>
       </VBox>
-      <Label fx:id="categoryLabel" layoutX="120.0" prefHeight="90.0" prefWidth="720.0" text="HOME" textAlignment="CENTER" />
-      <AnchorPane fx:id="anchorCategory" layoutX="120.0" layoutY="90.0" prefHeight="390.0" prefWidth="720.0" />
+      <Label fx:id="categoryLabel" layoutX="120.0" prefHeight="80.0" prefWidth="640.0" text="HOME" textAlignment="CENTER" />
+      <AnchorPane fx:id="anchorCategory" layoutX="120.0" layoutY="80.0" prefHeight="400.0" prefWidth="640.0" />
    </children>
 </AnchorPane>
