@@ -11,8 +11,8 @@ import java.nio.charset.StandardCharsets;
 public class TranslateTextAPIs {
     public static final String GOOGLE_TRANSLATE_URL = "https://translate.google.com/translate_a/t?";
 
-    public static String translate(String text, LANGUAGE srcLang, LANGUAGE destLang) throws IOException {
-        URL url = new URL(generateURL(srcLang.toString(), destLang.toString(), text));
+    public static String translate(String text, String srcLang, String destLang) throws IOException {
+        URL url = new URL(generateURL(srcLang, destLang, text));
         StringBuilder response = new StringBuilder();
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
@@ -31,20 +31,5 @@ public class TranslateTextAPIs {
                 + "&sl=" + sourceLanguage
                 + "&tl=" + targetLanguage
                 + "&q=" + URLEncoder.encode(text, StandardCharsets.UTF_8);
-    }
-
-    public enum LANGUAGE {
-        ENGLISH("en"), VIETNAMESE("vi"), AUTO("auto");
-
-        private final String lang;
-
-        LANGUAGE(String lang) {
-            this.lang = lang;
-        }
-
-        @Override
-        public String toString() {
-            return this.lang;
-        }
     }
 }

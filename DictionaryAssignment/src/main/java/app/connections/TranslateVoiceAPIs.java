@@ -14,13 +14,6 @@ import java.nio.charset.StandardCharsets;
 public class TranslateVoiceAPIs {
     public static final String GOOGLE_TRANSLATE_AUDIO = "https://translate.google.com/translate_tts?";
 
-    private static String generateURL(String text, String language) {
-        return GOOGLE_TRANSLATE_AUDIO + "?ie=UTF-8"
-                + "&q=" + URLEncoder.encode(text, StandardCharsets.UTF_8)
-                + "&tl=" + language
-                + "&client=tw-ob";
-    }
-
     public static void getAudio(String text, String destLang)
             throws IOException, JavaLayerException {
 
@@ -31,5 +24,12 @@ public class TranslateVoiceAPIs {
         connection.setRequestProperty("User-Agent", "Mozilla/5.0");
         InputStream audioSrc = connection.getInputStream();
         new Player(new BufferedInputStream(audioSrc)).play();
+    }
+
+    private static String generateURL(String text, String language) {
+        return GOOGLE_TRANSLATE_AUDIO + "?ie=UTF-8"
+                + "&q=" + URLEncoder.encode(text, StandardCharsets.UTF_8)
+                + "&tl=" + language
+                + "&client=tw-ob";
     }
 }
