@@ -5,6 +5,7 @@ module app.DictionaryFX {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires jlayer;
 
     opens app to javafx.fxml;
     exports app;
