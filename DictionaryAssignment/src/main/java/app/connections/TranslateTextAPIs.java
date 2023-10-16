@@ -23,11 +23,17 @@ public class TranslateTextAPIs {
             response.append(inputLine);
         }
         in.close();
-        return response.toString().trim().replace("\"", "");
+        return response
+                .toString()
+                .trim()
+                .replace("\"", "")
+                .replace("[", "")
+                .replace("]", "");
     }
 
     private static String generateURL(String sourceLanguage, String targetLanguage, String text) {
-        return GOOGLE_TRANSLATE_URL + "client=gtrans"
+        return GOOGLE_TRANSLATE_URL
+                + "client=gtrans"
                 + "&sl=" + sourceLanguage
                 + "&tl=" + targetLanguage
                 + "&q=" + URLEncoder.encode(text, StandardCharsets.UTF_8);

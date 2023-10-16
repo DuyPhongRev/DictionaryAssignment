@@ -12,13 +12,10 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 
 public class TranslateVoiceAPIs {
-    public static final String GOOGLE_TRANSLATE_AUDIO = "https://translate.google.com/translate_tts?";
+    private static final String GOOGLE_TRANSLATE_AUDIO = "https://translate.google.com/translate_tts?";
 
-    public static void getAudio(String text, String destLang)
-            throws IOException, JavaLayerException {
-
-        String urlString = generateURL(text, destLang);
-        URL url = new URL(urlString);
+    public static void getAudio(String text, String destLang) throws IOException, JavaLayerException {
+        URL url = new URL(generateURL(text, destLang));
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
         connection.setRequestProperty("User-Agent", "Mozilla/5.0");
@@ -27,7 +24,8 @@ public class TranslateVoiceAPIs {
     }
 
     private static String generateURL(String text, String language) {
-        return GOOGLE_TRANSLATE_AUDIO + "?ie=UTF-8"
+        return GOOGLE_TRANSLATE_AUDIO
+                + "?ie=UTF-8"
                 + "&q=" + URLEncoder.encode(text, StandardCharsets.UTF_8)
                 + "&tl=" + language
                 + "&client=tw-ob";

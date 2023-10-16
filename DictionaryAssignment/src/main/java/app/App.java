@@ -1,8 +1,10 @@
 package app;
 
+import app.connections.TranslateVoiceAPIs;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javazoom.jl.decoder.JavaLayerException;
 
