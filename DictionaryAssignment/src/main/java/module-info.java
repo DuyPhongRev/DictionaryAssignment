@@ -6,6 +6,7 @@ module app.DictionaryFX {
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
     requires jlayer;
+    requires java.sql;
 
     opens app to javafx.fxml;
     exports app;

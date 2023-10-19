@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.actions.DictionaryAction;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Dictionary;
 import java.util.ResourceBundle;
 
 public class ContainerController implements Initializable {
@@ -45,6 +47,8 @@ public class ContainerController implements Initializable {
     private HomeSceneController homeSceneController;
     private SearchSceneController searchSceneController;
     private TranslateSceneController translateSceneController;
+
+    private DictionaryAction dictionaryAction = new DictionaryAction();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -87,6 +91,7 @@ public class ContainerController implements Initializable {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("SearchScene.fxml"));
             anchorSearchScene = fxmlLoader.load();
             searchSceneController = fxmlLoader.getController();
+            searchSceneController.initData(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -155,5 +160,13 @@ public class ContainerController implements Initializable {
     private void showHomeScene() {
         categoryLabel.setText("HOME");
         setContentScene(anchorHomeScene);
+    }
+
+    public void reset() {
+
+    }
+
+    public DictionaryAction getDictionaryAction() {
+        return this.dictionaryAction;
     }
 }
