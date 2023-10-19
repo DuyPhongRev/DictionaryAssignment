@@ -16,6 +16,7 @@ public class App extends Application {
     }
     @Override
     public void start(Stage stage) throws IOException, JavaLayerException {
+        System.out.println("test");
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("container.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 760, 480);
         stage.setScene(scene);
