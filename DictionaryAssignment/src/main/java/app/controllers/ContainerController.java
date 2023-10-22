@@ -28,8 +28,6 @@ public class ContainerController implements Initializable {
     @FXML
     private Button translateButton;
     @FXML
-    private Label categoryLabel;
-    @FXML
     private AnchorPane anchorCategory;
 
     private AnchorPane anchorSearchScene;
@@ -128,37 +126,37 @@ public class ContainerController implements Initializable {
     }
 
     private void showGameScene() {
-        categoryLabel.setText("GAME");
+
         setContentScene(anchorGameScene);
     }
 
     private void showHistoryScene() {
-        categoryLabel.setText("HISTORY");
+
         setContentScene(anchorHistoryScene);
     }
 
     private void showFavoriteScene() {
-        categoryLabel.setText("FAVORITE");
+
         setContentScene(anchorFavouriteScene);
     }
 
     private void showTranslateScene() {
-        categoryLabel.setText("TRANSLATE");
+
         setContentScene(anchorTranslateScene);
     }
 
     private void showEditScene() {
-        categoryLabel.setText("EDIT");
+
         setContentScene(anchorEditScene);
     }
 
     private void showSearchScene() {
-        categoryLabel.setText("SEARCH");
+
         setContentScene(anchorSearchScene);
     }
 
     private void showHomeScene() {
-        categoryLabel.setText("HOME");
+
         setContentScene(anchorHomeScene);
     }
 

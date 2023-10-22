@@ -21,7 +21,6 @@ public class SearchSceneController {
     protected Button searchButton;
     @FXML
     protected WebView webView;
-
     protected WebEngine webEngine;
     protected ArrayList<String> arrayWords;
 
@@ -68,7 +67,7 @@ public class SearchSceneController {
     public void searchAction(String searchText) {
         String meaning = myController.getDictionaryAction().getMyDict().LookUp(searchText);
         webEngine = webView.getEngine();
-        webEngine.load("https://translate.google.com.vn/");
+        webEngine.loadContent(meaning);
     }
 
     public void initData(ContainerController containerController) {

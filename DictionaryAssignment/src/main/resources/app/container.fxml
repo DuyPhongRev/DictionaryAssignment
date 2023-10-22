@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="480.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ContainerController">
+<AnchorPane prefHeight="480.0" prefWidth="850.0" stylesheets="@css/container.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ContainerController">
    <children>
-      <VBox prefHeight="480.0" prefWidth="120.0">
+      <VBox prefHeight="480.0" prefWidth="60.0" styleClass="vBox" stylesheets="@css/container.css">
          <children>
-            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="80.0" prefWidth="120.0" text="HOME" textAlignment="CENTER" />
-            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="SEARCH" />
-            <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="EDIT" />
-            <Button fx:id="translateButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="TRANSLATE" />
-            <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="FAVORITE" textAlignment="CENTER" />
-            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="HISTORY" />
-            <Button fx:id="gameButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="70.0" prefWidth="120.0" text="GAME" />
+            <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="60.0" styleClass="button_nav" stylesheets="@css/container.css" textAlignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/snapedit_1697999911126.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="58.0" style="-fx-background-color: #314874;" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/snapedit_1698000038631.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/snapedit_1698000117367.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="translateButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/2840590%20copy.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css" textAlignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/snapedit_1698001070557.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="historyButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/snapedit_1698001193257.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="gameButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="60.0" styleClass="button_nav" stylesheets="@css/container.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/snapedit_1698001287586.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </VBox>
-      <Label fx:id="categoryLabel" layoutX="120.0" prefHeight="80.0" prefWidth="640.0" text="HOME" textAlignment="CENTER" />
-      <AnchorPane fx:id="anchorCategory" layoutX="120.0" layoutY="80.0" prefHeight="400.0" prefWidth="640.0" />
+      <AnchorPane fx:id="anchorCategory" layoutX="59.0" prefHeight="480.0" prefWidth="800.0" style="-fx-background-color: #FBF5D5;" stylesheets="@css/container.css" />
    </children>
 </AnchorPane>
