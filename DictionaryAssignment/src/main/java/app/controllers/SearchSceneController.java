@@ -67,6 +67,7 @@ public class SearchSceneController {
     public void searchAction(String searchText) {
         String meaning = myController.getDictionaryAction().getMyDict().LookUp(searchText);
         webEngine = webView.getEngine();
+        meaning.replace("<i>//</i>", " ");
         webEngine.loadContent(meaning);
     }
 
