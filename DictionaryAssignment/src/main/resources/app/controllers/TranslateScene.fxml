@@ -9,20 +9,20 @@
    <children>
       <AnchorPane prefHeight="80.0" prefWidth="640.0">
          <children>
-            <ChoiceBox fx:id="SrcLang" layoutX="107.0" layoutY="28.0" prefWidth="150.0" />
-            <ChoiceBox fx:id="DesLang" layoutX="394.0" layoutY="28.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="SrcLangChoiceBox" layoutX="107.0" layoutY="28.0" prefWidth="150.0" />
+            <ChoiceBox fx:id="DesLangChoiceBox" layoutX="394.0" layoutY="28.0" prefWidth="150.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="80.0" prefHeight="160.0" prefWidth="640.0">
          <children>
-            <TextArea fx:id="SrcText" layoutX="14.0" onKeyPressed="#handleEvent" prefHeight="146.0" prefWidth="612.0" />
-            <Button fx:id="SrcSound" layoutX="14.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleEvent" text="Button" />
+            <TextArea fx:id="SrcTextArea" layoutX="14.0" onKeyReleased="#handleEvent" prefHeight="146.0" prefWidth="612.0" />
+            <Button fx:id="SrcSoundButton" layoutX="14.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleEvent" text="Button" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="240.0" prefHeight="160.0" prefWidth="640.0">
          <children>
-            <TextArea fx:id="DesText" editable="false" layoutX="14.0" onKeyPressed="#handleEvent" prefHeight="146.0" prefWidth="612.0" />
-            <Button fx:id="DesSound" layoutX="14.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleEvent" text="Button" />
+            <TextArea fx:id="DesTextArea" editable="false" layoutX="14.0" prefHeight="146.0" prefWidth="612.0" />
+            <Button fx:id="DesSoundButton" layoutX="14.0" layoutY="121.0" mnemonicParsing="false" onAction="#handleEvent" text="Button" />
          </children>
       </AnchorPane>
    </children>

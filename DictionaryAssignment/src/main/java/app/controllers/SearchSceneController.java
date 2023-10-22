@@ -6,8 +6,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 
-import java.time.format.TextStyle;
 import java.util.ArrayList;
 
 public class SearchSceneController {
@@ -19,10 +20,10 @@ public class SearchSceneController {
     @FXML
     protected Button searchButton;
     @FXML
-    protected TextArea definitionPane;
+    protected WebView webView;
+
+    protected WebEngine webEngine;
     protected ArrayList<String> arrayWords;
-
-
 
     @FXML
     public void handleSearchButton (ActionEvent event) {
@@ -30,8 +31,6 @@ public class SearchSceneController {
             String searchText = txtSearch.getText();
             if (!searchText.isEmpty()) {
                 searchAction(searchText);
-            } else {
-//              do nothing
             }
         }
     }
@@ -56,8 +55,6 @@ public class SearchSceneController {
             if (searchText != null && !searchText.isEmpty()) {
                 searchAction(searchText);
                 txtSearch.setText(searchText);
-            } else {
-//              do nothing
             }
         }
     }
@@ -70,13 +67,11 @@ public class SearchSceneController {
 
     public void searchAction(String searchText) {
         String meaning = myController.getDictionaryAction().getMyDict().LookUp(searchText);
-        definitionPane.setWrapText(true);
-        definitionPane.setText(meaning);
+        webEngine = webView.getEngine();
+        webEngine.load("https://translate.google.com.vn/");
     }
 
     public void initData(ContainerController containerController) {
         this.myController = containerController;
-//        arrayWords = myController.getDictionaryAction().getDictionary().toArrayStringWord();
-//        SearchListView.getItems().setAll(arrayWords);
     }
 }

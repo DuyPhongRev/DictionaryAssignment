@@ -36,6 +36,7 @@ public class TranslateTextAPIs {
                 + "client=gtrans"
                 + "&sl=" + sourceLanguage
                 + "&tl=" + targetLanguage
+                + "&hl=" + targetLanguage
                 + "&q=" + URLEncoder.encode(text, StandardCharsets.UTF_8);
     }
 }

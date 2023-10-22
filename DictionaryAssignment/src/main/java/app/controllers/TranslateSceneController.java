@@ -16,47 +16,47 @@ import java.util.ResourceBundle;
 
 public class TranslateSceneController implements Initializable {
     @FXML
-    private Button SrcSound, DesSound;
+    private Button SrcSoundButton, DesSoundButton;
     @FXML
-    private ChoiceBox<LANGUAGE> SrcLang, DesLang;
+    private ChoiceBox<LANGUAGE> SrcLangChoiceBox, DesLangChoiceBox;
     @FXML
-    private TextArea SrcText, DesText;
-    private String currentSrcLang = "vi";
+    private TextArea SrcTextArea, DesTextArea;
+    private String currentSrcLang = "en";
     private String currentDesLang = "vi";
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        SrcLang.getItems().addAll(LANGUAGE.values());
-        DesLang.getItems().addAll(LANGUAGE.values());
+        SrcLangChoiceBox.getItems().addAll(LANGUAGE.values());
+        DesLangChoiceBox.getItems().addAll(LANGUAGE.values());
+        SrcTextArea.setWrapText(true);
+        DesTextArea.setWrapText(true);
     }
 
     public void getCurrentSrcLang() {
-        if (SrcLang.getValue() != null) {
-            currentSrcLang = SrcLang.getValue().key;
+        if (SrcLangChoiceBox.getValue() != null) {
+            currentSrcLang = SrcLangChoiceBox.getValue().getKey();
         }
     }
 
     public void getCurrentDesLang() {
-        if (DesLang.getValue() != null) {
-            currentDesLang = DesLang.getValue().key;
+        if (DesLangChoiceBox.getValue() != null) {
+            currentDesLang = DesLangChoiceBox.getValue().getKey();
         }
     }
 
     @FXML
     public void handleEvent(Event event) throws IOException, JavaLayerException {
-            getCurrentSrcLang();
-            getCurrentDesLang();
-        if (event.getSource().equals(SrcText) && !SrcText.getText().equals("")) {
-            String text = SrcText.getText();
+        if (event.getSource().equals(SrcTextArea)) {
+            String text = SrcTextArea.getText();
             if (currentDesLang.equals(currentSrcLang)) {
-                DesText.setText(text);
+                DesTextArea.setText(text);
             } else {
-                DesText.setText(TranslateTextAPIs.translate(text, currentSrcLang, currentDesLang));
+                DesTextArea.setText(TranslateTextAPIs.translate(text, currentSrcLang, currentDesLang));
             }
-        } else if (event.getSource().equals(SrcSound) && !SrcText.getText().equals("")) {
-            TranslateVoiceAPIs.getAudio(SrcText.getText(), currentSrcLang);
-        } else if (event.getSource().equals(DesSound) && !DesText.getText().equals("")) {
-            TranslateVoiceAPIs.getAudio(DesText.getText(), currentDesLang);
+        } else if (event.getSource().equals(SrcSoundButton) && !SrcTextArea.getText().equals("")) {
+            TranslateVoiceAPIs.getAudio(SrcTextArea.getText(), currentSrcLang);
+        } else if (event.getSource().equals(DesSoundButton) && !DesTextArea.getText().equals("")) {
+            TranslateVoiceAPIs.getAudio(DesTextArea.getText(), currentDesLang);
         }
     }
 
