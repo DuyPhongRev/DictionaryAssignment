@@ -14,7 +14,7 @@
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/snapedit_1697999911126.png" />
+                        <Image url="@img/home.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -23,15 +23,7 @@
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/snapedit_1698000038631.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-            <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/snapedit_1698000117367.png" />
+                        <Image url="@img/search.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -39,7 +31,15 @@
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/2840590%20copy.png" />
+                        <Image url="@img/translate.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/edit.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -47,7 +47,7 @@
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/snapedit_1698001070557.png" />
+                        <Image url="@img/favorite.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -55,7 +55,7 @@
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/snapedit_1698001193257.png" />
+                        <Image url="@img/history.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
@@ -63,7 +63,7 @@
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/snapedit_1698001287586.png" />
+                        <Image url="@img/game.png" />
                      </image>
                   </ImageView>
                </graphic></Button>

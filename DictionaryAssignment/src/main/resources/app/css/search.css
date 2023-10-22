@@ -1,0 +1,7 @@
+.search-button {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ece9e9;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}

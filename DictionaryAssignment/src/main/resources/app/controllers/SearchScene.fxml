@@ -6,22 +6,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.SearchSceneController">
+<AnchorPane prefHeight="480.0" prefWidth="800.0" stylesheets="@../css/search.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.SearchSceneController">
    <children>
-      <AnchorPane layoutY="80.0" prefHeight="320.0" prefWidth="262.0">
+      <AnchorPane prefHeight="80.0" prefWidth="800.0" stylesheets="@../css/search.css">
          <children>
-            <ListView fx:id="SearchListView" layoutX="14.0" layoutY="14.0" onMouseClicked="#SelectSearchListItem" prefHeight="292.0" prefWidth="239.0" />
+            <TextField fx:id="txtSearch" layoutX="20.0" layoutY="20.0" onKeyReleased="#handleChangeInputSearch" prefHeight="46.0" prefWidth="660.0" styleClass="search-text" stylesheets="@../css/search.css" />
+            <Button fx:id="searchButton" layoutX="700.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="46.0" prefWidth="80.0" styleClass="search-button" stylesheets="@../css/search.css" text="Search" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="320.0" layoutY="80.0" prefHeight="320.0" prefWidth="320.0">
-         <children>
-            <WebView fx:id="webView" layoutX="14.0" layoutY="14.0" prefHeight="292.0" prefWidth="292.0" />
-         </children></AnchorPane>
-      <AnchorPane prefHeight="80.0" prefWidth="640.0">
-         <children>
-            <TextField fx:id="txtSearch" layoutX="14.0" layoutY="17.0" onKeyReleased="#handleChangeInputSearch" prefHeight="46.0" prefWidth="518.0" />
-            <Button fx:id="searchButton" layoutX="546.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="46.0" prefWidth="80.0" text="Search" />
-         </children>
-      </AnchorPane>
+      <ListView fx:id="SearchListView" layoutX="20.0" layoutY="90.0" onMouseClicked="#SelectSearchListItem" prefHeight="370.0" prefWidth="250.0" stylesheets="@../css/search.css" />
+      <WebView fx:id="webView" layoutX="280.0" layoutY="90.0" prefHeight="370.0" prefWidth="500.0" stylesheets="@../css/search.css" />
    </children>
 </AnchorPane>
