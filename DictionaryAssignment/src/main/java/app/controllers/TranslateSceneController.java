@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class TranslateSceneController implements Initializable {
     @FXML
-    private Button SrcSoundButton, DesSoundButton;
+    private Button SrcSoundButton, DesSoundButton, tranButton;
     @FXML
     private ChoiceBox<LANGUAGE> SrcLangChoiceBox, DesLangChoiceBox;
     @FXML
@@ -53,6 +53,11 @@ public class TranslateSceneController implements Initializable {
             } else {
                 DesTextArea.setText(TranslateTextAPIs.translate(text, currentSrcLang, currentDesLang));
             }
+        } else if (event.getSource().equals(tranButton)) {
+            getCurrentDesLang();
+            getCurrentSrcLang();
+            String text = SrcTextArea.getText();
+            DesTextArea.setText(TranslateTextAPIs.translate(text, currentSrcLang, currentDesLang));
         } else if (event.getSource().equals(SrcSoundButton) && !SrcTextArea.getText().equals("")) {
             TranslateVoiceAPIs.getAudio(SrcTextArea.getText(), currentSrcLang);
         } else if (event.getSource().equals(DesSoundButton) && !DesTextArea.getText().equals("")) {

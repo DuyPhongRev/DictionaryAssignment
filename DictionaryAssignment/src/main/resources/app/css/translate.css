@@ -1,12 +1,14 @@
 .text_area {
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
-    -fx-border-color: #FBF5D5;
+    -fx-padding: 5px 5px 50px 5px;
+    -fx-border-color: #314874;
+    -fx-background-color: white;
 }
 
 .choice-box {
     -fx-background-color: #ffffff;
-    -fx-border-color: #ece9e9;
+    -fx-border-color: #314874;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
@@ -19,4 +21,26 @@
 .choice-box:hover {
     -fx-cursor: hand;
     -fx-background-color: #cecdcd;
+}
+
+.tran-button {
+    -fx-text-fill: white;
+    -fx-background-color: #314874;
+    -fx-cursor: hand;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.tran-button:hover {
+    -fx-border-radius: 5px;
+    -fx-border-style: hidden hidden solid hidden;
+    -fx-border-width: 2px;
+    -fx-background-color: #68718F;
+    -fx-border-color: #FEC400;
+}
+
+.tran-button:pressed {
+    -fx-background-color: #5F647C;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
 }

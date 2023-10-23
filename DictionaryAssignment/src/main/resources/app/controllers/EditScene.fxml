@@ -6,34 +6,27 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.EditSceneController">
+<AnchorPane prefHeight="480.0" prefWidth="800.0" stylesheets="@../css/edit.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.EditSceneController">
    <children>
-      <AnchorPane layoutX="320.0" prefHeight="400.0" prefWidth="320.0">
+      <AnchorPane layoutX="400.0" prefHeight="480.0" prefWidth="400.0" stylesheets="@../css/edit.css">
          <children>
-            <Label layoutX="155.0" layoutY="14.0" text="Label" />
-            <TextField layoutX="52.0" layoutY="55.0" prefHeight="26.0" prefWidth="99.0" />
-            <TextField layoutX="52.0" layoutY="102.0" prefHeight="26.0" prefWidth="235.0" />
-            <TextArea layoutX="54.0" layoutY="150.0" prefHeight="154.0" prefWidth="235.0" />
-            <TextField layoutX="194.0" layoutY="56.0" prefHeight="26.0" prefWidth="92.0" />
-            <Label layoutX="14.0" layoutY="60.0" text="Label" />
-            <Label layoutX="14.0" layoutY="106.0" text="Label" />
-            <Label layoutX="14.0" layoutY="152.0" text="Label" />
-            <Label layoutX="155.0" layoutY="60.0" text="Label" />
-            <Button layoutX="54.0" layoutY="338.0" mnemonicParsing="false" text="Button" />
-            <Button layoutX="234.0" layoutY="338.0" mnemonicParsing="false" text="Button" />
+            <Label layoutY="28.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-box" stylesheets="@../css/edit.css" text="Edit an existing world" />
+            <TextField layoutX="50.0" layoutY="110.0" prefHeight="30.0" prefWidth="130.0" styleClass="custom-text-field" />
+            <TextField layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="300.0" styleClass="custom-text-field" />
+            <TextArea layoutX="50.0" layoutY="210.0" prefHeight="180.0" prefWidth="300.0" styleClass="custom-text-area" />
+            <Button layoutX="50.0" layoutY="410.0" mnemonicParsing="false" styleClass="button_nav" text="Button" />
+            <Button layoutX="298.0" layoutY="410.0" mnemonicParsing="false" styleClass="button_nav" text="Button" />
+            <TextField layoutX="221.0" layoutY="110.0" prefHeight="30.0" prefWidth="130.0" styleClass="custom-text-field" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="400.0" prefWidth="320.0">
+      <AnchorPane prefHeight="480.0" prefWidth="400.0" stylesheets="@../css/edit.css">
          <children>
-            <Label layoutX="155.0" layoutY="14.0" text="Label" />
-            <TextField layoutX="52.0" layoutY="55.0" prefHeight="26.0" prefWidth="235.0" />
-            <TextField layoutX="52.0" layoutY="102.0" prefHeight="26.0" prefWidth="235.0" />
-            <TextArea layoutX="54.0" layoutY="150.0" prefHeight="154.0" prefWidth="235.0" />
-            <Label layoutX="14.0" layoutY="60.0" text="Label" />
-            <Label layoutX="14.0" layoutY="106.0" text="Label" />
-            <Label layoutX="14.0" layoutY="152.0" text="Label" />
-            <Button layoutX="54.0" layoutY="338.0" mnemonicParsing="false" text="Button" />
-            <Button layoutX="234.0" layoutY="338.0" mnemonicParsing="false" text="Button" />
+            <Label layoutY="28.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-box" stylesheets="@../css/edit.css" text="Add a new word" />
+            <TextField layoutX="50.0" layoutY="110.0" prefHeight="30.0" prefWidth="300.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+            <TextField layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="300.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+            <TextArea layoutX="50.0" layoutY="210.0" prefHeight="180.0" prefWidth="300.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
+            <Button layoutX="50.0" layoutY="410.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Button" />
+            <Button layoutX="298.0" layoutY="410.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Button" />
          </children>
       </AnchorPane>
    </children>
