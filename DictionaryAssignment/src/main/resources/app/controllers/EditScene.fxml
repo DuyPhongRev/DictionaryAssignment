@@ -10,7 +10,7 @@
    <children>
       <AnchorPane layoutX="400.0" prefHeight="480.0" prefWidth="400.0" stylesheets="@../css/edit.css">
          <children>
-            <Label layoutY="28.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-box" stylesheets="@../css/edit.css" text="Edit an existing world" />
+            <Label layoutY="28.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-box" stylesheets="@../css/edit.css" text="Edit an existing word" />
             <TextField layoutX="50.0" layoutY="110.0" prefHeight="30.0" prefWidth="130.0" styleClass="custom-text-field" />
             <TextField layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="300.0" styleClass="custom-text-field" />
             <TextArea layoutX="50.0" layoutY="210.0" prefHeight="180.0" prefWidth="300.0" styleClass="custom-text-area" />

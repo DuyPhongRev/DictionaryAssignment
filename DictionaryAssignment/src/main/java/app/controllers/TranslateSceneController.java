@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class TranslateSceneController implements Initializable {
     @FXML
-    private Button SrcSoundButton, DesSoundButton, tranButton;
+    private Button SrcSoundButton, DesSoundButton, tranButton, reverseButton;
     @FXML
     private ChoiceBox<LANGUAGE> SrcLangChoiceBox, DesLangChoiceBox;
     @FXML
@@ -28,6 +28,8 @@ public class TranslateSceneController implements Initializable {
     public void initialize(URL arg0, ResourceBundle arg1) {
         SrcLangChoiceBox.getItems().addAll(LANGUAGE.values());
         DesLangChoiceBox.getItems().addAll(LANGUAGE.values());
+        SrcLangChoiceBox.setValue(LANGUAGE.ENGLISH);
+        DesLangChoiceBox.setValue(LANGUAGE.VIETNAMESE);
         SrcTextArea.setWrapText(true);
         DesTextArea.setWrapText(true);
     }
@@ -58,11 +60,26 @@ public class TranslateSceneController implements Initializable {
             getCurrentSrcLang();
             String text = SrcTextArea.getText();
             DesTextArea.setText(TranslateTextAPIs.translate(text, currentSrcLang, currentDesLang));
+        } else if (false) {
+            getCurrentDesLang();
+            DesTextArea.setText(TranslateTextAPIs.translate(SrcTextArea.getText(), currentSrcLang, currentDesLang));
+        } else if (event.getSource().equals(reverseButton)) {
+            swap();
         } else if (event.getSource().equals(SrcSoundButton) && !SrcTextArea.getText().equals("")) {
             TranslateVoiceAPIs.getAudio(SrcTextArea.getText(), currentSrcLang);
         } else if (event.getSource().equals(DesSoundButton) && !DesTextArea.getText().equals("")) {
             TranslateVoiceAPIs.getAudio(DesTextArea.getText(), currentDesLang);
         }
+    }
+
+    void swap() throws IOException {
+        LANGUAGE tmpLang = SrcLangChoiceBox.getValue();
+        SrcLangChoiceBox.setValue(DesLangChoiceBox.getValue());
+        DesLangChoiceBox.setValue(tmpLang);
+        getCurrentSrcLang();
+        getCurrentDesLang();
+        SrcTextArea.setText(DesTextArea.getText());
+        DesTextArea.setText(TranslateTextAPIs.translate(SrcTextArea.getText(), currentSrcLang, currentDesLang));
     }
 
     public enum LANGUAGE {

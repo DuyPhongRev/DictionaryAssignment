@@ -182,18 +182,14 @@ public class ContainerController implements Initializable {
     }
 
     public void pressedButton(Button currentButton) {
-        lastButton.setStyle(
-                "-fx-background-color: #314874;" +
-                "-fx-border-width: 2px;" +
-                "-fx-border-radius: 5px 5px 5px 5px;"
-        );
         currentButton.setStyle(
-                "-fx-background-color: #68718F;" +
+                "-fx-background-color: #203e77;" +
                 "-fx-border-radius: 5px 5px 5px 5px;" +
                 "-fx-border-style: hidden hidden solid hidden;" +
                 "-fx-border-width: 2px;" +
                 "-fx-border-color: #FEC400;"
         );
+        lastButton.setStyle(null);
         lastButton = currentButton;
     }
 }

@@ -7,7 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="480.0" prefWidth="800.0" style="-fx-background-color: #FBF5D5;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.TranslateSceneController">
+<AnchorPane prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.TranslateSceneController">
    <children>
       <AnchorPane onMouseReleased="#getCurrentSrcLang" prefHeight="480.0" prefWidth="400.0">
          <children>
@@ -23,12 +23,13 @@
                </graphic>
             </Button>
             <Button fx:id="tranButton" layoutX="20.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="30.0" prefWidth="90.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Translate" />
+            <Button fx:id="reverseButton" layoutX="120.0" layoutY="426.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="30.0" prefWidth="22.0" styleClass="tran-button" stylesheets="@../css/translate.css" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="400.0" onMouseReleased="#getCurrentDesLang" prefHeight="480.0" prefWidth="400.0">
          <children>
             <TextArea fx:id="DesTextArea" editable="false" layoutX="20.0" layoutY="120.0" prefHeight="280.0" prefWidth="360.0" styleClass="text_area" stylesheets="@../css/translate.css" />
-            <ChoiceBox fx:id="DesLangChoiceBox" layoutX="20.0" layoutY="70.0" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
+            <ChoiceBox fx:id="DesLangChoiceBox" cache="true" layoutX="20.0" layoutY="70.0" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
             <Button fx:id="DesSoundButton" layoutX="26.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleEvent" style="-fx-background-color: white;">
                <graphic>
                   <ImageView fitHeight="26.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">

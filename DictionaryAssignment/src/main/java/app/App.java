@@ -29,7 +29,7 @@ public class App extends Application {
         ImageView loadingImageView = new ImageView(new Image(App.class.getResourceAsStream("loadingData.gif")));
         StackPane loadingLayout = new StackPane(loadingImageView);
         loadingLayout.setAlignment(Pos.CENTER);
-        Scene loadingScene = new Scene(loadingLayout, 498, 356);
+        Scene loadingScene = new Scene(loadingLayout);
         Stage loadingStage = new Stage(StageStyle.UNDECORATED);
         loadingStage.setScene(loadingScene);
 

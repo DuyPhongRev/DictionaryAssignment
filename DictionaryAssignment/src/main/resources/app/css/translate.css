@@ -16,6 +16,7 @@
 
 .choice-box .label {
     -fx-text-fill: #333333;
+    -fx-font-size: 16;
 }
 
 .choice-box:hover {
