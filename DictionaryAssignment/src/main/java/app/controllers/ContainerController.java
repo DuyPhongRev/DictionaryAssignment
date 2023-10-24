@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.actions.CheckHistoryAction;
 import app.actions.DictionaryAction;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.Dictionary;
 import java.util.ResourceBundle;
 
@@ -47,6 +49,7 @@ public class ContainerController implements Initializable {
     private TranslateSceneController translateSceneController;
 
     private DictionaryAction dictionaryAction = new DictionaryAction();
+    private CheckHistoryAction checkHistoryAction = new CheckHistoryAction();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -68,6 +71,7 @@ public class ContainerController implements Initializable {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("FavoriteScene.fxml"));
             anchorFavouriteScene = fxmlLoader.load();
             favoriteSceneController = fxmlLoader.getController();
+            favoriteSceneController.initData(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -82,6 +86,8 @@ public class ContainerController implements Initializable {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("HistoryScene.fxml"));
             anchorHistoryScene = fxmlLoader.load();
             historySceneController = fxmlLoader.getController();
+            historySceneController.initData(this);
+            historySceneController.initSelectionList();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -166,5 +172,8 @@ public class ContainerController implements Initializable {
 
     public DictionaryAction getDictionaryAction() {
         return this.dictionaryAction;
+    }
+    public CheckHistoryAction getCheckHistoryAction() {
+        return this.checkHistoryAction;
     }
 }

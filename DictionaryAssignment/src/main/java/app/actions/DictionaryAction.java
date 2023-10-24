@@ -10,4 +10,5 @@ public class DictionaryAction extends DictionaryManagement {
     public ArrayList<String> getStringFoundWord(String foundWord) {
         return this.getMyDict().getArrayRelevantWord(foundWord);
     }
+
 }

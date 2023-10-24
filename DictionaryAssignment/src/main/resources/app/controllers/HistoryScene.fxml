@@ -10,11 +10,11 @@
    <children>
       <AnchorPane prefHeight="80.0" prefWidth="800.0" stylesheets="@../css/search.css">
          <children>
-            <TextField fx:id="txtSearch" layoutX="20.0" layoutY="20.0" prefHeight="46.0" prefWidth="660.0" styleClass="search-text" stylesheets="@../css/search.css" />
-            <Button fx:id="searchButton" layoutX="700.0" layoutY="20.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="80.0" styleClass="search-button" stylesheets="@../css/search.css" text="Search" />
+            <TextField fx:id="txtSearch" layoutX="20.0" layoutY="20.0" onKeyReleased="#handleChangeInputSearch" prefHeight="46.0" prefWidth="660.0" styleClass="search-text" stylesheets="@../css/search.css" />
+            <Button fx:id="searchButton" layoutX="700.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="46.0" prefWidth="80.0" styleClass="search-button" stylesheets="@../css/search.css" text="Search" />
          </children>
       </AnchorPane>
-      <ListView fx:id="SearchListView" layoutX="20.0" layoutY="90.0" prefHeight="370.0" prefWidth="250.0" stylesheets="@../css/search.css" />
+      <ListView fx:id="SearchListView" layoutX="20.0" layoutY="90.0" onMouseClicked="#SelectSearchListItem" prefHeight="370.0" prefWidth="250.0" stylesheets="@../css/search.css" />
       <WebView fx:id="webView" layoutX="280.0" layoutY="90.0" prefHeight="370.0" prefWidth="500.0" stylesheets="@../css/search.css" />
    </children>
 </AnchorPane>
