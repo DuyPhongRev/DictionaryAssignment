@@ -30,7 +30,7 @@ public class ThreeController {
 
     }
     @FXML
-    public void handleSearchButton (ActionEvent event) {
+    public void handleSearchButton (ActionEvent event) throws SQLException {
         if (event.getSource() == searchButton) {
             String searchText = txtSearch.getText();
             if (!searchText.isEmpty()) {
@@ -57,25 +57,25 @@ public class ThreeController {
         if (event.getSource() == SearchListView) {
             String searchText = SearchListView.getSelectionModel().getSelectedItem();
             if (searchText != null && !searchText.isEmpty()) {
-                SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
                 searchAction(searchText);
                 txtSearch.setText(searchText);
                 arrayWords.clear();
                 arrayWords.add(searchText);
+                SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
             }
         }
     }
 
     public void showListAction(String searchText) {
-        arrayWords = myController.getDictionaryAction().getStringFoundWord(searchText);
+        arrayWords = myController.getDictionaryManagement().getDictMain().getArrayRelevantWord(searchText);
 
         SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
     }
 
-    public void searchAction(String searchText) {
-        String meaning = myController.getDictionaryAction().getMyDict().LookUp(searchText);
-        webEngine = webView.getEngine();
-        webEngine.loadContent(meaning);
+    public void searchAction(String searchText) throws SQLException {
+//        String meaning = myController.getDictionaryManagement().searchAct(searchText);
+//        webEngine = webView.getEngine();
+//        webEngine.loadContent(meaning);
     }
 
 }

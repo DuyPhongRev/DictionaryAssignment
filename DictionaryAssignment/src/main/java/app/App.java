@@ -21,6 +21,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("container.fxml"));
+
         Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image(App.class.getResourceAsStream("logo.png")));

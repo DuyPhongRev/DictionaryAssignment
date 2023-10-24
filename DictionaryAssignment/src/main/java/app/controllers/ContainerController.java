@@ -2,6 +2,7 @@ package app.controllers;
 
 import app.actions.CheckHistoryAction;
 import app.actions.DictionaryAction;
+import app.dictionary.DictionaryManagement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,8 +49,7 @@ public class ContainerController implements Initializable {
     private SearchSceneController searchSceneController;
     private TranslateSceneController translateSceneController;
 
-    private DictionaryAction dictionaryAction = new DictionaryAction();
-    private CheckHistoryAction checkHistoryAction = new CheckHistoryAction();
+    private DictionaryManagement dictionaryManagement = new DictionaryManagement();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -75,6 +75,7 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         try {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("GameScene.fxml"));
             anchorGameScene = fxmlLoader.load();
@@ -82,6 +83,7 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         try {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("HistoryScene.fxml"));
             anchorHistoryScene = fxmlLoader.load();
@@ -91,11 +93,13 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         try {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("SearchScene.fxml"));
             anchorSearchScene = fxmlLoader.load();
             searchSceneController = fxmlLoader.getController();
             searchSceneController.initData(this);
+            searchSceneController.initSelectionList();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -106,6 +110,7 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     @FXML
@@ -121,6 +126,7 @@ public class ContainerController implements Initializable {
         } else if (e.getSource() == favouriteButton) {
             showFavoriteScene();
         } else if (e.getSource() == historyButton) {
+            historySceneController.reload();
             showHistoryScene();
         } else {
             showGameScene();
@@ -170,10 +176,7 @@ public class ContainerController implements Initializable {
 
     }
 
-    public DictionaryAction getDictionaryAction() {
-        return this.dictionaryAction;
-    }
-    public CheckHistoryAction getCheckHistoryAction() {
-        return this.checkHistoryAction;
+    public DictionaryManagement getDictionaryManagement() {
+        return this.dictionaryManagement;
     }
 }
