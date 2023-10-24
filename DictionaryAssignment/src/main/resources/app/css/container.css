@@ -11,11 +11,11 @@
 }
 
 .button_nav:hover {
-    -fx-background-color: #68718F;
     -fx-border-radius: 5px 5px 5px 5px;
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-width: 2px;
     -fx-border-color: #FEC400;
+    -fx-background-color: #68718F;
 }
 
 .button_nav:pressed {

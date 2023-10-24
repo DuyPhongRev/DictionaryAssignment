@@ -50,5 +50,6 @@ public class App extends Application {
 
         Thread loadingThread = new Thread(loadingTask);
         loadingThread.start();
+
     }
 }

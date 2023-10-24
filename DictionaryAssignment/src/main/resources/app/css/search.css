@@ -25,6 +25,7 @@
     -fx-border-color: #314874;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
 }
 
 .web-view {
@@ -32,6 +33,7 @@
     -fx-border-color: #314874;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
 }
 
 .search-text {
@@ -39,8 +41,8 @@
     -fx-border-color: #314874;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
     -fx-font-size: 14px;
     -fx-padding: 5px;
     -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
-
 }

@@ -7,13 +7,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.util.Dictionary;
 import java.util.ResourceBundle;
 
 public class ContainerController implements Initializable {
@@ -29,6 +26,8 @@ public class ContainerController implements Initializable {
     private Button homeButton;
     @FXML
     private Button translateButton;
+    @FXML
+    private Button gameButton;
     @FXML
     private AnchorPane anchorCategory;
 
@@ -48,11 +47,13 @@ public class ContainerController implements Initializable {
     private SearchSceneController searchSceneController;
     private TranslateSceneController translateSceneController;
 
-    private DictionaryAction dictionaryAction = new DictionaryAction();
-    private CheckHistoryAction checkHistoryAction = new CheckHistoryAction();
+    private final DictionaryAction dictionaryAction = new DictionaryAction();
+    private final CheckHistoryAction checkHistoryAction = new CheckHistoryAction();
+    private Button lastButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        lastButton = homeButton;
         try {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("HomeScene.fxml"));
             anchorHomeScene = fxmlLoader.load();
@@ -111,18 +112,25 @@ public class ContainerController implements Initializable {
     @FXML
     private void handleAction(ActionEvent e) {
         if (e.getSource() == homeButton) {
+            pressedButton(homeButton);
             showHomeScene();
         } else if (e.getSource() == searchButton) {
+            pressedButton(searchButton);
             showSearchScene();
         } else if (e.getSource() == editButton) {
+            pressedButton(editButton);
             showEditScene();
         } else if (e.getSource() == translateButton) {
+            pressedButton(translateButton);
             showTranslateScene();
         } else if (e.getSource() == favouriteButton) {
+            pressedButton(favouriteButton);
             showFavoriteScene();
         } else if (e.getSource() == historyButton) {
+            pressedButton(historyButton);
             showHistoryScene();
         } else {
+            pressedButton(gameButton);
             showGameScene();
         }
     }
@@ -166,14 +174,26 @@ public class ContainerController implements Initializable {
         setContentScene(anchorHomeScene);
     }
 
-    public void reset() {
-
-    }
-
     public DictionaryAction getDictionaryAction() {
         return this.dictionaryAction;
     }
     public CheckHistoryAction getCheckHistoryAction() {
         return this.checkHistoryAction;
+    }
+
+    public void pressedButton(Button currentButton) {
+        lastButton.setStyle(
+                "-fx-background-color: #314874;" +
+                "-fx-border-width: 2px;" +
+                "-fx-border-radius: 5px 5px 5px 5px;"
+        );
+        currentButton.setStyle(
+                "-fx-background-color: #68718F;" +
+                "-fx-border-radius: 5px 5px 5px 5px;" +
+                "-fx-border-style: hidden hidden solid hidden;" +
+                "-fx-border-width: 2px;" +
+                "-fx-border-color: #FEC400;"
+        );
+        lastButton = currentButton;
     }
 }

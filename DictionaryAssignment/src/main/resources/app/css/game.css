@@ -1,0 +1,18 @@
+.guess-label {
+    -fx-font-size: 25;
+    -fx-border-width: 2px;
+    -fx-border-color: #dee1e9;
+    -fx-background-color: #fbfcff;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-text-fill: #393e4c;
+    -fx-alignment: center;
+}
+
+.stimulate-button {
+    -fx-background-radius: 5px;
+    -fx-background-color: #dce1ed;
+    -fx-font-size: 20;
+    -fx-font-family: "Yu Gothic UI Semibold";
+    -fx-cursor: hand;
+}

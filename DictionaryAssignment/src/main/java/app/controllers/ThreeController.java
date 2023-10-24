@@ -77,5 +77,4 @@ public class ThreeController {
         webEngine = webView.getEngine();
         webEngine.loadContent(meaning);
     }
-
 }

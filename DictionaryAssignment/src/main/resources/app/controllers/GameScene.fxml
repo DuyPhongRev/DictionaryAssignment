@@ -1,11 +1,322 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.GameSceneController">
+<AnchorPane prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.GameSceneController">
    <children>
-      <Label layoutX="264.0" layoutY="191.0" text="GAME SCENE" />
+      <SplitPane dividerPositions="0.6693773234200744" orientation="VERTICAL" prefHeight="480.0" prefWidth="800.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="316.0" prefWidth="798.0">
+               <children>
+                  <HBox layoutX="269.0" layoutY="58.0" prefHeight="50.0" prefWidth="250.0">
+                     <children>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="269.0" layoutY="162.0" prefHeight="50.0" prefWidth="250.0">
+                     <children>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="269.0" layoutY="110.0" prefHeight="50.0" prefWidth="250.0">
+                     <children>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="269.0" layoutY="266.0" prefHeight="50.0" prefWidth="250.0">
+                     <children>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="269.0" layoutY="214.0" prefHeight="50.0" prefWidth="250.0">
+                     <children>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label maxHeight="50.0" maxWidth="50.0" minHeight="42.0" minWidth="42.0" prefHeight="50.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="798.0">
+               <children>
+                  <HBox layoutX="111.0" prefHeight="50.0" prefWidth="574.0">
+                     <children>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Q">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="W">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="E">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="R">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="T">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Y">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="U">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="I">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="O">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="51.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="P">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="113.0" layoutY="51.0" prefHeight="51.0" prefWidth="574.0">
+                     <children>
+                        <Button minHeight="41.0" minWidth="56.6" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="A">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="41.0" minWidth="56.6" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="S">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="41.0" minWidth="56.6" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="D">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="41.0" minWidth="56.6" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="G">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="41.0" minWidth="56.6" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="H">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="41.0" minWidth="56.6" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="J">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="41.0" minWidth="56.6" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="K">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="41.0" minWidth="56.6" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="L">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="41.0" minWidth="56.6" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="F">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="113.0" layoutY="102.0" prefHeight="53.0" prefWidth="574.0">
+                     <children>
+                        <Button minHeight="43.0" minWidth="90.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="[X]">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="47.4" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="V">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="47.4" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="B">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="47.4" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="C">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="47.4" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="X">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="47.4" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Z">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="47.4" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="M">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="47.4" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="N">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button minHeight="43.0" minWidth="90.0" mnemonicParsing="false" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Enter">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
    </children>
 </AnchorPane>

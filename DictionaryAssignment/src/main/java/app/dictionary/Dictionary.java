@@ -21,9 +21,6 @@ public class Dictionary {
         try {
             pre_state = connection.prepareStatement("SELECT word, description FROM av group by word");
             ResultSet resultSet = pre_state.executeQuery();
-            while (resultSet.next()) {
-
-            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -190,7 +187,6 @@ public class Dictionary {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, foundWord);
             preparedStatement.executeUpdate();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
