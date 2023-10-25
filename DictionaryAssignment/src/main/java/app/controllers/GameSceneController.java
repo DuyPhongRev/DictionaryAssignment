@@ -109,11 +109,11 @@ public class GameSceneController {
                     highLightLastWord(label.getText(), 2);
                 }
             }
+            currentAttemp++;
             if (endGame) {
                 showAlert("WORDLE", "GOOD JOBS!!! YOU'RE WINNER");
                 reset();
             }
-            currentAttemp++;
             if (currentAttemp == 7) {
                 giveUp();
             }
@@ -125,13 +125,13 @@ public class GameSceneController {
             Button button = (Button) keyboardGridPane.getChildren().get(i);
             button.setStyle(null);
         }
-        for (int i = 0; i < currentIndex; i++) {
+        for (int i = 0; i < this.currentIndex; i++) {
             Label label = (Label) answerGridPane.getChildren().get(i);
             label.setText("");
             label.setStyle(null);
         }
-        currentIndex = 0;
-        currentAttemp = 1;
+        this.currentIndex = 0;
+        this.currentAttemp = 1;
     }
 
     public void giveUp() {
