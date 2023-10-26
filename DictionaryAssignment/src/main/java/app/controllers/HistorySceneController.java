@@ -10,10 +10,12 @@ import javafx.scene.input.MouseEvent;
 public class HistorySceneController extends ThreeController {
     public HistorySceneController() {
         super();
+
     }
 
     public void initSelectionList() {
-        arrayWords = myController.getCheckHistoryAction().getHistory();
+
+        arrayWords = myController.getDictionaryManagement().getDicHistory().getDefault_history();
         SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
         SearchListView.getItems().setAll(arrayWords);
     }
@@ -25,7 +27,7 @@ public class HistorySceneController extends ThreeController {
             if (!searchText.isEmpty()) {
                 showListAction(searchText);
             } else {
-                arrayWords = myController.getCheckHistoryAction().getHistory();
+                arrayWords = myController.getDictionaryManagement().getDicHistory().getDefault_history();
                 SearchListView.getItems().setAll(arrayWords);
             }
         }
@@ -43,14 +45,14 @@ public class HistorySceneController extends ThreeController {
 
     @Override
     public void searchAction(String searchText) {
-        String meaning = myController.getCheckHistoryAction().getMyDict().LookUpInHist(searchText);
+        String meaning = myController.getDictionaryManagement().getDicHistory().LookUpInHist(searchText);
         webEngine = webView.getEngine();
         webEngine.loadContent(meaning);
     }
 
     @Override
     public void showListAction(String searchText) {
-        arrayWords = myController.getCheckHistoryAction().getStringFoundWord(searchText);
+        arrayWords = myController.getDictionaryManagement().getDicHistory().getArrayRelevantWordInHist(searchText);
 
         SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
     }
@@ -62,9 +64,11 @@ public class HistorySceneController extends ThreeController {
             String searchText = SearchListView.getSelectionModel().getSelectedItem();
             if (searchText != null && !searchText.isEmpty()) {
                 searchAction(searchText);
-                txtSearch.setText(searchText);
-                arrayWords.clear();
-                arrayWords.add(searchText);
+//                txtSearch.setText(searchText);
+//                arrayWords.clear();
+//                arrayWords.add(searchText);
+//                SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
+//                SearchListView.getItems().setAll(arrayWords);
             }
         }
     }
@@ -80,5 +84,10 @@ public class HistorySceneController extends ThreeController {
                 }
             }
         });
+    }
+
+    public void reload() {
+        txtSearch.setText("");
+        initSelectionList();
     }
 }

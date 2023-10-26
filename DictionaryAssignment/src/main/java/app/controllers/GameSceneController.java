@@ -45,7 +45,7 @@ public class GameSceneController {
 
     public void instruct() {
         showAlert("INSTRUCTION", "You have to guess the hidden word in 6 tries and the " +
-                                            "color of the letters changes to show how close you are.\n" +
+                "color of the letters changes to show how close you are.\n" +
                 "GRAY is in the target word at all.\n" +
                 "YELLOW is in the word but in the wrong spot.\n" +
                 "GREEN is in the word and in the correct spot.\n" +
@@ -87,24 +87,24 @@ public class GameSceneController {
                 if (hiddenWord.charAt(i - size * (currentAttemp - 1)) == label.getText().charAt(0)) {
                     label.setStyle(
                             "-fx-text-fill: #FFFFFF;"
-                            + "-fx-background-color: #79B851;"
-                            + "-fx-border-width: 0px"
+                                    + "-fx-background-color: #79B851;"
+                                    + "-fx-border-width: 0px"
                     );
                     highLightLastWord(label.getText(), 0);
                 } else if (hiddenWord.indexOf(label.getText().charAt(0)) != -1) {
                     endGame = false;
                     label.setStyle(
                             "-fx-text-fill: #FFFFFF;"
-                            + "-fx-background-color: #F3C237;"
-                            + "-fx-border-width: 0px"
+                                    + "-fx-background-color: #F3C237;"
+                                    + "-fx-border-width: 0px"
                     );
                     highLightLastWord(label.getText(), 1);
                 } else {
                     endGame = false;
                     label.setStyle(
                             "-fx-text-fill: #FFFFFF;"
-                            + "-fx-background-color: #A4AEC4;"
-                            + "-fx-border-width: 0px"
+                                    + "-fx-background-color: #A4AEC4;"
+                                    + "-fx-border-width: 0px"
                     );
                     highLightLastWord(label.getText(), 2);
                 }
