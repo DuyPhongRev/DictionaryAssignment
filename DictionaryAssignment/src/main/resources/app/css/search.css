@@ -1,12 +1,51 @@
-.search-button {
+. list-view .scroll-bar:horizontal .increment-arrow,
+. list-view .scroll-bar:horizontal .decrement-arrow,
+. list-view .scroll-bar:horizontal .increment-button,
+. list-view .scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}
+
+. list-view .scroll-bar:vertical {
+    -fx-background-radius: 20;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+. list-view .decrement-button, .list-view .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+. list-view .increment-button, .list-view .increment-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+. list-view .scroll-bar:vertical .thumb {
+    -fx-background-color: #314874;
+    -fx-background-insets: 5, 5, 5;
+    -fx-background-radius: 5;
+}
+
+. list-view .scroll-bar:horizontal {
+    -fx-scale-x: 0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    -fx-opacity: 0;
+}
+
+.button {
     -fx-text-fill: white;
     -fx-background-color: #314874;
     -fx-cursor: hand;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
 }
 
-.search-button:hover {
+.button:hover {
     -fx-border-radius: 5px;
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-width: 2px;
@@ -14,7 +53,7 @@
     -fx-border-color: #FEC400;
 }
 
-.search-button:pressed {
+.button:pressed {
     -fx-background-color: #5F647C;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
@@ -38,7 +77,7 @@
 
 .search-text {
     -fx-background-color: #FFFFFF;
-    -fx-border-color: #314874;
+    -fx-border-color: #1a3b7a;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;

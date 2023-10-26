@@ -188,7 +188,7 @@
             </GridPane>
             <Button fx:id="resetButton" layoutX="739.0" layoutY="14.0" minHeight="40.0" minWidth="46.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="46.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
                <graphic>
-                  <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 90%;">
                      <image>
                         <Image url="@../img/reload.png" />
                      </image>
@@ -196,7 +196,7 @@
                </graphic></Button>
             <Button fx:id="instructionButton" layoutX="684.0" layoutY="14.0" minHeight="40.0" minWidth="38.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="46.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
                <graphic>
-                  <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
                         <Image url="@../img/instruction.png" />
                      </image>

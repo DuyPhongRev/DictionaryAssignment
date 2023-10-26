@@ -23,7 +23,7 @@
                </graphic>
             </Button>
             <Button fx:id="tranButton" layoutX="20.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="30.0" prefWidth="90.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Translate" />
-            <Button fx:id="reverseButton" layoutX="120.0" layoutY="426.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="30.0" prefWidth="22.0" styleClass="tran-button" stylesheets="@../css/translate.css" />
+            <Button fx:id="textRecognizeButton" layoutX="120.0" layoutY="426.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="30.0" prefWidth="120.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Text Recognition" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="400.0" onMouseReleased="#getCurrentDesLang" prefHeight="480.0" prefWidth="400.0">

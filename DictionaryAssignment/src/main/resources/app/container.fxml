@@ -27,22 +27,6 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="translateButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/translate.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-            <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@img/edit.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
             <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css" textAlignment="CENTER">
                <graphic>
                   <ImageView fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
@@ -56,6 +40,22 @@
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@img/history.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/edit.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="translateButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="120.0" styleClass="button_nav" stylesheets="@css/container.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/translate.png" />
                      </image>
                   </ImageView>
                </graphic></Button>

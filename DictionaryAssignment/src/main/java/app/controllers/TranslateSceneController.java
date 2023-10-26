@@ -16,7 +16,7 @@ import java.util.ResourceBundle;
 
 public class TranslateSceneController implements Initializable {
     @FXML
-    private Button SrcSoundButton, DesSoundButton, tranButton, reverseButton;
+    private Button SrcSoundButton, DesSoundButton, tranButton, textRecognizeButton;
     @FXML
     private ChoiceBox<LANGUAGE> SrcLangChoiceBox, DesLangChoiceBox;
     @FXML
@@ -63,8 +63,8 @@ public class TranslateSceneController implements Initializable {
         } else if (false) {
             getCurrentDesLang();
             DesTextArea.setText(TranslateTextAPIs.translate(SrcTextArea.getText(), currentSrcLang, currentDesLang));
-        } else if (event.getSource().equals(reverseButton)) {
-            swap();
+        } else if (event.getSource().equals(textRecognizeButton)) {
+
         } else if (event.getSource().equals(SrcSoundButton) && !SrcTextArea.getText().equals("")) {
             TranslateVoiceAPIs.getAudio(SrcTextArea.getText(), currentSrcLang);
         } else if (event.getSource().equals(DesSoundButton) && !DesTextArea.getText().equals("")) {
@@ -72,15 +72,7 @@ public class TranslateSceneController implements Initializable {
         }
     }
 
-    void swap() throws IOException {
-        LANGUAGE tmpLang = SrcLangChoiceBox.getValue();
-        SrcLangChoiceBox.setValue(DesLangChoiceBox.getValue());
-        DesLangChoiceBox.setValue(tmpLang);
-        getCurrentSrcLang();
-        getCurrentDesLang();
-        SrcTextArea.setText(DesTextArea.getText());
-        DesTextArea.setText(TranslateTextAPIs.translate(SrcTextArea.getText(), currentSrcLang, currentDesLang));
-    }
+
 
     public enum LANGUAGE {
         ENGLISH("en"),

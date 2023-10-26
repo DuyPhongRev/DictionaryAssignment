@@ -8,25 +8,16 @@
 
 <AnchorPane prefHeight="480.0" prefWidth="800.0" stylesheets="@../css/edit.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.EditSceneController">
    <children>
-      <AnchorPane layoutX="400.0" prefHeight="480.0" prefWidth="400.0" stylesheets="@../css/edit.css">
+      <AnchorPane prefHeight="480.0" prefWidth="800.0" stylesheets="@../css/edit.css">
          <children>
-            <Label layoutY="28.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-box" stylesheets="@../css/edit.css" text="Edit an existing word" />
-            <TextField layoutX="50.0" layoutY="110.0" prefHeight="30.0" prefWidth="130.0" styleClass="custom-text-field" />
-            <TextField layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="300.0" styleClass="custom-text-field" />
-            <TextArea layoutX="50.0" layoutY="210.0" prefHeight="180.0" prefWidth="300.0" styleClass="custom-text-area" />
-            <Button layoutX="50.0" layoutY="410.0" mnemonicParsing="false" styleClass="button_nav" text="Button" />
-            <Button layoutX="298.0" layoutY="410.0" mnemonicParsing="false" styleClass="button_nav" text="Button" />
-            <TextField layoutX="221.0" layoutY="110.0" prefHeight="30.0" prefWidth="130.0" styleClass="custom-text-field" />
-         </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="480.0" prefWidth="400.0" stylesheets="@../css/edit.css">
-         <children>
-            <Label layoutY="28.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-box" stylesheets="@../css/edit.css" text="Add a new word" />
-            <TextField layoutX="50.0" layoutY="110.0" prefHeight="30.0" prefWidth="300.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
-            <TextField layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="300.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
-            <TextArea layoutX="50.0" layoutY="210.0" prefHeight="180.0" prefWidth="300.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
-            <Button layoutX="50.0" layoutY="410.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Button" />
-            <Button layoutX="298.0" layoutY="410.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Button" />
+            <Label layoutY="28.0" prefHeight="50.0" prefWidth="800.0" styleClass="custom-text-box" stylesheets="@../css/edit.css" text="Modify a word" />
+            <TextField fx:id="srcTextField" layoutX="50.0" layoutY="110.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+            <TextField fx:id="DesTextField" layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+            <TextArea fx:id="meaningTextArea" layoutX="50.0" layoutY="210.0" prefHeight="180.0" prefWidth="400.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
+            <Button fx:id="addButton" layoutX="50.0" layoutY="413.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Add" />
+            <Button fx:id="editButton" layoutX="115.0" layoutY="413.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Edit" />
+            <TextArea fx:id="SynonymTextArea" layoutX="475.0" layoutY="110.0" prefHeight="280.0" prefWidth="275.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
+            <Button fx:id="deleteButton" layoutX="179.0" layoutY="413.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Delete" />
          </children>
       </AnchorPane>
    </children>
