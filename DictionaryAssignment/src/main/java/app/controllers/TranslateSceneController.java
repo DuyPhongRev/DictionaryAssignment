@@ -8,8 +8,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
+import javafx.stage.FileChooser;
 import javazoom.jl.decoder.JavaLayerException;
+import net.sourceforge.tess4j.Tesseract;
+import net.sourceforge.tess4j.TesseractException;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -47,7 +51,7 @@ public class TranslateSceneController implements Initializable {
     }
 
     @FXML
-    public void handleEvent(Event event) throws IOException, JavaLayerException {
+    public void handleEvent(Event event) throws IOException, JavaLayerException, TesseractException {
         if (event.getSource().equals(SrcTextArea)) {
             String text = SrcTextArea.getText();
             if (currentDesLang.equals(currentSrcLang)) {
@@ -64,7 +68,7 @@ public class TranslateSceneController implements Initializable {
             getCurrentDesLang();
             DesTextArea.setText(TranslateTextAPIs.translate(SrcTextArea.getText(), currentSrcLang, currentDesLang));
         } else if (event.getSource().equals(textRecognizeButton)) {
-
+            recognizeText();
         } else if (event.getSource().equals(SrcSoundButton) && !SrcTextArea.getText().equals("")) {
             TranslateVoiceAPIs.getAudio(SrcTextArea.getText(), currentSrcLang);
         } else if (event.getSource().equals(DesSoundButton) && !DesTextArea.getText().equals("")) {
@@ -72,13 +76,27 @@ public class TranslateSceneController implements Initializable {
         }
     }
 
-
+    public void recognizeText() throws TesseractException, IOException {
+        FileChooser fileChooser = new FileChooser();
+        File respond = fileChooser.showOpenDialog(null);
+        if (respond != null) {
+            Tesseract tesseract = new Tesseract();
+            tesseract.setDatapath("DictionaryAssignment\\src\\main\\resources\\app\\tessdata");
+            String text = tesseract.doOCR(respond).replace("\n", " ");
+            SrcTextArea.setText(text);
+            SrcLangChoiceBox.setValue(LANGUAGE.AUTO);
+            getCurrentDesLang();
+            getCurrentSrcLang();
+            DesTextArea.setText(TranslateTextAPIs.translate(text, currentSrcLang, currentDesLang));
+        }
+    }
 
     public enum LANGUAGE {
         ENGLISH("en"),
         CHINESE("zh"),
         FRENCH("fr"),
-        VIETNAMESE("vi");
+        VIETNAMESE("vi"),
+        AUTO("auto");
 
         private final String key;
 

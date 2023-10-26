@@ -196,7 +196,7 @@ public class ContainerController implements Initializable {
     public void pressedButton(Button currentButton) {
         lastButton.setStyle(null);
         currentButton.setStyle(
-                "-fx-background-color: #515870;" +
+                "-fx-background-color: #1d386c;" +
                         "-fx-border-radius: 5px 5px 5px 5px;" +
                         "-fx-border-style: hidden hidden solid hidden;" +
                         "-fx-border-width: 2px;" +

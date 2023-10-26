@@ -16,7 +16,7 @@
 
 .choice-box .label {
     -fx-text-fill: #333333;
-    -fx-font-size: 16;
+    -fx-font-size: 14;
 }
 
 .choice-box:hover {
@@ -44,4 +44,44 @@
     -fx-background-color: #5F647C;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
+}
+
+
+
+. text_area .scroll-bar:horizontal .increment-arrow,
+. text_area .scroll-bar:horizontal .decrement-arrow,
+. text_area .scroll-bar:horizontal .increment-button,
+. text_area .scroll-bar:horizontal .decrement-button {
+    -fx-padding: 0;
+}
+
+. text_area .scroll-bar:vertical {
+    -fx-background-radius: 20;
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+. text_area .decrement-button, .text_area .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+. text_area .increment-button, .text_area .increment-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+. text_area .scroll-bar:vertical .thumb {
+    -fx-background-color: #314874;
+    -fx-background-insets: 5, 5, 5;
+    -fx-background-radius: 5;
+}
+
+. text_area .scroll-bar:horizontal {
+    -fx-scale-x: 0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+    -fx-opacity: 0;
 }

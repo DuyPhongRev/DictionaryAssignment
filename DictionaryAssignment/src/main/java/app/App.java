@@ -10,6 +10,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.geometry.Pos;
+
 import java.io.IOException;
 
 public class App extends Application {
@@ -25,7 +26,6 @@ public class App extends Application {
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image(App.class.getResourceAsStream("logo.png")));
         primaryStage.setTitle("Dictionary");
-
         ImageView loadingImageView = new ImageView(new Image(App.class.getResourceAsStream("loadingData.gif")));
         StackPane loadingLayout = new StackPane(loadingImageView);
         loadingLayout.setAlignment(Pos.CENTER);
@@ -50,6 +50,5 @@ public class App extends Application {
 
         Thread loadingThread = new Thread(loadingTask);
         loadingThread.start();
-
     }
 }

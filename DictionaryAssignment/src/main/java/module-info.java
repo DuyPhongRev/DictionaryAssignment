@@ -8,6 +8,7 @@ module app.DictionaryFX {
     requires jlayer;
     requires java.sql;
     requires javafx.web;
+    requires tess4j;
 
     opens app to javafx.fxml;
     exports app;

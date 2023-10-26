@@ -21,6 +21,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
+            <Button layoutX="665.0" layoutY="29.0" maxHeight="30.0" maxWidth="30.0" minHeight="10.0" minWidth="21.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="21.0" />
          </children>
       </AnchorPane>
       <ListView fx:id="SearchListView" layoutX="20.0" layoutY="90.0" onMouseClicked="#SelectSearchListItem" prefHeight="370.0" prefWidth="180.0" styleClass="search-text" stylesheets="@../css/search.css" />
