@@ -2,15 +2,19 @@ package app.controllers;
 
 import app.actions.CheckHistoryAction;
 import app.actions.DictionaryAction;
+import app.dictionary.DictionaryManagement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-
+import javafx.scene.control.Button;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.util.Dictionary;
 import java.util.ResourceBundle;
 
 public class ContainerController implements Initializable {
@@ -27,9 +31,9 @@ public class ContainerController implements Initializable {
     @FXML
     private Button translateButton;
     @FXML
-    private Button gameButton;
-    @FXML
     private AnchorPane anchorCategory;
+    @FXML
+    private Button gameButton;
 
     private AnchorPane anchorSearchScene;
     private AnchorPane anchorTranslateScene;
@@ -47,9 +51,10 @@ public class ContainerController implements Initializable {
     private SearchSceneController searchSceneController;
     private TranslateSceneController translateSceneController;
 
-    private final DictionaryAction dictionaryAction = new DictionaryAction();
-    private final CheckHistoryAction checkHistoryAction = new CheckHistoryAction();
     private Button lastButton;
+    private DictionaryManagement dictionaryManagement = new DictionaryManagement();
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -76,6 +81,7 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         try {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("GameScene.fxml"));
             anchorGameScene = fxmlLoader.load();
@@ -83,6 +89,7 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         try {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("HistoryScene.fxml"));
             anchorHistoryScene = fxmlLoader.load();
@@ -92,11 +99,13 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
         try {
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("SearchScene.fxml"));
             anchorSearchScene = fxmlLoader.load();
             searchSceneController = fxmlLoader.getController();
             searchSceneController.initData(this);
+            searchSceneController.initSelectionList();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -107,6 +116,7 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     @FXML
@@ -128,6 +138,7 @@ public class ContainerController implements Initializable {
             showFavoriteScene();
         } else if (e.getSource() == historyButton) {
             pressedButton(historyButton);
+            historySceneController.reload();
             showHistoryScene();
         } else {
             pressedButton(gameButton);
@@ -174,22 +185,27 @@ public class ContainerController implements Initializable {
         setContentScene(anchorHomeScene);
     }
 
-    public DictionaryAction getDictionaryAction() {
-        return this.dictionaryAction;
+    public void reset() {
+
     }
-    public CheckHistoryAction getCheckHistoryAction() {
-        return this.checkHistoryAction;
+
+    public DictionaryManagement getDictionaryManagement() {
+        return this.dictionaryManagement;
     }
 
     public void pressedButton(Button currentButton) {
-        currentButton.setStyle(
-                "-fx-background-color: #203e77;" +
-                "-fx-border-radius: 5px 5px 5px 5px;" +
-                "-fx-border-style: hidden hidden solid hidden;" +
-                "-fx-border-width: 2px;" +
-                "-fx-border-color: #FEC400;"
+        lastButton.setStyle(
+                "-fx-background-color: #314874;" +
+                        "-fx-border-width: 2px;" +
+                        "-fx-border-radius: 5px 5px 5px 5px;"
         );
-        lastButton.setStyle(null);
+        currentButton.setStyle(
+                "-fx-background-color: #68718F;" +
+                        "-fx-border-radius: 5px 5px 5px 5px;" +
+                        "-fx-border-style: hidden hidden solid hidden;" +
+                        "-fx-border-width: 2px;" +
+                        "-fx-border-color: #FEC400;"
+        );
         lastButton = currentButton;
     }
 }
