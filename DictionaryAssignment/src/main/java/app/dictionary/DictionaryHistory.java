@@ -86,7 +86,7 @@ public class DictionaryHistory {
     }
 
     public void deleteWordFromHistoryDatabase(String foundWord) {
-//        foundWord = foundWord.trim();
+        foundWord = foundWord.trim();
         String sql = "DELETE FROM avHistory WHERE word = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

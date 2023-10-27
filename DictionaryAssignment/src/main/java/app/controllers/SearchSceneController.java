@@ -9,11 +9,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-
+import org.controlsfx.control.action.Action;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class SearchSceneController extends ThreeController {
+    @FXML
+    private Button favoriteButton;
     public SearchSceneController() {
         super();
     }
@@ -77,7 +79,24 @@ public class SearchSceneController extends ThreeController {
         });
     }
 
-
+    @FXML
+    public void handleFavouriteButton(ActionEvent event) throws SQLException {
+        if (event.getSource() == favoriteButton) {
+            boolean hasContent = webView.getEngine().getDocument() != null;
+            if (hasContent) {
+                String searchText = txtSearch.getText();
+                boolean checkContains = myController.getDictionaryManagement().getDictFavourite().getFavouriteList().contains(searchText);
+                if (!checkContains) {
+                    myController.getDictionaryManagement().addToFavourite(searchText);
+                    showPopup("Added to favorite!");
+                } else {
+                    showPopup("This word is already in favorite!");
+                }
+            } else {
+                showPopup("Please search a word first!");
+            }
+        }
+    }
     @Override
     public void searchAction(String searchText) throws SQLException {
         String meaning = myController.getDictionaryManagement().searchAct(searchText);

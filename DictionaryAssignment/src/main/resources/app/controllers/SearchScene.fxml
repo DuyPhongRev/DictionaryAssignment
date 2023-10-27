@@ -28,7 +28,7 @@
       <WebView fx:id="webView" layoutX="419.0" layoutY="90.0" prefHeight="370.0" prefWidth="360.0" stylesheets="@../css/search.css" />
       <ListView fx:id="SynonymListView" layoutX="220.0" layoutY="90.0" onMouseClicked="#SelectSearchListItem" prefHeight="370.0" prefWidth="180.0" styleClass="search-text" stylesheets="@../css/search.css" />
       <Button fx:id="deleteButton" layoutX="709.0" layoutY="116.0" mnemonicParsing="false" stylesheets="@../css/search.css" text="Delete" />
-      <Button fx:id="favoriteButton" layoutX="709.0" layoutY="149.0" mnemonicParsing="false" stylesheets="@../css/search.css" text="Favorite" />
+      <Button fx:id="favoriteButton" layoutX="709.0" layoutY="149.0" mnemonicParsing="false" onAction="#handleFavouriteButton" stylesheets="@../css/search.css" text="Favorite" />
       <Button fx:id="soundButton" layoutX="709.0" layoutY="182.0" mnemonicParsing="false" stylesheets="@../css/search.css" text="Sound" />
    </children>
 </AnchorPane>

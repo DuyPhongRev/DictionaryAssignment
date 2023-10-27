@@ -78,6 +78,7 @@ public class ContainerController implements Initializable {
             anchorFavouriteScene = fxmlLoader.load();
             favoriteSceneController = fxmlLoader.getController();
             favoriteSceneController.initData(this);
+            favoriteSceneController.initSelectionList();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -8,7 +8,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -76,6 +77,14 @@ public class ThreeController {
 //        String meaning = myController.getDictionaryManagement().searchAct(searchText);
 //        webEngine = webView.getEngine();
 //        webEngine.loadContent(meaning);
+    }
+
+    public void showPopup(String message) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Notification!");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }

@@ -45,6 +45,10 @@ public class DictionaryManagement {
         return ans;
     }
 
+    public void addToFavourite(String word) {
+        dict_favourite.saveWordToFavouriteDB(word);
+    }
+
     public boolean addNewWord(String target, String explain) {
         target = target.toLowerCase();
         explain = explain.toLowerCase();
