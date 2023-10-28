@@ -86,6 +86,7 @@ public class DictionaryHistory {
     }
 
     public void deleteWordFromHistoryDatabase(String foundWord) {
+        default_history.remove(foundWord);
         foundWord = foundWord.trim();
         String sql = "DELETE FROM avHistory WHERE word = ?";
         try {
@@ -108,6 +109,10 @@ public class DictionaryHistory {
 
     public ArrayList<String> getDefault_history() {
         insertHistoryListFromDB();
+        return default_history;
+    }
+
+    public ArrayList<String> getHistoryList() {
         return default_history;
     }
 }

@@ -24,8 +24,7 @@ public class DictionaryManagement {
         dict_favourite.setConnection(this.connection);
         dict_main.insertWordListFromDB();
         dic_history.insertHistoryListFromDB();
-//        System.out.println("DictionaryManagement hehe");
-//        dict_favourite.insertFavouriteListFromDB();
+        dict_favourite.insertFavouriteListFromDB();
     }
 
     public String searchAct(String word) throws SQLException {
@@ -45,6 +44,19 @@ public class DictionaryManagement {
         return ans;
     }
 
+    public void deleteAct(String word) throws SQLException {
+        try {
+            connection.setAutoCommit(false);
+            dict_main.deleteWordFromDictionaryDatabase(word);
+            dic_history.deleteWordFromHistoryDatabase(word);
+            dict_favourite.deleteWordFromFavouriteDatabase(word);
+            connection.commit();
+        } catch (SQLException e) {
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+        }
+    }
     public void addToFavourite(String word) {
         dict_favourite.saveWordToFavouriteDB(word);
     }

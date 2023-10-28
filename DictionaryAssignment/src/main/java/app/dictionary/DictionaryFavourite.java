@@ -17,7 +17,7 @@ public class DictionaryFavourite {
             if (!default_favourite.isEmpty()) {
                 default_favourite.clear();
             }
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT word, html FROM avFavorite");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT word, html FROM avFavourite");
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 default_favourite.add(0, resultSet.getString(1));
@@ -30,7 +30,7 @@ public class DictionaryFavourite {
 
     public String LookUpInFavourite(String word) {
         try{
-            PreparedStatement stmt = connection.prepareStatement("SELECT html FROM avFavorite WHERE word = ?");
+            PreparedStatement stmt = connection.prepareStatement("SELECT html FROM avFavourite WHERE word = ?");
             stmt.setString(1, word);
             ResultSet rs = stmt.executeQuery();
 
@@ -65,9 +65,6 @@ public class DictionaryFavourite {
     public void saveWordToFavouriteDB(String foundWord) {
         foundWord = foundWord.trim();
         if (default_favourite.contains(foundWord)) {
-//            default_favourite.remove(foundWord);
-//            default_favourite.add(0, foundWord);
-//            deleteWordFromFavouriteDatabase(foundWord);
 //            do nothing
         } else {
             default_favourite.add(0, foundWord);
@@ -84,6 +81,7 @@ public class DictionaryFavourite {
 
     public void deleteWordFromFavouriteDatabase(String foundWord) {
         foundWord = foundWord.trim();
+        default_favourite.remove(foundWord);
         String sql = "DELETE FROM avFavourite WHERE word = ?";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

@@ -40,6 +40,20 @@ public class Dictionary {
         }
     }
 
+    public void deleteWordFromDictionaryDatabase(String foundWord) {
+        foundWord = foundWord.trim();
+        default_dictionary.remove(foundWord);
+        String sql = "DELETE FROM av WHERE word = ?";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, foundWord);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public String LookUp(String word) {
         try{
             PreparedStatement stmt = connection.prepareStatement("SELECT html FROM av WHERE word = ?");

@@ -50,8 +50,8 @@ public class FavoriteSceneController extends ThreeController {
         if (event.getSource() == SearchListView) {
             String searchText = SearchListView.getSelectionModel().getSelectedItem();
             if (searchText != null && !searchText.isEmpty()) {
+                System.out.println("selected favourite list item");
                 searchAction(searchText);
-//                txtSearch.setText(searchText);
             }
         }
     }
@@ -85,6 +85,8 @@ public class FavoriteSceneController extends ThreeController {
 
     public void reload() {
         txtSearch.setText("");
-        initSelectionList();
+        arrayWords = myController.getDictionaryManagement().getDictFavourite().getFavouriteList();
+        SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
+        SearchListView.getItems().setAll(arrayWords);
     }
 }

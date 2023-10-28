@@ -136,6 +136,7 @@ public class ContainerController implements Initializable {
             showTranslateScene();
         } else if (e.getSource() == favouriteButton) {
             pressedButton(favouriteButton);
+            favoriteSceneController.reload();
             showFavoriteScene();
         } else if (e.getSource() == historyButton) {
             pressedButton(historyButton);
