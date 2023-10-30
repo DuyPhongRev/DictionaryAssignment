@@ -9,15 +9,17 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-
+import org.controlsfx.control.action.Action;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
 public class SearchSceneController extends ThreeController {
+    @FXML
+    private Button favoriteButton;
     public SearchSceneController() {
         super();
     }
     ArrayList<String> arrayWordsDefault = new ArrayList<>();
+    private String currentLoadWord = "";
     @Override
     @FXML
     public void SelectSearchListItem (MouseEvent event) throws SQLException {
@@ -77,11 +79,56 @@ public class SearchSceneController extends ThreeController {
         });
     }
 
+    @FXML
+    public void handleFavouriteButton(ActionEvent event) throws SQLException {
+        if (event.getSource() == favoriteButton) {
+            boolean hasContent = webView.getEngine().getDocument() != null;
+            if (hasContent) {
+                boolean checkContains = myController.getDictionaryManagement().getDictFavourite().getFavouriteList().contains(currentLoadWord);
+                if (!checkContains) {
+                    myController.getDictionaryManagement().addToFavourite(currentLoadWord);
+                    showPopup("Added to favorite!");
+                } else {
+                    showPopup("This word is already in favorite!");
+                }
+            } else {
+                showPopup("Please search a word first!");
+            }
+        }
+    }
 
+    public void handleDeleteButton(ActionEvent event) throws SQLException {
+        if (event.getSource() == deleteButton) {
+            boolean hasContent = webView.getEngine().getDocument() != null;
+            if (hasContent) {
+                String tempResult = showConfirmationPopup("Are you sure you want to delete this word from the database system?");
+                if (tempResult.equals("no")) {
+                    return;
+                } else {
+                myController.getDictionaryManagement().deleteAct(currentLoadWord);
+                reload();
+                    webEngine = webView.getEngine();
+                    webEngine.loadContent("This word has been deleted from the database system!");
+                }
+            } else {
+                showPopup("Please Select the word first");
+            }
+
+        }
+    }
     @Override
     public void searchAction(String searchText) throws SQLException {
         String meaning = myController.getDictionaryManagement().searchAct(searchText);
+        currentLoadWord = searchText;
         webEngine = webView.getEngine();
         webEngine.loadContent(meaning);
+    }
+
+    public void reload() {
+        txtSearch.setText("");
+        arrayWords = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
+        SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
+        SearchListView.getItems().setAll(arrayWords);
+
     }
 }

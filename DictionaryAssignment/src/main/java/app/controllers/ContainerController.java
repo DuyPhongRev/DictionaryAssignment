@@ -78,6 +78,7 @@ public class ContainerController implements Initializable {
             anchorFavouriteScene = fxmlLoader.load();
             favoriteSceneController = fxmlLoader.getController();
             favoriteSceneController.initData(this);
+            favoriteSceneController.initSelectionList();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -135,6 +136,7 @@ public class ContainerController implements Initializable {
             showTranslateScene();
         } else if (e.getSource() == favouriteButton) {
             pressedButton(favouriteButton);
+            favoriteSceneController.reload();
             showFavoriteScene();
         } else if (e.getSource() == historyButton) {
             pressedButton(historyButton);

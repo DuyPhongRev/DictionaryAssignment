@@ -1,5 +1,5 @@
 package app.controllers;
-import app.connections.databaseConnection;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,8 +8,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-
-import java.sql.Connection;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -25,6 +25,8 @@ public class ThreeController {
     protected WebView webView;
     protected WebEngine webEngine;
     protected ArrayList<String> arrayWords;
+    @FXML
+    protected Button deleteButton;
 
     public ThreeController() {
 
@@ -72,10 +74,37 @@ public class ThreeController {
         SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
     }
 
-    public void searchAction(String searchText) throws SQLException {
-//        String meaning = myController.getDictionaryManagement().searchAct(searchText);
-//        webEngine = webView.getEngine();
-//        webEngine.loadContent(meaning);
+    public void searchAction(String searchText) throws SQLException {}
+
+    public void showPopup(String message) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Notification!");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
+    protected String showConfirmationPopup(String message) {
+        Dialog<ButtonType> dialog = new Dialog<>();
+        dialog.setTitle("Confirmation");
+        dialog.setHeaderText(null);
+        dialog.setContentText(message);
+
+        ButtonType yesButton = new ButtonType("Yes");
+        ButtonType noButton = new ButtonType("No");
+
+        dialog.getDialogPane().getButtonTypes().addAll(yesButton, noButton);
+
+        dialog.showAndWait();
+
+        ButtonType result = dialog.getResult();
+        if (result == yesButton) {
+            dialog.close();
+            showPopup("Delete successfully!");
+            return "yes";
+        } else {
+            dialog.close();
+            return "no";
+        }
+    }
 }

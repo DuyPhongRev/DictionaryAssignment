@@ -64,11 +64,6 @@ public class HistorySceneController extends ThreeController {
             String searchText = SearchListView.getSelectionModel().getSelectedItem();
             if (searchText != null && !searchText.isEmpty()) {
                 searchAction(searchText);
-//                txtSearch.setText(searchText);
-//                arrayWords.clear();
-//                arrayWords.add(searchText);
-//                SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
-//                SearchListView.getItems().setAll(arrayWords);
             }
         }
     }
@@ -88,6 +83,9 @@ public class HistorySceneController extends ThreeController {
 
     public void reload() {
         txtSearch.setText("");
-        initSelectionList();
+        arrayWords = myController.getDictionaryManagement().getDicHistory().getHistoryList();
+        SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
+        SearchListView.getItems().setAll(arrayWords);
+
     }
 }
