@@ -13,7 +13,7 @@
       <AnchorPane prefHeight="80.0" prefWidth="800.0" stylesheets="@../css/search.css">
          <children>
             <TextField fx:id="txtSearch" layoutX="20.0" layoutY="15.0" prefHeight="50.0" prefWidth="760.0" styleClass="search-text" stylesheets="@../css/search.css" />
-            <Button fx:id="searchButton" layoutX="735.0" layoutY="20.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 5px;" styleClass="search-button" stylesheets="@../css/search.css">
+            <Button fx:id="searchButton" layoutX="735.0" layoutY="20.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 5px;" styleClass="button-normal" stylesheets="@../css/search.css">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -21,12 +21,14 @@
                      </image>
                   </ImageView>
                </graphic></Button>
+            <Button fx:id="deleteSearchButton" layoutX="710.0" layoutY="30.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#deleteTextSearch" prefHeight="10.0" prefWidth="22.0" styleClass="button-delete" />
          </children>
       </AnchorPane>
       <ListView fx:id="SearchListView" layoutX="20.0" layoutY="90.0" onMouseClicked="#SelectSearchListItem" prefHeight="370.0" prefWidth="180.0" stylesheets="@../css/search.css" />
       <WebView fx:id="webView" layoutX="419.0" layoutY="90.0" prefHeight="370.0" prefWidth="360.0" stylesheets="@../css/search.css" />
       <ListView fx:id="SynonymListView" layoutX="220.0" layoutY="90.0" prefHeight="370.0" prefWidth="180.0" stylesheets="@../css/search.css" />
-      <Button fx:id="deleteButton" layoutX="699.0" layoutY="106.0" mnemonicParsing="false" styleClass="search-button" text="Delete" />
-      <Button fx:id="soundButton" layoutX="699.0" layoutY="142.0" mnemonicParsing="false" styleClass="search-button" text="Sound" />
+      <Button fx:id="deleteButton" layoutX="710.0" layoutY="105.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" styleClass="button-normal" stylesheets="@../css/search.css" text="Delete" />
+      <Button fx:id="soundButton" layoutX="710.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" styleClass="button-normal" stylesheets="@../css/search.css" text="Sound" />
+      <Button fx:id="favoriteButton" layoutX="710.0" layoutY="140.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" styleClass="button-normal" stylesheets="@../css/search.css" text="Favorite" />
    </children>
 </AnchorPane>

@@ -36,7 +36,7 @@
     -fx-opacity: 0;
 }
 
-.button {
+.button-normal {
     -fx-text-fill: white;
     -fx-background-color: #314874;
     -fx-cursor: hand;
@@ -45,7 +45,7 @@
     -fx-background-radius: 5px;
 }
 
-.button:hover {
+.button-normal:hover {
     -fx-border-radius: 5px;
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-width: 2px;
@@ -53,35 +53,54 @@
     -fx-border-color: #FEC400;
 }
 
-.button:pressed {
+.button-normal:pressed {
     -fx-background-color: #5F647C;
     -fx-border-width: 1px;
-    -fx-border-radius: 5px;
 }
 
 .list-view {
-    -fx-background-color: #FFFFFF;
-    -fx-border-color: #314874;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
 }
 
 .web-view {
-    -fx-background-color: #FFFFFF;
-    -fx-border-color: #314874;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
 }
 
 .search-text {
-    -fx-background-color: #FFFFFF;
-    -fx-border-color: #1a3b7a;
     -fx-border-width: 1px;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
     -fx-font-size: 14px;
     -fx-padding: 5px;
     -fx-prompt-text-fill: derive(-fx-control-inner-background, -30%);
+}
+
+.button-delete {
+    -fx-text-fill: white;
+    -fx-background-color: #bbbbbb;
+    -fx-background-radius: 30px;
+    -fx-cursor: hand;
+    -fx-min-height: 18px;
+    -fx-min-width: 18px;
+    -fx-max-height: 18px;
+    -fx-max-width: 18px;
+}
+
+.button-delete:hover {
+    -fx-background-color: #b6b6b6;
+
+}
+
+.button-delete:pressed {
+    -fx-background-color: #a9a9a9;
+}
+
+.list-view, .web-view, .search-text {
+    -fx-background-color: white;
+    -fx-text-fill: #797979;
+    -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.3), 10, 0, 1, 1);
+    -fx-background-radius: 8;
+    -fx-font-size: 14;
 }

@@ -2,22 +2,54 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="480.0" prefWidth="800.0" stylesheets="@../css/edit.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.EditSceneController">
    <children>
       <AnchorPane prefHeight="480.0" prefWidth="800.0" stylesheets="@../css/edit.css">
          <children>
-            <Label layoutY="28.0" prefHeight="50.0" prefWidth="800.0" styleClass="custom-text-box" stylesheets="@../css/edit.css" text="Modify a word" />
-            <TextField fx:id="srcTextField" layoutX="50.0" layoutY="110.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
-            <TextField fx:id="DesTextField" layoutX="50.0" layoutY="160.0" prefHeight="30.0" prefWidth="400.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
-            <TextArea fx:id="meaningTextArea" layoutX="50.0" layoutY="210.0" prefHeight="180.0" prefWidth="400.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
-            <Button fx:id="addButton" layoutX="50.0" layoutY="413.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Add" />
-            <Button fx:id="editButton" layoutX="115.0" layoutY="413.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Edit" />
-            <TextArea fx:id="SynonymTextArea" layoutX="475.0" layoutY="110.0" prefHeight="280.0" prefWidth="275.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
-            <Button fx:id="deleteButton" layoutX="179.0" layoutY="413.0" minWidth="50.0" mnemonicParsing="false" styleClass="button_nav" stylesheets="@../css/edit.css" text="Delete" />
+            <TabPane layoutX="1.0" prefHeight="480.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Add">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="112.0">
+                           <children>
+                              <TextField fx:id="AddWordTextField" layoutX="180.0" layoutY="129.0" prefHeight="40.0" prefWidth="440.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+                              <TextArea fx:id="meaningTextArea" layoutX="180.0" layoutY="180.0" prefHeight="140.0" prefWidth="440.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
+                              <Button fx:id="addButton" layoutX="180.0" layoutY="330.0" minWidth="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" text="Add" />
+                              <Label layoutY="15.0" prefHeight="74.0" prefWidth="806.0" style="-fx-alignment: center;" text="Add">
+                                 <font>
+                                    <Font size="50.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Edit">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="112.0">
+                           <children>
+                              <TextField fx:id="OldWordTextField1" layoutX="420.0" layoutY="129.0" prefHeight="40.0" prefWidth="200.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+                              <TextArea fx:id="meaningTextArea1" layoutX="180.0" layoutY="180.0" prefHeight="140.0" prefWidth="440.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
+                              <TextField fx:id="OldWordTextField11" layoutX="180.0" layoutY="129.0" prefHeight="40.0" prefWidth="200.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+                              <Label layoutY="15.0" prefHeight="74.0" prefWidth="806.0" style="-fx-alignment: center;" text="Edit">
+                                 <font>
+                                    <Font size="50.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="editButton" layoutX="180.0" layoutY="330.0" minWidth="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" text="Edit" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
          </children>
       </AnchorPane>
    </children>

@@ -8,12 +8,12 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="480.0" prefWidth="800.0" stylesheets="@../css/search.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.SearchSceneController">
+<AnchorPane prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.SearchSceneController">
    <children>
-      <AnchorPane prefHeight="80.0" prefWidth="800.0" stylesheets="@../css/search.css">
+      <AnchorPane prefHeight="80.0" prefWidth="800.0">
          <children>
             <TextField fx:id="txtSearch" layoutX="20.0" layoutY="15.0" onKeyReleased="#handleChangeInputSearch" prefHeight="50.0" prefWidth="760.0" styleClass="search-text" stylesheets="@../css/search.css" />
-            <Button fx:id="searchButton" layoutX="735.0" layoutY="20.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="40.0" prefWidth="40.0" stylesheets="@../css/search.css">
+            <Button fx:id="searchButton" layoutX="735.0" layoutY="20.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="40.0" prefWidth="40.0" styleClass="button-normal" stylesheets="@../css/search.css">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -21,14 +21,14 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button layoutX="665.0" layoutY="29.0" maxHeight="30.0" maxWidth="30.0" minHeight="10.0" minWidth="21.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="21.0" />
+            <Button fx:id="deleteSearchButton" layoutX="710.0" layoutY="30.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#deleteTextSearch" prefHeight="10.0" prefWidth="22.0" styleClass="button-delete" stylesheets="@../css/search.css" text="X" />
          </children>
       </AnchorPane>
       <ListView fx:id="SearchListView" layoutX="20.0" layoutY="90.0" onMouseClicked="#SelectSearchListItem" prefHeight="370.0" prefWidth="180.0" styleClass="search-text" stylesheets="@../css/search.css" />
       <WebView fx:id="webView" layoutX="419.0" layoutY="90.0" prefHeight="370.0" prefWidth="360.0" stylesheets="@../css/search.css" />
       <ListView fx:id="SynonymListView" layoutX="220.0" layoutY="90.0" onMouseClicked="#SelectSearchListItem" prefHeight="370.0" prefWidth="180.0" styleClass="search-text" stylesheets="@../css/search.css" />
-      <Button fx:id="deleteButton" layoutX="709.0" layoutY="116.0" mnemonicParsing="false" onAction="#handleDeleteButton" stylesheets="@../css/search.css" text="Delete" />
-      <Button fx:id="favoriteButton" layoutX="709.0" layoutY="149.0" mnemonicParsing="false" onAction="#handleFavouriteButton" stylesheets="@../css/search.css" text="Favorite" />
-      <Button fx:id="soundButton" layoutX="709.0" layoutY="182.0" mnemonicParsing="false" stylesheets="@../css/search.css" text="Sound" />
+      <Button fx:id="deleteButton" layoutX="710.0" layoutY="105.0" minWidth="60.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="25.0" prefWidth="60.0" styleClass="button-normal" stylesheets="@../css/search.css" text="Delete" />
+      <Button fx:id="favoriteButton" layoutX="710.0" layoutY="140.0" mnemonicParsing="false" onAction="#handleFavouriteButton" prefHeight="25.0" prefWidth="60.0" styleClass="button-normal" stylesheets="@../css/search.css" text="Favorite" />
+      <Button fx:id="soundButton" layoutX="710.0" layoutY="175.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" styleClass="button-normal" stylesheets="@../css/search.css" text="Sound" />
    </children>
 </AnchorPane>

@@ -1,18 +1,17 @@
 .custom-text-field {
-    -fx-border-color: #314874;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
     -fx-background-color: #FFFFFF;
 }
 
 .custom-text-area {
-    -fx-border-color: #314874;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
     -fx-background-color: #FFFFFF;
+    -fx-padding: 5px;
 }
 
-.button_nav {
+.button {
     -fx-text-fill: white;
     -fx-background-color: #314874;
     -fx-cursor: hand;
@@ -20,7 +19,7 @@
     -fx-border-radius: 5px;
 }
 
-.button_nav:hover {
+.button:hover {
     -fx-background-color: #68718F;
     -fx-border-radius: 5px;
     -fx-border-style: hidden hidden solid hidden;
@@ -28,7 +27,7 @@
 
 }
 
-.button_nav:pressed {
+.button:pressed {
     -fx-background-color: #5F647C;
     -fx-border-width: 1px;
     -fx-border-radius: 5px;
@@ -37,4 +36,13 @@
 .custom-text-box {
     -fx-alignment: center;
     -fx-font-size: 20;
+}
+
+.label {
+    -fx-font-size: 60px;
+}
+
+.custom-text-area, .custom-text-field, .button {
+    -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.3), 10, 0, 1, 1);
+    -fx-background-radius: 10px;
 }

@@ -2,6 +2,7 @@ package app.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
@@ -23,10 +24,13 @@ public class ThreeController {
     protected Button searchButton;
     @FXML
     protected WebView webView;
-    protected WebEngine webEngine;
-    protected ArrayList<String> arrayWords;
     @FXML
     protected Button deleteButton;
+    @FXML
+    protected Button deleteSearchButton;
+    protected WebEngine webEngine;
+    protected ArrayList<String> arrayWords;
+
 
     public ThreeController() {
 
@@ -70,7 +74,6 @@ public class ThreeController {
 
     public void showListAction(String searchText) {
         arrayWords = myController.getDictionaryManagement().getDictMain().getArrayRelevantWord(searchText);
-
         SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
     }
 
@@ -105,6 +108,13 @@ public class ThreeController {
         } else {
             dialog.close();
             return "no";
+        }
+    }
+    @FXML
+    public void deleteTextSearch(Event event) {
+        if (event.getSource() == deleteSearchButton) {
+            txtSearch.setText("");
+            showListAction("");
         }
     }
 }

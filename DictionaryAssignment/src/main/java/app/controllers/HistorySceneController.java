@@ -10,7 +10,6 @@ import javafx.scene.input.MouseEvent;
 public class HistorySceneController extends ThreeController {
     public HistorySceneController() {
         super();
-
     }
 
     public void initSelectionList() {

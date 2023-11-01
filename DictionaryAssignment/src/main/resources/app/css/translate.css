@@ -1,17 +1,11 @@
 .text_area {
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
     -fx-padding: 5px 5px 50px 5px;
-    -fx-border-color: #314874;
     -fx-background-color: white;
 }
 
 .choice-box {
     -fx-background-color: #ffffff;
-    -fx-border-color: #314874;
     -fx-border-width: 1px;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
 }
 
 .choice-box .label {
@@ -29,11 +23,11 @@
     -fx-background-color: #314874;
     -fx-cursor: hand;
     -fx-border-width: 1px;
-    -fx-border-radius: 5px;
+    -fx-border-radius: 10px;
 }
 
 .tran-button:hover {
-    -fx-border-radius: 5px;
+    -fx-border-radius: 10px;
     -fx-border-style: hidden hidden solid hidden;
     -fx-border-width: 2px;
     -fx-background-color: #68718F;
@@ -46,7 +40,11 @@
     -fx-border-radius: 5px;
 }
 
-
+.text_area, .choice-box {
+    -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.3), 10, 0, 1, 1);
+    -fx-background-radius: 10px;
+    -fx-background-color: white;
+}
 
 . text_area .scroll-bar:horizontal .increment-arrow,
 . text_area .scroll-bar:horizontal .decrement-arrow,
@@ -55,7 +53,7 @@
     -fx-padding: 0;
 }
 
-. text_area .scroll-bar:vertical {
+.text_area .scroll-bar:vertical {
     -fx-background-radius: 20;
     -fx-background-color: transparent;
     -fx-padding: 0;
