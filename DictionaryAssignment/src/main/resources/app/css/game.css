@@ -12,7 +12,7 @@
 .stimulate-button {
     -fx-background-radius: 5px;
     -fx-background-color: #dce1ed;
-    -fx-font-size: 20;
+    -fx-font-size: 19;
     -fx-text-fill: #414a5e;
     -fx-font-family: "Yu Gothic UI Semibold";
     -fx-cursor: hand;
@@ -24,4 +24,8 @@
 
 .stimulate-button:pressed {
     -fx-background-color: #a9b6d9;
+}
+
+.label {
+    -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.2), 5, 0, 0.5, 0.5);
 }

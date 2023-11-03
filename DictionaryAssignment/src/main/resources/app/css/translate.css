@@ -1,85 +1,16 @@
-.text_area {
-    -fx-padding: 5px 5px 50px 5px;
-    -fx-background-color: white;
+.text-area {
+    -fx-padding: 10px 5px 40px 5px;
 }
 
-.choice-box {
-    -fx-background-color: #ffffff;
-    -fx-border-width: 1px;
-}
-
-.choice-box .label {
-    -fx-text-fill: #333333;
-    -fx-font-size: 14;
-}
-
-.choice-box:hover {
-    -fx-cursor: hand;
-    -fx-background-color: #cecdcd;
-}
-
-.tran-button {
-    -fx-text-fill: white;
-    -fx-background-color: #314874;
-    -fx-cursor: hand;
-    -fx-border-width: 1px;
-    -fx-border-radius: 10px;
-}
-
-.tran-button:hover {
-    -fx-border-radius: 10px;
-    -fx-border-style: hidden hidden solid hidden;
-    -fx-border-width: 2px;
-    -fx-background-color: #68718F;
-    -fx-border-color: #FEC400;
-}
-
-.tran-button:pressed {
-    -fx-background-color: #5F647C;
-    -fx-border-width: 1px;
-    -fx-border-radius: 5px;
-}
-
-.text_area, .choice-box {
-    -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.3), 10, 0, 1, 1);
-    -fx-background-radius: 10px;
-    -fx-background-color: white;
-}
-
-. text_area .scroll-bar:horizontal .increment-arrow,
-. text_area .scroll-bar:horizontal .decrement-arrow,
-. text_area .scroll-bar:horizontal .increment-button,
-. text_area .scroll-bar:horizontal .decrement-button {
-    -fx-padding: 0;
-}
-
-.text_area .scroll-bar:vertical {
-    -fx-background-radius: 20;
+.button-voice {
     -fx-background-color: transparent;
-    -fx-padding: 0;
+    -fx-effect: none;
 }
 
-. text_area .decrement-button, .text_area .decrement-button {
+.button-voice:hover {
     -fx-background-color: transparent;
-    -fx-border-color: transparent;
 }
 
-. text_area .increment-button, .text_area .increment-button {
+.button-voice:pressed {
     -fx-background-color: transparent;
-    -fx-border-color: transparent;
-}
-
-. text_area .scroll-bar:vertical .thumb {
-    -fx-background-color: #314874;
-    -fx-background-insets: 5, 5, 5;
-    -fx-background-radius: 5;
-}
-
-. text_area .scroll-bar:horizontal {
-    -fx-scale-x: 0;
-}
-
-.scroll-bar:vertical .increment-arrow,
-.scroll-bar:vertical .decrement-arrow {
-    -fx-opacity: 0;
 }

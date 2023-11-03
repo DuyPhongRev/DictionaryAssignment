@@ -10,8 +10,7 @@ import java.util.ArrayList;
 public class Dictionary {
     private Connection connection;
     private ArrayList<String> default_dictionary = new ArrayList<>();
-    Dictionary() {
-
+    public Dictionary() {
     }
 
     public void insertWordListFromDB() {
@@ -99,5 +98,4 @@ public class Dictionary {
     public ArrayList<String> getDefault_dictionary() {
         return default_dictionary;
     }
-
 }

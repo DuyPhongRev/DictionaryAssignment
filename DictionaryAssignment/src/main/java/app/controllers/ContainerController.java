@@ -118,6 +118,7 @@ public class ContainerController implements Initializable {
             throw new RuntimeException(e);
         }
 
+        showHomeScene();
     }
 
     @FXML

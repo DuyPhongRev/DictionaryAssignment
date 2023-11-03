@@ -7,9 +7,6 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
-import org.controlsfx.control.action.Action;
 import java.sql.SQLException;
 import java.util.ArrayList;
 public class SearchSceneController extends ThreeController {
@@ -122,6 +119,7 @@ public class SearchSceneController extends ThreeController {
         currentLoadWord = searchText;
         webEngine = webView.getEngine();
         webEngine.loadContent(meaning);
+        webEngine.setUserStyleSheetLocation(getClass().getResource("webview.css").toString());
     }
 
     public void reload() {

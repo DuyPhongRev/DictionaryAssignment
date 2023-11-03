@@ -81,6 +81,7 @@ public class FavoriteSceneController extends ThreeController {
         String meaning = myController.getDictionaryManagement().getDictFavourite().LookUpInFavourite(searchText);
         webEngine = webView.getEngine();
         webEngine.loadContent(meaning);
+        webEngine.setUserStyleSheetLocation(getClass().getResource("webview.css").toString());
     }
 
     public void reload() {

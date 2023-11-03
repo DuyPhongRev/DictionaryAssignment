@@ -1,10 +1,6 @@
 package app.connections;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class databaseConnection {
     public static Connection connection;
@@ -29,9 +25,13 @@ public class databaseConnection {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) {
-        databaseConnection myDb = new databaseConnection();
-
+    public String gameQueryWord() {
+        try {
+            PreparedStatement pre_state = connection.prepareStatement("SELECT word FROM av WHERE LENGTH(word) = 5 ORDER BY RANDOM() LIMIT 1");
+            ResultSet resultSet = pre_state.executeQuery();
+            return resultSet.getString("word");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

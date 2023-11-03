@@ -36,7 +36,7 @@ public class App extends Application {
         Task<Void> loadingTask = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                Thread.sleep(2400);
+                Thread.sleep(0);
                 return null;
             }
         };

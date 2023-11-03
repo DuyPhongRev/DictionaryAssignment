@@ -20,7 +20,7 @@
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="112.0">
                            <children>
                               <TextField fx:id="AddWordTextField" layoutX="180.0" layoutY="129.0" prefHeight="40.0" prefWidth="440.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
-                              <TextArea fx:id="meaningTextArea" layoutX="180.0" layoutY="180.0" prefHeight="140.0" prefWidth="440.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
+                              <TextArea fx:id="meaningTextArea" layoutX="180.0" layoutY="180.0" prefHeight="140.0" prefWidth="440.0" stylesheets="@../css/edit.css" />
                               <Button fx:id="addButton" layoutX="180.0" layoutY="330.0" minWidth="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" text="Add" />
                               <Label layoutY="15.0" prefHeight="74.0" prefWidth="806.0" style="-fx-alignment: center;" text="Add">
                                  <font>
@@ -36,7 +36,7 @@
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="112.0">
                            <children>
                               <TextField fx:id="OldWordTextField1" layoutX="420.0" layoutY="129.0" prefHeight="40.0" prefWidth="200.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
-                              <TextArea fx:id="meaningTextArea1" layoutX="180.0" layoutY="180.0" prefHeight="140.0" prefWidth="440.0" styleClass="custom-text-area" stylesheets="@../css/edit.css" />
+                              <TextArea fx:id="meaningTextArea1" layoutX="180.0" layoutY="180.0" prefHeight="140.0" prefWidth="440.0" stylesheets="@../css/edit.css" />
                               <TextField fx:id="OldWordTextField11" layoutX="180.0" layoutY="129.0" prefHeight="40.0" prefWidth="200.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
                               <Label layoutY="15.0" prefHeight="74.0" prefWidth="806.0" style="-fx-alignment: center;" text="Edit">
                                  <font>

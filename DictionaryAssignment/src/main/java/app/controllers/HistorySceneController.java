@@ -47,6 +47,8 @@ public class HistorySceneController extends ThreeController {
         String meaning = myController.getDictionaryManagement().getDicHistory().LookUpInHist(searchText);
         webEngine = webView.getEngine();
         webEngine.loadContent(meaning);
+        webEngine.setUserStyleSheetLocation(getClass().getResource("webview.css").toString());
+
     }
 
     @Override

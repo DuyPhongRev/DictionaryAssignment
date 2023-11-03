@@ -1,11 +1,16 @@
 package app.controllers;
 
+import app.connections.databaseConnection;
+import app.dictionary.Dictionary;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class GameSceneController {
     @FXML
@@ -18,13 +23,14 @@ public class GameSceneController {
     private Button aButton, sButton, dButton, fButton, gButton, hButton, jButton, kButton, lButton;
     @FXML
     private Button zButton, xButton, cButton, vButton, bButton, nButton, mButton, enterButton, deleteButton;
+//    private databaseConnection dictionary = new databaseConnection();
     private String hiddenWord = "CANDY";
     private int currentIndex = 0;
-    private int currentAttemp = 1;
-    private int size = 5;
+    private int currentAttempt = 1;
+    private final int size = 5;
 
     public void setText(String text) {
-        if (currentIndex < size * currentAttemp) {
+        if (currentIndex < size * currentAttempt) {
             Label label = (Label) answerGridPane.getChildren().get(currentIndex);
             label.setText(text);
             label.setStyle(
@@ -35,7 +41,7 @@ public class GameSceneController {
     }
 
     public void deleteText() {
-        if (currentIndex > (currentAttemp - 1) * size) {
+        if (currentIndex > (currentAttempt - 1) * size) {
             currentIndex--;
             Label label = (Label) answerGridPane.getChildren().get(currentIndex);
             label.setText("");
@@ -44,34 +50,38 @@ public class GameSceneController {
     }
 
     public void instruct() {
-        showAlert("INSTRUCTION", "You have to guess the hidden word in 6 tries and the " +
-                "color of the letters changes to show how close you are.\n" +
-                "GRAY is in the target word at all.\n" +
-                "YELLOW is in the word but in the wrong spot.\n" +
-                "GREEN is in the word and in the correct spot.\n" +
-                "Got it!?");
+        showAlert("INSTRUCTION", """
+                You have to guess the hidden word in 6 tries and the color of the letters changes to show how close you are.
+                GRAY is in the target word at all.
+                YELLOW is in the word but in the wrong spot.
+                GREEN is in the word and in the correct spot.
+                Got it!?""");
     }
 
     public void highLightLastWord(String s, int status) {
         for (int i = 0; i < 26; i++) {
             if (keyboardGridPane.getChildren().get(i) != null) {
                 Button button = (Button) keyboardGridPane.getChildren().get(i);
-                if (button.getText() == s) {
+                if (button.getText().equals(s)) {
                     if (status == 0) {
                         button.setStyle(
                                 "-fx-text-fill: #FFFFFF;"
                                         + "-fx-background-color: #79B851;"
                         );
                     } else if (status == 1) {
-                        button.setStyle(
-                                "-fx-text-fill: #FFFFFF;"
-                                        + "-fx-background-color: #F3C237;"
-                        );
+                        if (!button.getStyle().contains("#79B851")) {
+                            button.setStyle(
+                                    "-fx-text-fill: #FFFFFF;"
+                                            + "-fx-background-color: #F3C237;"
+                            );
+                        }
                     } else {
-                        button.setStyle(
-                                "-fx-text-fill: #FFFFFF;"
-                                        + "-fx-background-color: #A4AEC4;"
-                        );
+                        if (!button.getStyle().contains("#79B851") && !button.getStyle().contains("F3C237")) {
+                            button.setStyle(
+                                    "-fx-text-fill: #FFFFFF;"
+                                            + "-fx-background-color: #A4AEC4;"
+                            );
+                        }
                     }
                 }
             }
@@ -79,12 +89,12 @@ public class GameSceneController {
     }
 
     public void confirmText() {
-        Boolean endGame = true;
-        if (currentIndex == currentAttemp * size) {
+        boolean endGame = true;
+        if (currentIndex == currentAttempt * size) {
             int size = answerGridPane.getColumnCount();
-            for (int i = size * (currentAttemp - 1); i < size * currentAttemp; i++) {
+            for (int i = size * (currentAttempt - 1); i < size * currentAttempt; i++) {
                 Label label = (Label) answerGridPane.getChildren().get(i);
-                if (hiddenWord.charAt(i - size * (currentAttemp - 1)) == label.getText().charAt(0)) {
+                if (hiddenWord.charAt(i - size * (currentAttempt - 1)) == label.getText().charAt(0)) {
                     label.setStyle(
                             "-fx-text-fill: #FFFFFF;"
                                     + "-fx-background-color: #79B851;"
@@ -98,6 +108,7 @@ public class GameSceneController {
                                     + "-fx-background-color: #F3C237;"
                                     + "-fx-border-width: 0px"
                     );
+
                     highLightLastWord(label.getText(), 1);
                 } else {
                     endGame = false;
@@ -109,12 +120,12 @@ public class GameSceneController {
                     highLightLastWord(label.getText(), 2);
                 }
             }
-            currentAttemp++;
+            currentAttempt++;
             if (endGame) {
                 showAlert("WORDLE", "GOOD JOBS!!! YOU'RE WINNER");
                 reset();
             }
-            if (currentAttemp == 7) {
+            if (currentAttempt == 7) {
                 giveUp();
             }
         }
@@ -131,11 +142,14 @@ public class GameSceneController {
             label.setStyle(null);
         }
         this.currentIndex = 0;
-        this.currentAttemp = 1;
+        this.currentAttempt = 1;
+//        this.hiddenWord = dictionary.gameQueryWord();
     }
 
     public void giveUp() {
-        showAlert("WORDLE", "Ha :| Chicken, you're loser.");
+        showAlert("WORDLE", """
+                Ha :| Chicken, you're loser.
+                Hiddien Word is\s""" + hiddenWord);
         reset();
     }
 

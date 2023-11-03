@@ -1,0 +1,27 @@
+.label-title {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-text-fill: white;
+}
+
+.label-subtitle {
+    -fx-font-size: 18px;
+    -fx-alignment: center;
+    -fx-text-fill: #c2bfbf;
+}
+
+.button-start {
+    -fx-text-fill: #333333;
+    -fx-background-color: white;
+
+}
+
+.button-learn {
+    -fx-text-fill: white;
+    -fx-background-color: #B9B9B9FF;
+}
+
+.button {
+    -fx-font-size: 13px;
+}
