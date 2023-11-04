@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import static app.dictionary.HelperAlgorithm.BinarySearch;
+
 
 public class Dictionary {
     private Connection connection;
@@ -15,7 +17,8 @@ public class Dictionary {
 
     public void insertWordListFromDB() {
         try {
-            PreparedStatement pre_state = connection.prepareStatement("SELECT word FROM av");
+            default_dictionary.clear();
+            PreparedStatement pre_state = connection.prepareStatement("SELECT word FROM av group by word");
             ResultSet resultSet = pre_state.executeQuery();
             while (resultSet.next()) {
                 default_dictionary.add(resultSet.getString(1));
@@ -53,6 +56,53 @@ public class Dictionary {
         }
     }
 
+    public boolean addWordToDictionaryDatabase(String word, String pron, String des, String type) {
+        word = word.toLowerCase();
+        word = word.trim();
+        try {
+            if (checkContains(word)) {
+                return false;
+            }
+            PreparedStatement stmt = connection.prepareStatement("INSERT INTO av (word, html, description, pronounce) VALUES (?, ?, ?, ?)");
+            stmt.setString(1, word);
+            stmt.setString(2, convertToHTML(word, pron, des, type));
+            stmt.setString(3, des);
+            stmt.setString(4, pron);
+            stmt.executeUpdate();
+            insertWordListFromDB();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return true;
+    }
+
+    public String convertToHTML(String addWord, String addPron, String addDescription, String type) {
+        if (addPron.isEmpty()) {
+            addPron = "/No pronunciation/";
+        }
+        if (addDescription.isEmpty()) {
+            addDescription = "/No description/";
+        }
+        if (type.isEmpty()) {
+            type = "/No type/";
+        }
+        if (addWord.isEmpty()) {
+            addWord = "no word";
+        }
+        StringBuilder convertHTML = new StringBuilder();
+        convertHTML.append("<h1>").append(addWord).append("</h1>");
+        convertHTML.append("<h3><i>/").append(addPron).append("/</i></h3>");
+        convertHTML.append("<h2>").append(type).append("</h2>");
+        convertHTML.append("<ul><li>").append(addDescription).append("</li></ul>");
+        return convertHTML.toString();
+    }
+
+    public boolean checkContains(String word) {
+        word = word.toLowerCase();
+        word = word.trim();
+        return BinarySearch(default_dictionary, word);
+    }
+
     public String LookUp(String word) {
         try{
             PreparedStatement stmt = connection.prepareStatement("SELECT html FROM av WHERE word = ?");
@@ -86,6 +136,8 @@ public class Dictionary {
         }
         return word_list;
     }
+
+
 
     public void setConnection(Connection connection) {
         this.connection = connection;

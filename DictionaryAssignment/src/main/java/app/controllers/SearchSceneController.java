@@ -2,6 +2,7 @@ package app.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
@@ -9,6 +10,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
+import static app.controllers.PopUp.showConfirmationPopup;
+import static app.controllers.PopUp.showPopup;
+
 public class SearchSceneController extends ThreeController {
     @FXML
     private Button favoriteButton;
@@ -16,7 +21,6 @@ public class SearchSceneController extends ThreeController {
         super();
     }
     ArrayList<String> arrayWordsDefault = new ArrayList<>();
-    private String currentLoadWord = "";
     @Override
     @FXML
     public void SelectSearchListItem (MouseEvent event) throws SQLException {
@@ -103,7 +107,8 @@ public class SearchSceneController extends ThreeController {
                     return;
                 } else {
                 myController.getDictionaryManagement().deleteAct(currentLoadWord);
-                reload();
+                    showPopup("Successfully!");
+                    reload();
                     webEngine = webView.getEngine();
                     webEngine.loadContent("This word has been deleted from the database system!");
                 }
@@ -122,6 +127,15 @@ public class SearchSceneController extends ThreeController {
         webEngine.setUserStyleSheetLocation(getClass().getResource("webview.css").toString());
     }
 
+    @Override
+    public void deleteTextSearch(Event event) {
+        if (event.getSource() == deleteSearchButton) {
+            txtSearch.setText("");
+            arrayWords = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
+            SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
+            SearchListView.getItems().setAll(arrayWords);
+        }
+    }
     public void reload() {
         txtSearch.setText("");
         arrayWords = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();

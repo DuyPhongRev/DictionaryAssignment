@@ -1,7 +1,5 @@
 package app.controllers;
 
-import app.actions.CheckHistoryAction;
-import app.actions.DictionaryAction;
 import app.dictionary.DictionaryManagement;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -60,21 +58,22 @@ public class ContainerController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lastButton = homeButton;
         try {
-            FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("HomeScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HomeScene.fxml"));
             anchorHomeScene = fxmlLoader.load();
             homeSceneController = fxmlLoader.getController();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         try {
-            FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("EditScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EditScene.fxml"));
             anchorEditScene = fxmlLoader.load();
             editSceneController = fxmlLoader.getController();
+            editSceneController.initData(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
         try {
-            FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("FavoriteScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FavoriteScene.fxml"));
             anchorFavouriteScene = fxmlLoader.load();
             favoriteSceneController = fxmlLoader.getController();
             favoriteSceneController.initData(this);
@@ -84,7 +83,7 @@ public class ContainerController implements Initializable {
         }
 
         try {
-            FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("GameScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameScene.fxml"));
             anchorGameScene = fxmlLoader.load();
             gameSceneController = fxmlLoader.getController();
         } catch (IOException e) {
@@ -92,7 +91,7 @@ public class ContainerController implements Initializable {
         }
 
         try {
-            FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("HistoryScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HistoryScene.fxml"));
             anchorHistoryScene = fxmlLoader.load();
             historySceneController = fxmlLoader.getController();
             historySceneController.initData(this);
@@ -102,7 +101,7 @@ public class ContainerController implements Initializable {
         }
 
         try {
-            FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("SearchScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SearchScene.fxml"));
             anchorSearchScene = fxmlLoader.load();
             searchSceneController = fxmlLoader.getController();
             searchSceneController.initData(this);
@@ -111,7 +110,7 @@ public class ContainerController implements Initializable {
             throw new RuntimeException(e);
         }
         try {
-            FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("TranslateScene.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("TranslateScene.fxml"));
             anchorTranslateScene = fxmlLoader.load();
             translateSceneController = fxmlLoader.getController();
         } catch (IOException e) {
