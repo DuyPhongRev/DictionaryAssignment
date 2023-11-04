@@ -6,6 +6,7 @@ import animatefx.animation.SlideOutUp;
 import app.dictionary.DictionaryManagement;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,9 +60,6 @@ public class ContainerController implements Initializable {
     private Button menuButton;
     private Button lastButton;
     private DictionaryManagement dictionaryManagement = new DictionaryManagement();
-    @FXML
-    private ImageView back_gr;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -125,30 +123,27 @@ public class ContainerController implements Initializable {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
+        menuBox.setVisible(false);
         showHomeScene();
     }
 
     @FXML
     private void handleAction(ActionEvent e) {
         if (e.getSource() == menuButton) {
-            menuButton.setOnAction(p -> {
-                if (menuBox.isVisible()) {
-                    SlideOutLeft slideOutLeft = new SlideOutLeft(menuBox);
-                    slideOutLeft.play();
-                    Timeline timeline = new Timeline(
-                            new KeyFrame(Duration.seconds(1.4), g->{
-                                menuBox.setVisible(false);
-                            })
-                    );
-                    timeline.play();
+            if (menuBox.isVisible()) {
+                SlideOutLeft slideOutLeft = new SlideOutLeft(menuBox);
+                slideOutLeft.play();
+                Timeline timeline = new Timeline(
+                        new KeyFrame(Duration.seconds(0.7), g->{
+                            menuBox.setVisible(false);
+                        })
+                );
+                timeline.play();
 
-                } else {
-                    menuBox.setVisible(true);
-                    new SlideInLeft(menuBox).play();
-                }
-            });
-            pressedButton(menuButton);
+            } else {
+                menuBox.setVisible(true);
+                new SlideInLeft(menuBox).play();
+            }
         } else if (e.getSource() == homeButton) {
             pressedButton(homeButton);
             showHomeScene();
@@ -182,43 +177,36 @@ public class ContainerController implements Initializable {
     private void showGameScene() {
 
         setContentScene(anchorGameScene);
-        back_gr.setVisible(false);
     }
 
     private void showHistoryScene() {
 
         setContentScene(anchorHistoryScene);
-        back_gr.setVisible(false);
     }
 
     private void showFavoriteScene() {
 
         setContentScene(anchorFavouriteScene);
-        back_gr.setVisible(false);
     }
 
     private void showTranslateScene() {
 
         setContentScene(anchorTranslateScene);
-        back_gr.setVisible(false);
     }
 
     private void showEditScene() {
 
         setContentScene(anchorEditScene);
-        back_gr.setVisible(false);
     }
 
     private void showSearchScene() {
 
         setContentScene(anchorSearchScene);
-        back_gr.setVisible(false);
     }
 
     private void showHomeScene() {
 
         setContentScene(anchorHomeScene);
-        back_gr.setVisible(true);
     }
 
     public void reset() {

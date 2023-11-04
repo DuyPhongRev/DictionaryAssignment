@@ -7,9 +7,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.TranslateSceneController">
+<AnchorPane prefHeight="480.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.TranslateSceneController">
    <children>
-      <AnchorPane onMouseReleased="#getCurrentSrcLang" prefHeight="480.0" prefWidth="400.0">
+      <AnchorPane layoutX="60.0" onMouseReleased="#getCurrentSrcLang" prefHeight="480.0" prefWidth="400.0">
          <children>
             <TextArea fx:id="SrcTextArea" layoutX="20.0" layoutY="120.0" onKeyReleased="#handleEvent" onMouseReleased="#getCurrentSrcLang" prefHeight="280.0" prefWidth="360.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
             <ChoiceBox fx:id="SrcLangChoiceBox" accessibleRole="TAB_PANE" layoutX="20.0" layoutY="70.0" onMouseReleased="#getCurrentSrcLang" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
@@ -26,7 +26,7 @@
             <Button fx:id="textRecognizeButton" layoutX="120.0" layoutY="426.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="30.0" prefWidth="120.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Text Recognition" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="400.0" onMouseReleased="#getCurrentDesLang" prefHeight="480.0" prefWidth="400.0">
+      <AnchorPane layoutX="460.0" onMouseReleased="#getCurrentDesLang" prefHeight="480.0" prefWidth="400.0">
          <children>
             <TextArea fx:id="DesTextArea" editable="false" layoutX="20.0" layoutY="120.0" prefHeight="280.0" prefWidth="360.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
             <ChoiceBox fx:id="DesLangChoiceBox" cache="true" layoutX="20.0" layoutY="70.0" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />

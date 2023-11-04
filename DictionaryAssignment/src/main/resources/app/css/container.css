@@ -6,12 +6,12 @@
     -fx-text-fill: #333333;
     -fx-font-size: 13px;
     -fx-background-color: white;
-    -fx-background-radius: 0px;
+    -fx-background-radius: 10px;
     -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.3), 10, 0, 1, 1);
 }
 
 .vBox {
-    -fx-background-color: #314874;
+    -fx-background-color: transparent;
 }
 
 .button {
@@ -21,11 +21,11 @@
 }
 
 .button:hover {
-    -fx-background-color: #3c5079;
+    -fx-background-color: rgba(49, 72, 116, 0.5);
 }
 
 .button:pressed {
-    -fx-background-color: #244179;
+    -fx-background-color: rgba(49, 72, 116, 0.5);
 }
 
 .text-field {
@@ -71,4 +71,8 @@
 .list-view .list-cell {
     -fx-background-color: white;
     -fx-text-fill: #333333;
+}
+
+.button-menu, .button-nav {
+    -fx-background-color: transparent;
 }

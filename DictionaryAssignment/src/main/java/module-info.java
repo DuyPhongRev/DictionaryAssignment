@@ -11,6 +11,8 @@ module app.DictionaryFX {
     requires tess4j;
     requires org.json;
     requires AnimateFX;
+    requires java.net.http;
+    requires java.desktop;
 
     opens app to javafx.fxml;
     exports app;

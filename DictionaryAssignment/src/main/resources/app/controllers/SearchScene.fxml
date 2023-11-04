@@ -10,12 +10,12 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.SearchSceneController">
+<AnchorPane prefHeight="480.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.SearchSceneController">
    <children>
-      <AnchorPane prefHeight="80.0" prefWidth="800.0" stylesheets="@../css/search.css">
+      <AnchorPane layoutX="60.0" prefHeight="80.0" prefWidth="800.0" stylesheets="@../css/search.css">
          <children>
             <TextField fx:id="txtSearch" layoutX="20.0" layoutY="15.0" onKeyReleased="#handleChangeInputSearch" prefHeight="50.0" prefWidth="760.0" styleClass="search-text" stylesheets="@../css/search.css" />
-            <Button fx:id="searchButton" layoutX="735.0" layoutY="20.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" styleClass="button-normal" stylesheets="@../css/search.css">
+            <Button fx:id="searchButton" layoutX="735.0" layoutY="20.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" stylesheets="@../css/search.css">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -23,7 +23,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="deleteSearchButton" layoutX="704.0" layoutY="28.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#deleteTextSearch" prefHeight="10.0" prefWidth="22.0" styleClass="button-delete" stylesheets="@../css/search.css">
+            <Button fx:id="deleteSearchButton" layoutX="704.0" layoutY="28.0" minHeight="24.0" minWidth="24.0" mnemonicParsing="false" onAction="#deleteTextSearch" prefHeight="10.0" prefWidth="22.0" styleClass="button-normal" stylesheets="@../css/search.css">
                <graphic>
                   <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -34,8 +34,8 @@
             </Button>
          </children>
       </AnchorPane>
-      <ListView fx:id="SearchListView" layoutX="20.0" layoutY="90.0" onMouseClicked="#SelectSearchListItem" prefHeight="370.0" prefWidth="180.0" stylesheets="@../css/search.css" />
-      <StackPane layoutX="419.0" layoutY="90.0" prefHeight="370.0" prefWidth="360.0" styleClass="stack-pane" stylesheets="@../css/search.css">
+      <ListView fx:id="SearchListView" layoutX="80.0" layoutY="90.0" onMouseClicked="#SelectSearchListItem" prefHeight="370.0" prefWidth="180.0" stylesheets="@../css/search.css" />
+      <StackPane layoutX="479.0" layoutY="90.0" prefHeight="370.0" prefWidth="360.0" styleClass="stack-pane" stylesheets="@../css/search.css">
          <children>
             <WebView fx:id="webView" prefHeight="370.0" prefWidth="360.0" stylesheets="@../css/search.css">
                <StackPane.margin>
@@ -44,30 +44,30 @@
             </WebView>
          </children>
       </StackPane>
-      <ListView fx:id="SynonymListView" layoutX="220.0" layoutY="90.0" prefHeight="370.0" prefWidth="180.0" stylesheets="@../css/search.css" />
-      <Button fx:id="deleteButton" layoutX="650.0" layoutY="140.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="30.0" prefWidth="30.0" styleClass="button-normal" stylesheets="@../css/search.css">
+      <ListView fx:id="SynonymListView" layoutX="280.0" layoutY="90.0" prefHeight="370.0" prefWidth="180.0" stylesheets="@../css/search.css" />
+      <Button fx:id="deleteButton" layoutX="710.0" layoutY="140.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="30.0" prefWidth="30.0" styleClass="button-normal" stylesheets="@../css/search.css">
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-delete-24.png" />
+                  <Image url="@../img/icons8-bin-64.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="soundButton" layoutX="690.0" layoutY="140.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-normal" stylesheets="@../css/search.css">
+      <Button fx:id="soundButton" layoutX="750.0" layoutY="140.0" minHeight="25.0" minWidth="25.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-normal" stylesheets="@../css/search.css">
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-sound-50.png" />
+                  <Image url="@../img/icons8-speaker-64.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="favoriteButton" layoutX="730.0" layoutY="140.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#handleFavouriteButton" prefHeight="30.0" prefWidth="30.0" styleClass="button-normal" stylesheets="@../css/search.css">
+      <Button fx:id="favoriteButton" layoutX="790.0" layoutY="140.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#handleFavouriteButton" prefHeight="30.0" prefWidth="30.0" styleClass="button-normal" stylesheets="@../css/search.css">
          <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-favorite-48.png" />
+                  <Image url="@../img/icons8-favourite-64.png" />
                </image>
             </ImageView>
          </graphic>

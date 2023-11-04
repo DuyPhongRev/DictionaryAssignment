@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="480.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.GameSceneController">
+<AnchorPane prefHeight="480.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.GameSceneController">
    <children>
-      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="800.0" style="-fx-background-color: white;">
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="860.0" style="-fx-background-color: white;">
          <children>
-            <GridPane fx:id="answerGridPane" layoutX="220.0" layoutY="10.0">
+            <GridPane fx:id="answerGridPane" layoutX="280.0" layoutY="9.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
@@ -186,27 +186,35 @@
                   </Label>
                </children>
             </GridPane>
-            <Button fx:id="resetButton" layoutX="739.0" layoutY="14.0" minHeight="40.0" minWidth="46.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="46.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+            <Button fx:id="resetButton" layoutX="810.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
                <graphic>
-                  <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 90%;">
+                  <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 90%;">
                      <image>
-                        <Image url="@../img/reload.png" />
+                        <Image url="@../img/icons8-reload-48.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button fx:id="instructionButton" layoutX="684.0" layoutY="14.0" minHeight="40.0" minWidth="38.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="46.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+            <Button fx:id="instructionButton" layoutX="760.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
                <graphic>
-                  <ImageView fitHeight="36.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
+                  <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
-                        <Image url="@../img/instruction.png" />
+                        <Image url="@../img/icons8-user-manual-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="giveUpButton" layoutX="710.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-give-up-64.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="320.0" minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="800.0" style="-fx-background-color: white;">
+      <AnchorPane layoutY="320.0" minHeight="0.0" minWidth="0.0" prefHeight="162.0" prefWidth="860.0" style="-fx-background-color: white;">
          <children>
-            <GridPane fx:id="keyboardGridPane" layoutX="72.0" layoutY="5.0">
+            <GridPane fx:id="keyboardGridPane" layoutX="131.0" layoutY="5.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
@@ -357,9 +365,22 @@
                   </Button>
                </children>
             </GridPane>
-            <Button fx:id="enterButton" layoutX="672.0" layoutY="14.0" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="114.0" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Enter" />
-            <Button fx:id="giveUpButton" layoutX="672.0" layoutY="108.0" minHeight="40.0" minWidth="48.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="114.0" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Give up!" />
-            <Button fx:id="deleteButton" layoutX="672.0" layoutY="61.0" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="114.0" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Delete" />
+            <Button fx:id="enterButton" layoutX="770.0" layoutY="14.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-enter-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="deleteButton" layoutX="770.0" layoutY="61.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-delete-40.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </AnchorPane>
    </children>
