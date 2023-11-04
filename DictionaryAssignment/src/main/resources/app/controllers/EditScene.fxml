@@ -19,14 +19,17 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="112.0">
                            <children>
-                              <TextField fx:id="AddWordTextField" layoutX="180.0" layoutY="129.0" prefHeight="40.0" prefWidth="440.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
-                              <TextArea fx:id="meaningTextArea" layoutX="180.0" layoutY="180.0" prefHeight="140.0" prefWidth="440.0" stylesheets="@../css/edit.css" />
-                              <Button fx:id="addButton" layoutX="180.0" layoutY="330.0" minWidth="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" text="Add" />
-                              <Label layoutY="15.0" prefHeight="74.0" prefWidth="806.0" style="-fx-alignment: center;" text="Add">
+                              <TextField fx:id="txtAdd" layoutX="180.0" layoutY="74.0" prefHeight="40.0" prefWidth="440.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+                              <Button fx:id="addButton" layoutX="180.0" layoutY="360.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" text="Add" />
+                              <Label prefHeight="74.0" prefWidth="806.0" style="-fx-alignment: center;" text="Add New Word">
                                  <font>
                                     <Font size="50.0" />
                                  </font>
                               </Label>
+                              <TextField fx:id="txtType" layoutX="180.0" layoutY="133.0" prefHeight="40.0" prefWidth="214.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+                              <TextField fx:id="txtPronunciation" layoutX="403.0" layoutY="133.0" prefHeight="40.0" prefWidth="214.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+                              <TextField fx:id="txtDescription" layoutX="180.0" layoutY="194.0" prefHeight="155.0" prefWidth="440.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
+                              <Button fx:id="genPhonetics" layoutX="635.0" layoutY="135.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleGenPhoneticsButton" prefHeight="35.0" prefWidth="66.0" stylesheets="@../css/edit.css" text="Generate" />
                            </children>
                         </AnchorPane>
                   </content>
@@ -38,12 +41,12 @@
                               <TextField fx:id="OldWordTextField1" layoutX="420.0" layoutY="129.0" prefHeight="40.0" prefWidth="200.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
                               <TextArea fx:id="meaningTextArea1" layoutX="180.0" layoutY="180.0" prefHeight="140.0" prefWidth="440.0" stylesheets="@../css/edit.css" />
                               <TextField fx:id="OldWordTextField11" layoutX="180.0" layoutY="129.0" prefHeight="40.0" prefWidth="200.0" styleClass="custom-text-field" stylesheets="@../css/edit.css" />
-                              <Label layoutY="15.0" prefHeight="74.0" prefWidth="806.0" style="-fx-alignment: center;" text="Edit">
+                              <Label layoutX="-3.0" layoutY="8.0" prefHeight="74.0" prefWidth="806.0" style="-fx-alignment: center;" text="Edit">
                                  <font>
                                     <Font size="50.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="editButton" layoutX="180.0" layoutY="330.0" minWidth="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" text="Edit" />
+                              <Button fx:id="editButton" layoutX="180.0" layoutY="360.0" minWidth="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" text="Edit" />
                            </children>
                         </AnchorPane>
                      </content>

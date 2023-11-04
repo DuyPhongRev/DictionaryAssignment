@@ -9,6 +9,8 @@ module app.DictionaryFX {
     requires java.sql;
     requires javafx.web;
     requires tess4j;
+    requires org.json;
+    requires AnimateFX;
 
     opens app to javafx.fxml;
     exports app;

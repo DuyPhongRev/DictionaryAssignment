@@ -7,6 +7,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
+import java.sql.SQLException;
+
+import static app.controllers.PopUp.showConfirmationPopup;
+import static app.controllers.PopUp.showPopup;
+
 public class FavoriteSceneController extends ThreeController {
     public FavoriteSceneController() {
         super();
@@ -66,6 +71,7 @@ public class FavoriteSceneController extends ThreeController {
     public void initData(ContainerController containerController) {
         this.myController = containerController;
         txtSearch.setPromptText("Search word...");
+
         txtSearch.setOnKeyPressed(event -> {
             if (event.getCode() == KeyCode.ENTER) {
                 String searchText = txtSearch.getText();
@@ -79,9 +85,31 @@ public class FavoriteSceneController extends ThreeController {
     @Override
     public void searchAction(String searchText) {
         String meaning = myController.getDictionaryManagement().getDictFavourite().LookUpInFavourite(searchText);
+        currentLoadWord = searchText;
         webEngine = webView.getEngine();
         webEngine.loadContent(meaning);
         webEngine.setUserStyleSheetLocation(getClass().getResource("webview.css").toString());
+    }
+
+    public void handleDeleteButton(ActionEvent event) throws SQLException {
+        if (event.getSource() == deleteButton) {
+            boolean hasContent = webView.getEngine().getDocument() != null;
+            if (hasContent) {
+                String tempResult = showConfirmationPopup("Are you sure you want to delete this word from the favourite?");
+                if (tempResult.equals("no")) {
+                    return;
+                } else {
+                    showPopup("Successfully!");
+                    myController.getDictionaryManagement().getDictFavourite().deleteWordFromFavouriteDatabase(currentLoadWord);
+                    reload();
+                    webEngine = webView.getEngine();
+                    webEngine.loadContent("This word has been deleted from the favourite!");
+                }
+            } else {
+                showPopup("Please Select the word first");
+            }
+
+        }
     }
 
     public void reload() {

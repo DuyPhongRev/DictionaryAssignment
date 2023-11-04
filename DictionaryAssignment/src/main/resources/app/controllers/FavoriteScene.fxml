@@ -45,7 +45,7 @@
          </children>
       </StackPane>
       <ListView fx:id="SynonymListView" layoutX="220.0" layoutY="90.0" prefHeight="370.0" prefWidth="180.0" stylesheets="@../css/search.css" />
-      <Button fx:id="deleteButton" layoutX="650.0" layoutY="140.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="button-normal" stylesheets="@../css/search.css">
+      <Button fx:id="deleteButton" layoutX="650.0" layoutY="140.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="30.0" prefWidth="30.0" styleClass="button-normal" stylesheets="@../css/search.css">
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
