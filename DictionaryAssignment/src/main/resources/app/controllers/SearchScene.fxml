@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,7 +15,10 @@
    <children>
       <AnchorPane layoutX="60.0" prefHeight="80.0" prefWidth="800.0" stylesheets="@../css/search.css">
          <children>
-            <TextField fx:id="txtSearch" layoutX="20.0" layoutY="15.0" onKeyReleased="#handleChangeInputSearch" prefHeight="50.0" prefWidth="760.0" styleClass="search-text" stylesheets="@../css/search.css" />
+            <TextField fx:id="txtSearch" layoutX="20.0" layoutY="15.0" onKeyReleased="#handleChangeInputSearch" prefHeight="50.0" prefWidth="760.0" styleClass="search-text" stylesheets="@../css/search.css">
+               <tooltip>
+                  <Tooltip text="Type your word here" />
+               </tooltip></TextField>
             <Button fx:id="searchButton" layoutX="735.0" layoutY="20.0" minWidth="40.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0" stylesheets="@../css/search.css">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
