@@ -93,6 +93,7 @@ public class ContainerController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("GameScene.fxml"));
             anchorGameScene = fxmlLoader.load();
             gameSceneController = fxmlLoader.getController();
+            gameSceneController.initData(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

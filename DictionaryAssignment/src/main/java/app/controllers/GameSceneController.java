@@ -7,10 +7,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class GameSceneController {
     @FXML
@@ -24,11 +27,26 @@ public class GameSceneController {
     @FXML
     private Button zButton, xButton, cButton, vButton, bButton, nButton, mButton, enterButton, deleteButton;
 //    private databaseConnection dictionary = new databaseConnection();
-    private String hiddenWord = "CANDY";
+    private String hiddenWord;
     private int currentIndex = 0;
     private int currentAttempt = 1;
     private final int size = 5;
 
+    private ArrayList<String> wordListGame;
+    private ContainerController myController;
+
+    public void initData(ContainerController containerController) {
+        this.myController = containerController;
+        wordListGame = new ArrayList<>();
+        ArrayList<String> sourceList = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
+        for (String s : sourceList) {
+            if (s.length() == 5 && !s.contains(" ")) {
+                wordListGame.add(s);
+            }
+        }
+        hiddenWord = wordListGame.get((int) (Math.random() * wordListGame.size()));
+        hiddenWord = hiddenWord.toUpperCase();
+    }
     public void setText(String text) {
         if (currentIndex < size * currentAttempt) {
             Label label = (Label) answerGridPane.getChildren().get(currentIndex);
@@ -143,6 +161,8 @@ public class GameSceneController {
         }
         this.currentIndex = 0;
         this.currentAttempt = 1;
+        hiddenWord = wordListGame.get((int) (Math.random() * wordListGame.size()));
+        hiddenWord = hiddenWord.toUpperCase();
 //        this.hiddenWord = dictionary.gameQueryWord();
     }
 
