@@ -91,10 +91,10 @@ public class FavoriteSceneController extends ThreeController {
         webEngine.setUserStyleSheetLocation(getClass().getResource("webview.css").toString());
     }
 
-    public void handleDeleteButton(ActionEvent event) throws SQLException {
+    public void handleDeleteButton(ActionEvent event) throws SQLException, InterruptedException {
         if (event.getSource() == deleteButton) {
             boolean hasContent = webView.getEngine().getDocument() != null;
-            if (hasContent) {
+            if (hasContent && !currentLoadWord.isEmpty()) {
                 String tempResult = showConfirmationPopup("Are you sure you want to delete this word from the favourite?");
                 if (tempResult.equals("no")) {
                     return;
@@ -104,6 +104,8 @@ public class FavoriteSceneController extends ThreeController {
                     reload();
                     webEngine = webView.getEngine();
                     webEngine.loadContent("This word has been deleted from the favourite!");
+                    currentLoadWord = "";
+
                 }
             } else {
                 showPopup("Please Select the word first");

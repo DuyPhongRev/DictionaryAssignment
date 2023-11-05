@@ -179,6 +179,14 @@ public class ContainerController implements Initializable {
         setContentScene(anchorGameScene);
     }
 
+    private void setUpToolTip(Button button, String text) {
+        ImageView imageView = new ImageView("app/assets/images/tooltip.png");
+        imageView.setFitHeight(20);
+        imageView.setFitWidth(20);
+        button.setGraphic(imageView);
+        button.setTooltip(new javafx.scene.control.Tooltip(text));
+    }
+
     private void showHistoryScene() {
 
         setContentScene(anchorHistoryScene);

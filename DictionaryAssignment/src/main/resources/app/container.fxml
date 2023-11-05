@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -17,6 +18,9 @@
                </image>
             </ImageView>
          </graphic>
+         <tooltip>
+            <Tooltip text="Hide/Show Menu Bar" />
+         </tooltip>
       </Button>
       <VBox fx:id="menuBox" layoutY="65.0" prefHeight="350.0" prefWidth="50.0" styleClass="vBox" stylesheets="@css/container.css">
          <children>
@@ -28,6 +32,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="Home Screen" />
+               </tooltip>
             </Button>
             <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css">
                <graphic>
@@ -37,6 +44,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="Search" />
+               </tooltip>
             </Button>
             <Button fx:id="favouriteButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css" textAlignment="CENTER">
                <graphic>
@@ -46,6 +56,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="Favourite" />
+               </tooltip>
             </Button>
             <Button fx:id="historyButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css">
                <graphic>
@@ -55,6 +68,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="History" />
+               </tooltip>
             </Button>
             <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css">
                <graphic>
@@ -64,6 +80,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="Add&amp;Edit" />
+               </tooltip>
             </Button>
             <Button fx:id="translateButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css">
                <graphic>
@@ -73,6 +92,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="Google Translate" />
+               </tooltip>
             </Button>
             <Button fx:id="gameButton" mnemonicParsing="false" onAction="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css">
                <graphic>
@@ -82,6 +104,9 @@
                      </image>
                   </ImageView>
                </graphic>
+               <tooltip>
+                  <Tooltip text="Wordle Game" />
+               </tooltip>
             </Button>
          </children>
       </VBox>
