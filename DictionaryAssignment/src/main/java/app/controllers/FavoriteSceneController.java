@@ -55,8 +55,8 @@ public class FavoriteSceneController extends ThreeController {
         if (event.getSource() == SearchListView) {
             String searchText = SearchListView.getSelectionModel().getSelectedItem();
             if (searchText != null && !searchText.isEmpty()) {
-                System.out.println("selected favourite list item");
                 searchAction(searchText);
+                txtSearch.setText(searchText);
             }
         }
     }
@@ -95,17 +95,13 @@ public class FavoriteSceneController extends ThreeController {
         if (event.getSource() == deleteButton) {
             boolean hasContent = webView.getEngine().getDocument() != null;
             if (hasContent && !currentLoadWord.isEmpty()) {
-                String tempResult = showConfirmationPopup("Are you sure you want to delete this word from the favourite?");
-                if (tempResult.equals("no")) {
-                    return;
-                } else {
+                if (showConfirmationPopup("Are you sure you want to delete this word from the favourite?")) {
                     showPopup("Successfully!");
                     myController.getDictionaryManagement().getDictFavourite().deleteWordFromFavouriteDatabase(currentLoadWord);
                     reload();
                     webEngine = webView.getEngine();
                     webEngine.loadContent("This word has been deleted from the favourite!");
                     currentLoadWord = "";
-
                 }
             } else {
                 showPopup("Please Select the word first");

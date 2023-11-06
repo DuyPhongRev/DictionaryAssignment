@@ -47,10 +47,7 @@ public class EditSceneController {
         if (event.getSource() == addButton) {
             boolean hasContent = (!txtAdd.getText().isEmpty() && !txtDescription.getText().isEmpty());
             if (hasContent) {
-                String tempResult = showConfirmationPopup("Are you sure you want to add this word to the dictionary?");
-                if (tempResult.equals("no")) {
-                    return;
-                } else {
+                if (!showConfirmationPopup("Are you sure you want to add this word to the dictionary?")) {
                     String pronunciation = txtPronunciation.getText();
                     String word_ = txtAdd.getText();
                     String type = txtType.getText();

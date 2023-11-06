@@ -59,20 +59,40 @@ public class TranslateSceneController implements Initializable {
             } else {
                 DesTextArea.setText(TranslateTextAPIs.translate(text, currentSrcLang, currentDesLang));
             }
-        } else if (event.getSource().equals(tranButton)) {
+        }
+    }
+
+    @FXML
+    public void handleTranslateButton(Event event) throws IOException {
+        if (event.getSource().equals(tranButton)) {
             getCurrentDesLang();
             getCurrentSrcLang();
             String text = SrcTextArea.getText();
             DesTextArea.setText(TranslateTextAPIs.translate(text, currentSrcLang, currentDesLang));
-        } else if (false) {
-            getCurrentDesLang();
-            DesTextArea.setText(TranslateTextAPIs.translate(SrcTextArea.getText(), currentSrcLang, currentDesLang));
-        } else if (event.getSource().equals(textRecognizeButton)) {
+        }
+    }
+
+    @FXML
+    public void handleTextRecognition(Event event) throws TesseractException, IOException {
+        if (event.getSource().equals(textRecognizeButton)) {
             recognizeText();
-        } else if (event.getSource().equals(SrcSoundButton) && !SrcTextArea.getText().equals("")) {
-            TranslateVoiceAPIs.getAudio(SrcTextArea.getText(), currentSrcLang);
+        }
+    }
+
+    @FXML
+    public void handleVoiceButton(Event event) throws IOException, JavaLayerException {
+        if (event.getSource().equals(SrcSoundButton)) {
+            if (SrcTextArea.getText().equals("")) {
+                PopUp.showPopup("Source text is bank!");
+            } else {
+                TranslateVoiceAPIs.getAudio(SrcTextArea.getText(), currentSrcLang);
+            }
         } else if (event.getSource().equals(DesSoundButton) && !DesTextArea.getText().equals("")) {
-            TranslateVoiceAPIs.getAudio(DesTextArea.getText(), currentDesLang);
+            if (SrcTextArea.getText().equals("")) {
+                PopUp.showPopup("Source text is bank!");
+            } else {
+                TranslateVoiceAPIs.getAudio(DesTextArea.getText(), currentDesLang);
+            }
         }
     }
 

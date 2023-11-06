@@ -1,18 +1,15 @@
 package app.controllers;
 
-import app.connections.databaseConnection;
-import app.dictionary.Dictionary;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Popup;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import javax.swing.text.html.ImageView;
+import java.awt.*;
 import java.util.ArrayList;
 
 public class GameSceneController {
@@ -26,7 +23,6 @@ public class GameSceneController {
     private Button aButton, sButton, dButton, fButton, gButton, hButton, jButton, kButton, lButton;
     @FXML
     private Button zButton, xButton, cButton, vButton, bButton, nButton, mButton, enterButton, deleteButton;
-//    private databaseConnection dictionary = new databaseConnection();
     private String hiddenWord;
     private int currentIndex = 0;
     private int currentAttempt = 1;
@@ -40,7 +36,7 @@ public class GameSceneController {
         wordListGame = new ArrayList<>();
         ArrayList<String> sourceList = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
         for (String s : sourceList) {
-            if (s.length() == 5 && !s.contains(" ")) {
+            if (s.length() == 5 && !s.contains(" ") && !s.contains(" ")) {
                 wordListGame.add(s);
             }
         }
@@ -67,13 +63,13 @@ public class GameSceneController {
         }
     }
 
-    public void instruct() {
-        showAlert("INSTRUCTION", """
-                You have to guess the hidden word in 6 tries and the color of the letters changes to show how close you are.
-                GRAY is in the target word at all.
+    public void instruct(Button showGuideButton) {
+        PopUp.showPopup("""
+                You have to guess the hidden word in 6 attempts and the color of the letters changes to show how close you are.
+                GRAY is not in the target word at all.
                 YELLOW is in the word but in the wrong spot.
                 GREEN is in the word and in the correct spot.
-                Got it!?""");
+                """);
     }
 
     public void highLightLastWord(String s, int status) {
@@ -140,7 +136,10 @@ public class GameSceneController {
             }
             currentAttempt++;
             if (endGame) {
-                showAlert("WORDLE", "GOOD JOBS!!! YOU'RE WINNER");
+                PopUp.showPopup("""
+                                Congratulation!!!
+                                You are winner.
+                                """);
                 reset();
             }
             if (currentAttempt == 7) {
@@ -163,29 +162,25 @@ public class GameSceneController {
         this.currentAttempt = 1;
         hiddenWord = wordListGame.get((int) (Math.random() * wordListGame.size()));
         hiddenWord = hiddenWord.toUpperCase();
-//        this.hiddenWord = dictionary.gameQueryWord();
     }
 
     public void giveUp() {
-        showAlert("WORDLE", """
-                Ha :| Chicken, you're loser.
-                Hiddien Word is\s""" + hiddenWord);
-        reset();
-    }
-
-    private void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
+        if (PopUp.showConfirmationPopup("Do you want to give up?")){
+            PopUp.showPopup("""
+                    You are loser!!!
+                    The hidden word is\s""" + hiddenWord);
+            reset();
+        }
     }
 
     public void handleEvent(Event event) {
         if (event.getSource().equals(resetButton)) {
-            reset();
+            if(PopUp.showConfirmationPopup("Do you want to reset this match?")) {
+                reset();
+                PopUp.showPopup("Game was reset.");
+            }
         } else if (event.getSource().equals(instructionButton)) {
-            instruct();
+            instruct(instructionButton);
         } else if (event.getSource().equals(giveUpButton)) {
             giveUp();
         } else if (event.getSource().equals(qButton)) {

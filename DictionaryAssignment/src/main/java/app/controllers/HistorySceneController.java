@@ -72,6 +72,7 @@ public class HistorySceneController extends ThreeController {
             String searchText = SearchListView.getSelectionModel().getSelectedItem();
             if (searchText != null && !searchText.isEmpty()) {
                 searchAction(searchText);
+                txtSearch.setText(searchText);
             }
         }
     }
@@ -93,9 +94,8 @@ public class HistorySceneController extends ThreeController {
         if (event.getSource() == deleteButton) {
             boolean hasContent = webView.getEngine().getDocument() != null;
             if (hasContent) {
-                String tempResult = showConfirmationPopup("Are you sure you want to delete this word from the history list?");
-                if (tempResult.equals("no")) {
-                    return;
+                if (showConfirmationPopup("Are you sure you want to delete this word from the history list?")) {
+                    return ;
                 } else {
                     showPopup("Successfully!");
                     myController.getDictionaryManagement().getDicHistory().deleteWordFromHistoryDatabase(currentLoadWord);

@@ -1,0 +1,30 @@
+
+.alert, .dialog-pane {
+    -fx-background-color: white;
+    -fx-border-color: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-font-family: "Yu Gothic UI Semibold";
+    -fx-font-size: 15px;
+    -fx-graphic-text-gap: 10;
+    -fx-text-fill: #333333;
+}
+
+.dialog-pane {
+    -fx-graphic: url("../img/icons8-type-64.png");
+}
+
+.alert {
+    -fx-graphic: url("../img/icons8-alert-48.png");
+}
+
+.alert .button-bar .button, .dialog-pane .button-bar .button {
+    -fx-background-radius: 10px;
+    -fx-background-color: #314874;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+}
+
+.alert .button-bar .button:hover, .dialog-pane .button-bar .button:hover {
+    -fx-background-color: rgba(49, 72, 116, 0.5);
+}

@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.connections.TranslateVoiceAPIs;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -8,6 +9,9 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javazoom.jl.decoder.JavaLayerException;
+
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -43,7 +47,6 @@ public class SearchSceneController extends ThreeController {
             if (!searchText.isEmpty()) {
                 showListAction(searchText);
             } else {
-                System.out.println("hello");
                 SearchListView.setItems(FXCollections.observableArrayList(arrayWordsDefault));
             }
         }
@@ -102,11 +105,8 @@ public class SearchSceneController extends ThreeController {
         if (event.getSource() == deleteButton) {
             boolean hasContent = webView.getEngine().getDocument() != null;
             if (hasContent) {
-                String tempResult = showConfirmationPopup("Are you sure you want to delete this word from the database system?");
-                if (tempResult.equals("no")) {
-                    return;
-                } else {
-                myController.getDictionaryManagement().deleteAct(currentLoadWord);
+                if (showConfirmationPopup("Are you sure you want to delete this word from the database system?")) {
+                    myController.getDictionaryManagement().deleteAct(currentLoadWord);
                     showPopup("Successfully!");
                     reload();
                     webEngine = webView.getEngine();
@@ -141,6 +141,5 @@ public class SearchSceneController extends ThreeController {
         arrayWords = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
         SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
         SearchListView.getItems().setAll(arrayWords);
-
-    }
+   }
 }

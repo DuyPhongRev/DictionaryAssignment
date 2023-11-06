@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.connections.TranslateVoiceAPIs;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -11,6 +12,9 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javazoom.jl.decoder.JavaLayerException;
+
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -28,9 +32,10 @@ public class ThreeController {
     protected Button deleteButton;
     @FXML
     protected Button deleteSearchButton;
+    @FXML
+    protected Button soundButton;
     protected WebEngine webEngine;
     protected ArrayList<String> arrayWords;
-
     protected String currentLoadWord = "";
 
     public ThreeController() {
@@ -55,6 +60,17 @@ public class ThreeController {
             } else {
                 arrayWords.clear();
                 SearchListView.getItems().setAll(arrayWords);
+            }
+        }
+    }
+
+    @FXML
+    public void handleVoice(Event event) throws IOException, JavaLayerException {
+        if (event.getSource() == soundButton) {
+            if (txtSearch.getText().isEmpty()) {
+                PopUp.showPopup("Search text is blank!");
+            } else {
+                TranslateVoiceAPIs.getAudio(txtSearch.getText(), "en");
             }
         }
     }
