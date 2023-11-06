@@ -1,6 +1,7 @@
 package app;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,9 +12,19 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.geometry.Pos;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class App extends Application {
+    private TrayIcon trayIcon;
+    private SystemTray tray;
 
     public static void main(String[] args) {
         launch(args);
@@ -21,6 +32,52 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        tray = SystemTray.getSystemTray();
+        try {
+            InputStream stream = App.class.getResourceAsStream("logo.png");
+            assert stream != null;
+            BufferedImage bufferedImage = ImageIO.read(stream);
+
+            java.awt.Image awtImage = Toolkit.getDefaultToolkit().createImage(bufferedImage.getSource());
+            awtImage = awtImage.getScaledInstance(16, 16, java.awt.Image.SCALE_SMOOTH);
+            trayIcon = new TrayIcon(awtImage);
+            SystemTray.getSystemTray().add(trayIcon);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        trayIcon.setToolTip("Dictionary");
+
+        // Xử lý sự kiện click vào tray icon
+        trayIcon.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {
+//                    System.out.println("Double click");
+                    Platform.runLater(() -> {
+                        primaryStage.setIconified(false);
+                        primaryStage.toFront();
+                        primaryStage.show();
+                    });
+                }
+            }
+
+        });
+
+        // Tạo menu chuột phải cho tray icon
+        PopupMenu popup = new PopupMenu();
+        MenuItem exitItem = new MenuItem("Exit");
+        exitItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Platform.exit();
+                tray.remove(trayIcon);
+            }
+        });
+        popup.add(exitItem);
+        trayIcon.setPopupMenu(popup);
+        // when click X, hide the window
+        Platform.setImplicitExit(false);
+
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("container.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         primaryStage.setScene(scene);
