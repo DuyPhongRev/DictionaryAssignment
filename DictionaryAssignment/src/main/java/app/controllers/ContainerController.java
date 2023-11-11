@@ -1,18 +1,16 @@
 package app.controllers;
 import animatefx.animation.SlideInLeft;
 import animatefx.animation.SlideOutLeft;
-import animatefx.animation.SlideInDown;
-import animatefx.animation.SlideOutUp;
 import app.dictionary.DictionaryManagement;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.animation.TranslateTransition;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
@@ -129,7 +127,7 @@ public class ContainerController implements Initializable {
     }
 
     @FXML
-    private void handleAction(ActionEvent e) {
+    private void handleAction(MouseEvent e) {
         if (e.getSource() == menuButton) {
             if (menuBox.isVisible()) {
                 SlideOutLeft slideOutLeft = new SlideOutLeft(menuBox);
@@ -171,21 +169,13 @@ public class ContainerController implements Initializable {
         }
     }
 
-    private void setContentScene(AnchorPane anchorCurrent) {
+    public void setContentScene(AnchorPane anchorCurrent) {
         this.anchorCategory.getChildren().setAll(anchorCurrent);
     }
 
     private void showGameScene() {
 
         setContentScene(anchorGameScene);
-    }
-
-    private void setUpToolTip(Button button, String text) {
-        ImageView imageView = new ImageView("app/assets/images/tooltip.png");
-        imageView.setFitHeight(20);
-        imageView.setFitWidth(20);
-        button.setGraphic(imageView);
-        button.setTooltip(new javafx.scene.control.Tooltip(text));
     }
 
     private void showHistoryScene() {
@@ -236,5 +226,12 @@ public class ContainerController implements Initializable {
                         "-fx-border-color: #FEC400;"
         );
         lastButton = currentButton;
+    }
+
+    @FXML
+    public void pressed(KeyEvent event) {
+        if (event.getCode() == KeyCode.UP) {
+            System.out.println("OK");
+        }
     }
 }
