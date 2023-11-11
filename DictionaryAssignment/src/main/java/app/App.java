@@ -23,6 +23,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class App extends Application {
+
+    public static Stage AppStage;
     private TrayIcon trayIcon;
     private SystemTray tray;
 
@@ -89,6 +91,8 @@ public class App extends Application {
         Scene loadingScene = new Scene(loadingLayout);
         Stage loadingStage = new Stage(StageStyle.UNDECORATED);
         loadingStage.setScene(loadingScene);
+
+        AppStage = primaryStage;
 
         Task<Void> loadingTask = new Task<Void>() {
             @Override
