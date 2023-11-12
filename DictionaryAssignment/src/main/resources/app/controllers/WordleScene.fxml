@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+
+<AnchorPane prefHeight="480.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.WordleController">
+   <children>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="320.0" prefWidth="860.0" style="-fx-background-color: white;">
+         <children>
+            <GridPane fx:id="answerGridPane" layoutX="280.0" layoutY="9.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="42.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label maxHeight="45.0" maxWidth="45.0" minHeight="45.0" minWidth="45.0" prefHeight="45.0" prefWidth="50.0" styleClass="guess-label" stylesheets="@../css/game.css" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+            <Button fx:id="resetButton" layoutX="810.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 90%;">
+                     <image>
+                        <Image url="@../img/icons8-reload-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="instructionButton" layoutX="760.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
+                     <image>
+                        <Image url="@../img/icons8-user-manual-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="giveUpButton" layoutX="710.0" layoutY="15.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-give-up-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="320.0" minHeight="0.0" minWidth="0.0" prefHeight="162.0" prefWidth="860.0" style="-fx-background-color: white;">
+         <children>
+            <GridPane fx:id="keyboardGridPane" layoutX="131.0" layoutY="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="55.0" prefWidth="40.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="qButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Q" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="wButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="W" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="rButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="R" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="eButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="E" GridPane.columnIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="tButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="T" GridPane.columnIndex="9" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="yButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Y" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="uButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="U" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="iButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="I" GridPane.columnIndex="8">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="oButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="O" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="pButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="P" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="aButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="39.0" styleClass="stimulate-button" stylesheets="@../css/game.css" text="A">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="sButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="S" GridPane.columnIndex="8" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="dButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="D" GridPane.columnIndex="3">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="gButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="G" GridPane.columnIndex="6">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="hButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="H" GridPane.columnIndex="7">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="jButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="J" GridPane.columnIndex="9">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="kButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="K" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="lButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="L" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="fButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="F" GridPane.columnIndex="5">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="vButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="V" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="bButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="B" GridPane.columnIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="cButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="C" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="X" GridPane.columnIndex="5" GridPane.rowIndex="2" fx:id="xButton">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="zButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Z" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="mButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="M" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="nButton" minHeight="40.0" minWidth="45.0" mnemonicParsing="false" onAction="#handleEvent" styleClass="stimulate-button" stylesheets="@../css/game.css" text="N" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                     </GridPane.margin>
+                  </Button>
+               </children>
+            </GridPane>
+            <Button fx:id="enterButton" layoutX="770.0" layoutY="14.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-enter-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="deleteButton" layoutX="770.0" layoutY="61.0" minHeight="40.0" minWidth="80.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/icons8-delete-40.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,3 +1,30 @@
 .button-download {
     -fx-background-color: transparent;
 }
+
+.tab-pane *.tab-header-area *.tab-header-background {
+    -fx-background-color:transparent;
+    -fx-tab-min-width:120px;
+    -fx-tab-max-width:120px;
+    -fx-tab-min-height:50px;
+    -fx-tab-max-height:50px;
+}
+
+.tab {
+    -fx-font-family: "Yu Gothic UI Semibold";
+    -fx-font-size: 15;
+    -fx-text-fill: white;
+    -fx-background-color: #314874;
+}
+
+.tab:hover {
+    -fx-background-color: rgba(49, 72, 116, 0.5);
+}
+
+.tab:selected {
+    -fx-background-color: #314874;
+}
+
+.label {
+    -fx-font-size: 45px;
+}

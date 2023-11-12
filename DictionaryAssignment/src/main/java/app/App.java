@@ -85,6 +85,7 @@ public class App extends Application {
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image(App.class.getResourceAsStream("logo.png")));
         primaryStage.setTitle("Dictionary");
+
         ImageView loadingImageView = new ImageView(new Image(App.class.getResourceAsStream("loadingData.gif")));
         StackPane loadingLayout = new StackPane(loadingImageView);
         loadingLayout.setAlignment(Pos.CENTER);
