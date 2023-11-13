@@ -28,6 +28,9 @@ public class App extends Application {
     private TrayIcon trayIcon;
     private SystemTray tray;
 
+    public static final double WIDTH = 860;
+    public static final double HEIGHT = 480;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -58,7 +61,9 @@ public class App extends Application {
                     Platform.runLater(() -> {
                         primaryStage.setIconified(false);
                         primaryStage.toFront();
+                        primaryStage.setResizable(false);
                         primaryStage.show();
+
                     });
                 }
             }
@@ -85,6 +90,9 @@ public class App extends Application {
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image(App.class.getResourceAsStream("logo.png")));
         primaryStage.setTitle("Dictionary");
+        primaryStage.setWidth(WIDTH);
+        primaryStage.setHeight(HEIGHT);
+        primaryStage.setResizable(false);
 
         ImageView loadingImageView = new ImageView(new Image(App.class.getResourceAsStream("loadingData.gif")));
         StackPane loadingLayout = new StackPane(loadingImageView);
