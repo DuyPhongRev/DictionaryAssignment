@@ -63,7 +63,10 @@ public class ImageRequestServer {
     }
 
     public static void sendToServer() throws IOException {
-        sendImageBase64ToServer("input.png");
+        String workingDir = System.getProperty("user.dir");
+        // save the image to the working directory
+        String destinationPath = workingDir + "/DictionaryAssignment/src/main/resources/app/input.png";
+        sendImageBase64ToServer(destinationPath);
     }
 
 }
