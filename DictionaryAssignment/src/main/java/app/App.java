@@ -23,11 +23,9 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class App extends Application {
-
     public static Stage AppStage;
     private TrayIcon trayIcon;
     private SystemTray tray;
-
     public static final double WIDTH = 860;
     public static final double HEIGHT = 480;
 

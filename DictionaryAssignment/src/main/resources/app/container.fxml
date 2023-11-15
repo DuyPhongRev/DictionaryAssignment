@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="480.0" prefWidth="860.0" styleClass="anchor-pane" stylesheets="@css/container.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ContainerController">
+<AnchorPane prefHeight="750.0" prefWidth="1000.0" styleClass="anchor-pane" stylesheets="@css/container.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ContainerController">
    <children>
-      <AnchorPane fx:id="anchorCategory" layoutX="-1.0" prefHeight="480.0" prefWidth="860.0" stylesheets="@css/container.css" />
-      <Button fx:id="menuButton" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-menu" stylesheets="@css/container.css" textAlignment="CENTER">
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/menu.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <tooltip>
-            <Tooltip text="Hide/Show Menu Bar" />
-         </tooltip>
-      </Button>
-      <VBox fx:id="menuBox" layoutY="65.0" prefHeight="350.0" prefWidth="50.0" styleClass="vBox" stylesheets="@css/container.css">
+      <AnchorPane fx:id="anchorCategory" layoutX="-1.0" prefHeight="750.0" prefWidth="1000.0" stylesheets="@css/container.css" />
+      <VBox fx:id="menuBox" layoutY="100.0" prefHeight="350.0" prefWidth="50.0" styleClass="vBox" stylesheets="@css/container.css">
          <children>
             <Button fx:id="homeButton" mnemonicParsing="false" onMouseClicked="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css" textAlignment="CENTER">
                <graphic>
@@ -110,5 +99,18 @@
             </Button>
          </children>
       </VBox>
+      <Label fx:id="title" layoutY="20.0" minHeight="60.0" minWidth="1000.0" styleClass="title" stylesheets="@css/container.css" />
+      <Button fx:id="menuButton" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-menu" stylesheets="@css/container.css" textAlignment="CENTER">
+         <graphic>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/menu.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <tooltip>
+            <Tooltip text="Hide/Show Menu Bar" />
+         </tooltip>
+      </Button>
    </children>
 </AnchorPane>

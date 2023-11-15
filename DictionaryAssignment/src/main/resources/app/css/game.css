@@ -29,3 +29,17 @@
 .label {
     -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.2), 5, 0, 0.5, 0.5);
 }
+
+.select-game-button {
+    -fx-border-radius: 15px;
+    -fx-background-color: white;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.2), 10, 0, 1, 1);
+}
+
+.select-game-button :hover {
+    -fx-min-height: 60;
+    -fx-min-width: 60;
+    -fx-fill-height: 60;
+    -fx-fill-width: 60;
+}

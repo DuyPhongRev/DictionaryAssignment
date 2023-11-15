@@ -10,45 +10,37 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="480.0" prefWidth="860.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.TranslateSceneController">
+<AnchorPane prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.TranslateSceneController">
    <children>
-      <AnchorPane layoutX="60.0" onMouseReleased="#getCurrentSrcLang" prefHeight="480.0" prefWidth="400.0">
-         <children>
-            <TextArea fx:id="SrcTextArea" layoutX="20.0" layoutY="120.0" onKeyReleased="#handleEvent" onMouseReleased="#getCurrentSrcLang" prefHeight="280.0" prefWidth="360.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
-            <ChoiceBox fx:id="SrcLangChoiceBox" accessibleRole="TAB_PANE" layoutX="20.0" layoutY="70.0" onMouseReleased="#getCurrentSrcLang" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
-            <Button fx:id="SrcSoundButton" layoutX="27.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
-               <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/icons8-speaker-64.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="tranButton" layoutX="20.0" layoutY="426.0" mnemonicParsing="false" onAction="#handleTranslateButton" prefHeight="30.0" prefWidth="90.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Translate" />
-            <Button fx:id="textRecognizeButton" layoutX="120.0" layoutY="426.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleTextRecognition" prefHeight="30.0" prefWidth="120.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Text Recognition" />
-            <Text fx:id="waitText" layoutX="360.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please wait..." visible="false">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <ProgressIndicator fx:id="progressIndicator" layoutX="380.0" layoutY="14.0" prefHeight="40.0" prefWidth="42.0" visible="false" />
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutX="460.0" onMouseReleased="#getCurrentDesLang" prefHeight="480.0" prefWidth="400.0">
-         <children>
-            <TextArea fx:id="DesTextArea" editable="false" layoutX="20.0" layoutY="120.0" prefHeight="280.0" prefWidth="360.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
-            <ChoiceBox fx:id="DesLangChoiceBox" cache="true" layoutX="200.0" layoutY="69.0" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
-            <Button fx:id="DesSoundButton" layoutX="26.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
-               <graphic>
-                  <ImageView fitHeight="26.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/icons8-speaker-64.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </AnchorPane>
+      <TextArea fx:id="SrcTextArea" layoutX="150.0" layoutY="160.0" onKeyReleased="#handleEvent" onMouseReleased="#getCurrentSrcLang" prefHeight="210.0" prefWidth="700.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
+      <TextArea fx:id="DesTextArea" editable="false" layoutX="150.0" layoutY="480.0" prefHeight="210.0" prefWidth="700.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
+      <Button fx:id="textRecognizeButton" layoutX="250.0" layoutY="705.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleTextRecognition" prefHeight="30.0" prefWidth="120.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Text Recognition" />
+      <Button fx:id="tranButton" layoutX="150.0" layoutY="705.0" mnemonicParsing="false" onAction="#handleTranslateButton" prefHeight="30.0" prefWidth="90.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Translate" />
+      <ChoiceBox fx:id="SrcLangChoiceBox" accessibleRole="TAB_PANE" layoutX="150.0" layoutY="110.0" onMouseReleased="#getCurrentSrcLang" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
+      <Button fx:id="SrcSoundButton" layoutX="150.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-speaker-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Text fx:id="waitText" strokeType="OUTSIDE" strokeWidth="0.0" text="Please wait..." visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ProgressIndicator fx:id="progressIndicator" prefHeight="40.0" prefWidth="42.0" visible="false" />
+      <ChoiceBox fx:id="DesLangChoiceBox" cache="true" layoutX="150.0" layoutY="430.0" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
+      <Button fx:id="DesSoundButton" layoutX="150.0" layoutY="650.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
+         <graphic>
+            <ImageView fitHeight="26.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-speaker-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

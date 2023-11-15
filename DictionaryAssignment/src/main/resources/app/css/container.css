@@ -76,3 +76,10 @@
 .button-menu, .button-nav {
     -fx-background-color: transparent;
 }
+
+.title {
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-font-size: 40px;
+}
+

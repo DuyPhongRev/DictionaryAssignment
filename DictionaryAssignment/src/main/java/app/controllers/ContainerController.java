@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -36,6 +37,8 @@ public class ContainerController implements Initializable {
     private AnchorPane anchorCategory;
     @FXML
     private Button gameButton;
+    @FXML
+    private Label title;
 
     private AnchorPane anchorSearchScene;
     private AnchorPane anchorTranslateScene;
