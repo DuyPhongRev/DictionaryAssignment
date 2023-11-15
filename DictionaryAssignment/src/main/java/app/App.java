@@ -90,8 +90,8 @@ public class App extends Application {
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image(App.class.getResourceAsStream("logo.png")));
         primaryStage.setTitle("Dictionary");
-        primaryStage.setWidth(WIDTH);
-        primaryStage.setHeight(HEIGHT);
+//        primaryStage.setWidth(WIDTH);
+//        primaryStage.setHeight(HEIGHT);
         primaryStage.setResizable(false);
 
         ImageView loadingImageView = new ImageView(new Image(App.class.getResourceAsStream("loadingData.gif")));
