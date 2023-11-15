@@ -13,6 +13,9 @@ public class ImageEncode {
 
     public static void base64ToImage(String base64Image) throws IOException {
         byte[] decodedBytes = Base64.getDecoder().decode(base64Image);
-        Files.write(Paths.get("result.png"), decodedBytes);
+        String workingDir = System.getProperty("user.dir");
+        // save the image to the working directory
+        String destinationPath = workingDir + "/DictionaryAssignment/src/main/resources/app/result.png";
+        Files.write(Paths.get(destinationPath), decodedBytes);
     }
 }

@@ -35,14 +35,17 @@ public class ThreeController {
     @FXML
     protected Button soundButton;
     protected WebEngine webEngine;
-    protected ArrayList<String> arrayWords;
+    protected ArrayList<String> arrayWords = new ArrayList<>();
+    protected ArrayList<String> arraySynonyms = new ArrayList<>();
     protected String currentLoadWord = "";
+    @FXML
+    protected ListView<String> SynonymListView = new ListView<>();
 
     public ThreeController() {
 
     }
     @FXML
-    public void handleSearchButton (ActionEvent event) throws SQLException {
+    public void handleSearchButton (ActionEvent event) throws SQLException, IOException {
         if (event.getSource() == searchButton) {
             String searchText = txtSearch.getText();
             if (!searchText.isEmpty()) {
@@ -76,7 +79,7 @@ public class ThreeController {
     }
 
     @FXML
-    public void SelectSearchListItem (MouseEvent event) throws SQLException {
+    public void SelectSearchListItem (MouseEvent event) throws SQLException, IOException {
         if (event.getSource() == SearchListView) {
             String searchText = SearchListView.getSelectionModel().getSelectedItem();
             if (searchText != null && !searchText.isEmpty()) {
@@ -94,7 +97,7 @@ public class ThreeController {
         SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
     }
 
-    public void searchAction(String searchText) throws SQLException {}
+    public void searchAction(String searchText) throws SQLException, IOException {}
 
     @FXML
     public void deleteTextSearch(Event event) {

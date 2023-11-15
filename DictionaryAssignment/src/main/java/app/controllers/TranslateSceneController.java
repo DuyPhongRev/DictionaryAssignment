@@ -155,7 +155,7 @@ public class TranslateSceneController implements Initializable {
                 // return the working directory
                 String workingDir = System.getProperty("user.dir");
                 // save the image to the working directory
-                String destinationPath = workingDir + "/input.png";
+                String destinationPath = workingDir + "/DictionaryAssignment/src/main/resources/app/input.png";
                 FileService.saveImageToFile(selectedFile, destinationPath);
 
                 ImageView ClientImageView = new ImageView(orignalImage);
@@ -186,7 +186,8 @@ public class TranslateSceneController implements Initializable {
                 future.thenRun(() -> {
                     try {
                         Platform.runLater(() -> {
-                            File image = new File("result.png");
+                            String destinationPath_res = workingDir + "/DictionaryAssignment/src/main/resources/app/result.png";
+                            File image = new File(destinationPath_res);
                             Image resultImage = null;
                             try {
                                 resultImage = new Image(image.toURI().toURL().toString());

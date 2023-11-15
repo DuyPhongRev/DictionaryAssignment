@@ -1,6 +1,7 @@
 package app.controllers;
 
 import app.connections.TranslateVoiceAPIs;
+import app.helper.GetSynonyms;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -20,6 +21,8 @@ import static app.controllers.PopUp.showPopup;
 
 public class SearchSceneController extends ThreeController {
     @FXML
+    private Button loadSynonym;
+    @FXML
     private Button favoriteButton;
     public SearchSceneController() {
         super();
@@ -27,7 +30,7 @@ public class SearchSceneController extends ThreeController {
     ArrayList<String> arrayWordsDefault = new ArrayList<>();
     @Override
     @FXML
-    public void SelectSearchListItem (MouseEvent event) throws SQLException {
+    public void SelectSearchListItem (MouseEvent event) throws SQLException, IOException {
         if (event.getSource() == SearchListView) {
             String searchText = SearchListView.getSelectionModel().getSelectedItem();
             if (searchText != null && !searchText.isEmpty()) {
@@ -43,10 +46,15 @@ public class SearchSceneController extends ThreeController {
     @Override
     public void handleChangeInputSearch(KeyEvent event) {
         if (event.getSource() == txtSearch) {
+            arraySynonyms.clear();
+            SynonymListView.setItems(FXCollections.observableArrayList(arraySynonyms));
+            SynonymListView.getItems().setAll(arraySynonyms);
             String searchText = txtSearch.getText();
             if (!searchText.isEmpty()) {
                 showListAction(searchText);
             } else {
+                webEngine = webView.getEngine();
+                webEngine.loadContent("");
                 SearchListView.setItems(FXCollections.observableArrayList(arrayWordsDefault));
             }
         }
@@ -76,6 +84,8 @@ public class SearchSceneController extends ThreeController {
                     try {
                         searchAction(searchText);
                     } catch (SQLException e) {
+                        throw new RuntimeException(e);
+                    } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 }
@@ -118,10 +128,28 @@ public class SearchSceneController extends ThreeController {
 
         }
     }
+
+    @FXML
+    public void SelectSynonymListItem(MouseEvent e) {
+        if (e.getSource() == SynonymListView) {
+            String searchText = SynonymListView.getSelectionModel().getSelectedItem();
+            if (searchText != null && !searchText.isEmpty()) {
+                try {
+                    searchAction(searchText);
+
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        }
+    }
     @Override
-    public void searchAction(String searchText) throws SQLException {
+    public void searchAction(String searchText) throws SQLException, IOException {
         String meaning = myController.getDictionaryManagement().searchAct(searchText);
         currentLoadWord = searchText;
+
         webEngine = webView.getEngine();
         webEngine.loadContent(meaning);
         webEngine.setUserStyleSheetLocation(getClass().getResource("webview.css").toString());
@@ -130,12 +158,37 @@ public class SearchSceneController extends ThreeController {
     @Override
     public void deleteTextSearch(Event event) {
         if (event.getSource() == deleteSearchButton) {
+            arraySynonyms.clear();
+            SynonymListView.setItems(FXCollections.observableArrayList(arraySynonyms));
+            SynonymListView.getItems().setAll(arraySynonyms);
+
+            // clear the definition pane
+            webEngine = webView.getEngine();
+            webEngine.loadContent("");
+
             txtSearch.setText("");
             arrayWords = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
             SearchListView.setItems(FXCollections.observableArrayList(arrayWords));
             SearchListView.getItems().setAll(arrayWords);
         }
     }
+
+    public void handleLoadSynonymButton(ActionEvent event) throws IOException, JavaLayerException {
+        if (event.getSource() == loadSynonym) {
+            if (txtSearch.getText().isEmpty()) {
+                showPopup("Please search a word");
+            } else {
+                arraySynonyms = (ArrayList<String>) GetSynonyms.getSynonyms(txtSearch.getText());
+                if (arraySynonyms.isEmpty()) {
+                    showPopup("No synonyms found!");
+                } else {
+                    SynonymListView.setItems(FXCollections.observableArrayList(arraySynonyms));
+                    SynonymListView.getItems().setAll(arraySynonyms);
+                }
+            }
+        }
+    }
+
     public void reload() {
         txtSearch.setText("");
         arrayWords = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
