@@ -23,7 +23,7 @@
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/icons8-magnifying-glass-68.png" />
+                        <Image url="@../img/search.png" />
                      </image>
                   </ImageView>
                </graphic></Button>
