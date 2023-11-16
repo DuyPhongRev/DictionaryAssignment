@@ -1,5 +1,6 @@
 package app.controllers;
 
+import app.App;
 import javafx.animation.AnimationTimer;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -10,10 +11,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 import java.net.URL;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class FlappyBirdController implements Initializable {
@@ -22,13 +25,13 @@ public class FlappyBirdController implements Initializable {
     @FXML
     ImageView bird;
     @FXML
-    private Label rightCloud, wrongCloud, scoreLabel, meaningLabel;
+    private Label rightCloud, wrongCloud, meaningLabel;
     @FXML
     private ImageView layer1Background, layer2Background, layer3Background, layer4Background, layer5Background;
     @FXML
     private ImageView layer1Background1, layer2Background1, layer3Background1, layer4Background1, layer5Background1;
     @FXML
-    private ImageView startImage, gameOverImage;
+    private ImageView startImage, gameOverImage, firstScoreImage, secondScoreImage;
     private AnimationTimer gameLoop;
     private double yDelta = 0.05;
     private double time = 0;
@@ -91,11 +94,25 @@ public class FlappyBirdController implements Initializable {
         }
     }
 
+    @FXML
+    public void clicked(MouseEvent event) {
+        if (isBirdDead()) {
+            gameLoop.start();
+            reset();
+        } else if (isGameStarted) {
+            fly();
+        } else {
+            isGameStarted = true;
+            startGame();
+        }
+    }
+
     public void startGame() {
         startImage.setVisible(false);
         generateCloud();
         meaningLabel.setText(meaning);
-        scoreLabel.setText(String.valueOf(score));
+        firstScoreImage.setImage(getImage(0));
+        secondScoreImage.setImage(getImage(0));
     }
 
     private void fly() {
@@ -114,8 +131,17 @@ public class FlappyBirdController implements Initializable {
         if (checkPoint) {
             checkPoint = false;
             score++;
-            scoreLabel.setText(String.valueOf(score));
+            firstScoreImage.setImage(getImage(score % 10));
+            if(score > 9) {
+                secondScoreImage.setImage(getImage(score - score % 10));
+            }
         }
+    }
+
+    public Image getImage(int number) {
+        String path = "num" + number + ".png";
+        Image image = new Image(FlappyBirdController.class.getResourceAsStream(path));
+        return image;
     }
 
     private void generateCloud() {
@@ -127,11 +153,11 @@ public class FlappyBirdController implements Initializable {
         wrongCloud.setLayoutX(WIDTH);
         wrongCloud.setText(wrongWord);
         if (Math.ceil(Math.random() * 100) % 2 == 0) {
-            wrongCloud.setLayoutY(110);
-            rightCloud.setLayoutY(260);
+            wrongCloud.setLayoutY(225);
+            rightCloud.setLayoutY(425);
         } else {
-            wrongCloud.setLayoutY(260);
-            rightCloud.setLayoutY(110);
+            wrongCloud.setLayoutY(425);
+            rightCloud.setLayoutY(225);
         }
     }
 
@@ -161,7 +187,8 @@ public class FlappyBirdController implements Initializable {
         startImage.setVisible(true);
         gameOverImage.setVisible(false);
         score = 0;
-        scoreLabel.setText(String.valueOf(score));
+        firstScoreImage.setImage(getImage(0));
+        secondScoreImage.setImage(getImage(0));
         generateCloud();
         bird.setLayoutY(200);
         bird.setRotate(0);

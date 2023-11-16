@@ -7,11 +7,17 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="750.0" prefWidth="1000.0" styleClass="anchor-pane" stylesheets="@css/container.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ContainerController">
    <children>
       <AnchorPane fx:id="anchorCategory" layoutX="-1.0" prefHeight="750.0" prefWidth="1000.0" stylesheets="@css/container.css" />
-      <VBox fx:id="menuBox" layoutY="100.0" prefHeight="350.0" prefWidth="50.0" styleClass="vBox" stylesheets="@css/container.css">
+      <Label fx:id="title" layoutX="300.0" layoutY="20.0" minHeight="60.0" minWidth="400.0" style="-fx-alignment: center;" styleClass="title" stylesheets="@css/container.css">
+         <font>
+            <Font name="System Bold" size="50.0" />
+         </font>
+      </Label>
+      <VBox fx:id="menuBox" layoutY="110.0" prefHeight="400.0" prefWidth="50.0" styleClass="vBox" stylesheets="@css/container.css">
          <children>
             <Button fx:id="homeButton" mnemonicParsing="false" onMouseClicked="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css" textAlignment="CENTER">
                <graphic>
@@ -61,6 +67,15 @@
                   <Tooltip text="History" />
                </tooltip>
             </Button>
+            <Button fx:id="addButton" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css" text="Button">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-add-file-100.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
             <Button fx:id="editButton" mnemonicParsing="false" onMouseClicked="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-nav" stylesheets="@css/container.css">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
@@ -89,7 +104,7 @@
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@img/icons8-game-94.png" />
+                        <Image url="@img/icons8-game-100.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -99,7 +114,6 @@
             </Button>
          </children>
       </VBox>
-      <Label fx:id="title" layoutY="20.0" minHeight="60.0" minWidth="1000.0" styleClass="title" stylesheets="@css/container.css" />
       <Button fx:id="menuButton" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#handleAction" prefHeight="50.0" prefWidth="50.0" styleClass="button-menu" stylesheets="@css/container.css" textAlignment="CENTER">
          <graphic>
             <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">

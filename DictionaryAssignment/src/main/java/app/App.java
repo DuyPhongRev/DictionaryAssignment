@@ -88,14 +88,14 @@ public class App extends Application {
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(new Image(App.class.getResourceAsStream("logo.png")));
         primaryStage.setTitle("Dictionary");
-//        primaryStage.setWidth(WIDTH);
-//        primaryStage.setHeight(HEIGHT);
+        primaryStage.setMaxWidth(WIDTH);
+        primaryStage.setMaxHeight(HEIGHT);
         primaryStage.setResizable(false);
 
         ImageView loadingImageView = new ImageView(new Image(App.class.getResourceAsStream("loadingData.gif")));
         StackPane loadingLayout = new StackPane(loadingImageView);
         loadingLayout.setAlignment(Pos.CENTER);
-        Scene loadingScene = new Scene(loadingLayout);
+        Scene loadingScene = new Scene(loadingLayout, WIDTH, HEIGHT);
         Stage loadingStage = new Stage(StageStyle.UNDECORATED);
         loadingStage.setScene(loadingScene);
 
@@ -104,7 +104,7 @@ public class App extends Application {
         Task<Void> loadingTask = new Task<Void>() {
             @Override
             protected Void call() throws Exception {
-                Thread.sleep(0);
+                Thread.sleep(2000);
                 return null;
             }
         };
@@ -112,8 +112,8 @@ public class App extends Application {
         loadingStage.show();
 
         loadingTask.setOnSucceeded(event -> {
-            loadingStage.hide();
             primaryStage.show();
+            loadingStage.hide();
         });
 
         Thread loadingThread = new Thread(loadingTask);

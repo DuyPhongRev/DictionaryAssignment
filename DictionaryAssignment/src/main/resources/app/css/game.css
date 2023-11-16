@@ -43,3 +43,8 @@
     -fx-fill-height: 60;
     -fx-fill-width: 60;
 }
+
+.title {
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #414a5e;
+}

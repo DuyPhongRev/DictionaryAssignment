@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.WordleController">
+<AnchorPane onKeyPressed="#handleKeyEvent" prefHeight="750.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.WordleController">
    <children>
-      <AnchorPane layoutY="101.0" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="1000.0" style="-fx-background-color: white;">
+      <AnchorPane layoutY="101.0" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="1000.0">
          <children>
             <GridPane fx:id="answerGridPane" layoutX="350.0" layoutY="20.0" prefHeight="360.0" prefWidth="300.0">
                <columnConstraints>
@@ -189,7 +189,7 @@
             </GridPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="500.0" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="1000.0" style="-fx-background-color: white;">
+      <AnchorPane layoutY="500.0" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="1000.0">
          <children>
             <GridPane fx:id="keyboardGridPane" layoutX="200.0" layoutY="30.0" prefHeight="180.0" prefWidth="600.0">
                <columnConstraints>
@@ -342,61 +342,50 @@
                   </Button>
                </children>
             </GridPane>
-            <Button fx:id="enterButton" layoutX="686.0" layoutY="156.0" minHeight="50.0" minWidth="109.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
-               <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/icons8-enter-48.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="deleteButton" layoutX="205.0" layoutY="156.0" minHeight="50.0" minWidth="109.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
-               <graphic>
-                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/icons8-delete-40.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
+            <Button fx:id="enterButton" layoutX="686.0" layoutY="156.0" minHeight="50.0" minWidth="109.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Enter" />
+            <Button fx:id="deleteButton" layoutX="205.0" layoutY="156.0" minHeight="50.0" minWidth="109.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css" text="Delete" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="100.0" prefWidth="1000.0" style="-fx-background-color: white;">
-         <children>
-            <Label layoutY="20.0" minHeight="60.0" minWidth="1000.0" style="-fx-alignment: center;" text="WORDLE">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Label>
-            <Button fx:id="giveUpButton" layoutX="820.0" layoutY="25.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
-               <graphic>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/icons8-give-up-64.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="instructionButton" layoutX="880.0" layoutY="25.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
-               <graphic>
-                  <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
-                     <image>
-                        <Image url="@../img/icons8-user-manual-48.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="resetButton" layoutX="940.0" layoutY="25.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
-               <graphic>
-                  <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 90%;">
-                     <image>
-                        <Image url="@../img/icons8-reload-48.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </AnchorPane>
+      <Label minHeight="100.0" minWidth="1000.0" style="-fx-alignment: center;" styleClass="title" stylesheets="@../css/game.css" text="WORDLE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="giveUpButton" layoutX="761.0" layoutY="25.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-fail-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="instructionButton" layoutX="821.0" layoutY="25.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
+               <image>
+                  <Image url="@../img/icons8-about-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="resetButton" layoutX="881.0" layoutY="25.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleEvent" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+         <graphic>
+            <ImageView fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 90%;">
+               <image>
+                  <Image url="@../img/icons8-restart-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="leaveButton" layoutX="940.0" layoutY="25.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#handleLeaveButton" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+         <graphic>
+            <ImageView fx:id="LeaveButton" fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 90%;">
+               <image>
+                  <Image url="@../img/icons8-redo-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

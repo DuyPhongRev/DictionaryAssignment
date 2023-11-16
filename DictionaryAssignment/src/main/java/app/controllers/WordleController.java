@@ -4,6 +4,9 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 
 import java.util.ArrayList;
@@ -12,7 +15,7 @@ public class WordleController {
     @FXML
     private GridPane answerGridPane, keyboardGridPane;
     @FXML
-    private Button resetButton, giveUpButton, instructionButton;
+    private Button resetButton, giveUpButton, instructionButton, leaveButton;
     @FXML
     private Button qButton, wButton, eButton, rButton, tButton, yButton, uButton, iButton, oButton, pButton;
     @FXML
@@ -141,6 +144,8 @@ public class WordleController {
             if (currentAttempt == 7) {
                 giveUp();
             }
+        } else {
+            PopUp.showPopup("TO SHORT!");
         }
     }
 
@@ -169,8 +174,24 @@ public class WordleController {
         }
     }
 
+    public void handleLeaveButton(MouseEvent event) {
+        if (event.getSource() == leaveButton) {
+            myController.showGameScene();
+        }
+    }
+
+    public void handleKeyEvent(KeyEvent event) throws StringIndexOutOfBoundsException {
+        if (event.getCode() == KeyCode.ENTER) {
+            confirmText();
+        } else if (event.getCode() == KeyCode.DELETE || event.getCode() == KeyCode.BACK_SPACE) {
+            deleteText();
+        } else if (event.getText().charAt(0) <= 'z' && event.getText().charAt(0) >= 'a') {
+            setText(event.getText().toUpperCase());
+        }
+    }
+
     public void handleEvent(Event event) {
-        if (event.getSource().equals(resetButton)) {
+         if (event.getSource().equals(resetButton)) {
             if(PopUp.showConfirmationPopup("Do you want to reset this match?")) {
                 reset();
                 PopUp.showPopup("Game was reset.");

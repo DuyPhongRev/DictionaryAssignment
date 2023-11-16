@@ -50,6 +50,7 @@ public class GameSceneController implements Initializable {
     public void showWordleGame(Event event) {
         if (event.getSource() == WordleGameButton) {
             this.myController.setContentScene(anchorWordleScene);
+            anchorWordleScene.requestFocus();
         }
     }
 

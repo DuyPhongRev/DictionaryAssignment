@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxWidth="1000.0" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.HomeSceneController">
+<AnchorPane maxWidth="1000.0" onKeyPressed="#handleReturnHome" prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.HomeSceneController">
    <children>
-      <ImageView fitHeight="750.0" fitWidth="1000.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="750.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/homeWallpaper4-3.png" />
          </image>
@@ -20,8 +20,8 @@
          </font>
       </Label>
       <Label layoutY="311.0" minHeight="40.0" minWidth="1000.0" prefHeight="28.0" prefWidth="860.0" styleClass="label-subtitle" stylesheets="@../css/home.css" text="A dictionary uses Database and Google API" />
-      <Button fx:id="startButton" layoutX="389.0" layoutY="389.0" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" styleClass="button-start" stylesheets="@../css/home.css" text="Get Started" />
-      <Button fx:id="moreButton" layoutX="509.0" layoutY="389.0" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" styleClass="button-learn" stylesheets="@../css/home.css" text="Learning More" />
+      <Button fx:id="getStartButton" layoutX="389.0" layoutY="389.0" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#handleGetStartButton" styleClass="button-start" stylesheets="@../css/home.css" text="Get Started" />
+      <Button fx:id="learningMoreButton" layoutX="509.0" layoutY="389.0" minHeight="45.0" minWidth="100.0" mnemonicParsing="false" onMouseClicked="#handleLearningMoreButton" styleClass="button-learn" stylesheets="@../css/home.css" text="Learning More" />
       <Label layoutY="339.0" minHeight="40.0" minWidth="1000.0" prefHeight="28.0" prefWidth="860.0" styleClass="label-subtitle" stylesheets="@../css/home.css" text="ingrediating Wordle Game" />
    </children>
 </AnchorPane>

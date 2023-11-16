@@ -38,6 +38,8 @@ public class ContainerController implements Initializable {
     @FXML
     private Button gameButton;
     @FXML
+    private Button addButton;
+    @FXML
     private Label title;
 
     private AnchorPane anchorSearchScene;
@@ -47,8 +49,10 @@ public class ContainerController implements Initializable {
     private AnchorPane anchorEditScene;
     private AnchorPane anchorHomeScene;
     private AnchorPane anchorGameScene;
+    private AnchorPane anchorAddScene;
 
     private EditSceneController editSceneController;
+    private AddSceneController addSceneController;
     private FavoriteSceneController favoriteSceneController;
     private GameSceneController gameSceneController;
     private HistorySceneController historySceneController;
@@ -62,6 +66,10 @@ public class ContainerController implements Initializable {
     private Button lastButton;
     private DictionaryManagement dictionaryManagement = new DictionaryManagement();
 
+    public AnchorPane getAnchorHomeScene() {
+        return anchorHomeScene;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         lastButton = homeButton;
@@ -69,6 +77,15 @@ public class ContainerController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HomeScene.fxml"));
             anchorHomeScene = fxmlLoader.load();
             homeSceneController = fxmlLoader.getController();
+            homeSceneController.initData(this);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddScene.fxml"));
+            anchorAddScene = fxmlLoader.load();
+            addSceneController = fxmlLoader.getController();
+            addSceneController.initData(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -76,7 +93,6 @@ public class ContainerController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EditScene.fxml"));
             anchorEditScene = fxmlLoader.load();
             editSceneController = fxmlLoader.getController();
-            editSceneController.initData(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -148,26 +164,37 @@ public class ContainerController implements Initializable {
                 new SlideInLeft(menuBox).play();
             }
         } else if (e.getSource() == homeButton) {
+            title.setText("");
             pressedButton(homeButton);
             showHomeScene();
         } else if (e.getSource() == searchButton) {
+            title.setText("Search in Database");
             pressedButton(searchButton);
             showSearchScene();
         } else if (e.getSource() == editButton) {
+            title.setText("Edit a word");
             pressedButton(editButton);
             showEditScene();
+        } else if (e.getSource() == addButton) {
+            title.setText("Add a word");
+            pressedButton(addButton);
+            showEditScene();
         } else if (e.getSource() == translateButton) {
+            title.setText("Online translate");
             pressedButton(translateButton);
             showTranslateScene();
         } else if (e.getSource() == favouriteButton) {
+            title.setText("Favourite list");
             pressedButton(favouriteButton);
             favoriteSceneController.reload();
             showFavoriteScene();
         } else if (e.getSource() == historyButton) {
+            title.setText("History list");
             pressedButton(historyButton);
             historySceneController.reload();
             showHistoryScene();
         } else {
+            title.setText("");
             pressedButton(gameButton);
             showGameScene();
         }
@@ -177,7 +204,7 @@ public class ContainerController implements Initializable {
         this.anchorCategory.getChildren().setAll(anchorCurrent);
     }
 
-    private void showGameScene() {
+    public void showGameScene() {
 
         setContentScene(anchorGameScene);
     }
@@ -202,7 +229,7 @@ public class ContainerController implements Initializable {
         setContentScene(anchorEditScene);
     }
 
-    private void showSearchScene() {
+    public void showSearchScene() {
 
         setContentScene(anchorSearchScene);
     }
@@ -223,11 +250,10 @@ public class ContainerController implements Initializable {
     public void pressedButton(Button currentButton) {
         lastButton.setStyle(null);
         currentButton.setStyle(
-                "-fx-background-color: #1d386c;" +
+                "-fx-background-color: linear-gradient(to right, rgba(76,205,241,0.8), rgba(22,69,189,0.8));" +
                         "-fx-border-radius: 5px 5px 5px 5px;" +
                         "-fx-border-style: hidden hidden solid hidden;" +
-                        "-fx-border-width: 2px;" +
-                        "-fx-border-color: #FEC400;"
+                        "-fx-border-radius: 10px"
         );
         lastButton = currentButton;
     }

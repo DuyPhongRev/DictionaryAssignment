@@ -15,17 +15,17 @@
 }
 
 .button {
-    -fx-background-color: #314874;
+    -fx-background-color: linear-gradient(to right, #4CCDF1, #1645BD);
     -fx-text-fill: white;
     -fx-cursor: hand;
 }
 
 .button:hover {
-    -fx-background-color: rgba(49, 72, 116, 0.5);
+    -fx-background-color: linear-gradient(to right, rgba(51, 199, 239, 0.5), rgba(9, 59, 189, 0.5));
 }
 
 .button:pressed {
-    -fx-background-color: rgba(49, 72, 116, 0.5);
+    --fx-background-color: linear-gradient(to right, #27c3ee, #0734b0);
 }
 
 .text-field {
@@ -81,5 +81,8 @@
     -fx-text-alignment: center;
     -fx-alignment: center;
     -fx-font-size: 40px;
+    -fx-font-family: "system-ui";
+    -fx-text-fill: linear-gradient(to right, rgba(76, 205, 241, 0.7), rgba(22, 69, 189, 0.7));
+    -fx-font-weight: bold;
 }
 
