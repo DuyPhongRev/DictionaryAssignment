@@ -33,7 +33,7 @@ public class FlappyBirdController implements Initializable {
     private double yDelta = 0.05;
     private double time = 0;
     private int jumpHeight = 50;
-    private final int WIDTH = 860;
+    private final int WIDTH = 1333;
     private String rightWord = "CANDY";
     private String wrongWord = "CAKE";
     private String meaning = "Kẹo";

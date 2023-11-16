@@ -126,6 +126,7 @@ public class ContainerController implements Initializable {
             throw new RuntimeException(e);
         }
         menuBox.setVisible(false);
+        pressedButton(homeButton);
         showHomeScene();
     }
 

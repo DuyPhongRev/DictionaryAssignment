@@ -30,7 +30,7 @@ import java.util.concurrent.Executors;
 
 public class TranslateSceneController implements Initializable {
     @FXML
-    private Button SrcSoundButton, DesSoundButton, tranButton, textRecognizeButton;
+    private Button SrcSoundButton, DesSoundButton, tranButton, textRecognizeButton, switchButton;
     @FXML
     private ChoiceBox<LANGUAGE> SrcLangChoiceBox, DesLangChoiceBox;
     @FXML
@@ -110,6 +110,18 @@ public class TranslateSceneController implements Initializable {
             } else {
                 TranslateVoiceAPIs.getAudio(DesTextArea.getText(), currentDesLang);
             }
+        }
+    }
+
+    public void switchText(Event event) throws IOException {
+        if (event.getSource() == switchButton) {
+            SrcTextArea.setText(DesTextArea.getText());
+            LANGUAGE tmp = SrcLangChoiceBox.getValue();
+            SrcLangChoiceBox.setValue(DesLangChoiceBox.getValue());
+            DesLangChoiceBox.setValue(tmp);
+            getCurrentDesLang();
+            getCurrentSrcLang();
+            DesTextArea.setText(TranslateTextAPIs.translate(SrcTextArea.getText(), currentSrcLang, currentDesLang));
         }
     }
 

@@ -2,64 +2,32 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="480.0" prefWidth="860.0" stylesheets="@../css/edit.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.EditSceneController">
+<AnchorPane prefHeight="750.0" prefWidth="1000.0" stylesheets="@../css/edit.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.EditSceneController">
    <children>
-      <TabPane layoutX="51.0" prefHeight="480.0" prefWidth="810.0" style="-fx-background-radius: 0; -fx-background-color: F4F4F4;" styleClass="t" stylesheets="@../css/edit.css" tabClosingPolicy="UNAVAILABLE">
-         <tabs>
-            <Tab text="Add">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="818.0">
-                     <children>
-                        <TextField fx:id="txtAdd" layoutX="180.0" layoutY="88.0" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" />
-                        <Button fx:id="addButton" layoutX="180.0" layoutY="374.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" text="Add" />
-                        <Label layoutY="10.0" prefHeight="74.0" prefWidth="810.0" style="-fx-alignment: center;" text="Add New Word">
-                           <font>
-                              <Font size="50.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtType" layoutX="180.0" layoutY="147.0" prefHeight="40.0" prefWidth="214.0" stylesheets="@../css/edit.css" />
-                        <TextField fx:id="txtPronunciation" layoutX="403.0" layoutY="147.0" prefHeight="40.0" prefWidth="214.0" stylesheets="@../css/edit.css" />
-                        <TextField fx:id="txtDescription" layoutX="180.0" layoutY="208.0" prefHeight="155.0" prefWidth="440.0" stylesheets="@../css/edit.css" />
-                        <Button fx:id="genPhonetics" layoutX="571.0" layoutY="152.0" minHeight="30.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleGenPhoneticsButton" prefHeight="30.0" prefWidth="42.0" styleClass="button-download" stylesheets="@../css/edit.css">
-                           <graphic>
-                              <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/icons8-download-40.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
-            <Tab text="Edit">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="112.0">
-                     <children>
-                        <TextField fx:id="OldWordTextField1" layoutX="420.0" layoutY="129.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/edit.css" />
-                        <TextArea fx:id="meaningTextArea1" layoutX="180.0" layoutY="180.0" prefHeight="140.0" prefWidth="440.0" stylesheets="@../css/edit.css" />
-                        <TextField fx:id="OldWordTextField11" layoutX="180.0" layoutY="129.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@../css/edit.css" />
-                        <Label layoutX="-3.0" layoutY="8.0" prefHeight="74.0" prefWidth="806.0" style="-fx-alignment: center;" text="Edit">
-                           <font>
-                              <Font size="50.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="editButton" layoutX="180.0" layoutY="360.0" minWidth="50.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="440.0" stylesheets="@../css/edit.css" text="Edit" />
-                     </children>
-                  </AnchorPane>
-               </content>
-            </Tab>
-         </tabs>
-      </TabPane>
+      <Label layoutX="10.0" layoutY="20.0" prefHeight="60.0" prefWidth="1000.0" style="-fx-alignment: center;" text="Add New Word">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAdd" layoutX="236.0" layoutY="193.0" prefHeight="50.0" prefWidth="500.0" stylesheets="@../css/edit.css" />
+      <TextField fx:id="txtType" layoutX="236.0" layoutY="262.0" prefHeight="50.0" prefWidth="235.0" stylesheets="@../css/edit.css" />
+      <TextField fx:id="txtPronunciation" layoutX="501.0" layoutY="262.0" prefHeight="50.0" prefWidth="235.0" stylesheets="@../css/edit.css" />
+      <TextField fx:id="txtDescription" layoutX="236.0" layoutY="332.0" prefHeight="250.0" prefWidth="500.0" stylesheets="@../css/edit.css" />
+      <Button fx:id="addButton" layoutX="236.0" layoutY="603.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="50.0" prefWidth="500.0" stylesheets="@../css/edit.css" text="Add" />
+      <Button fx:id="genPhonetics" layoutX="691.0" layoutY="266.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onAction="#handleGenPhoneticsButton" prefHeight="30.0" prefWidth="42.0" styleClass="button-download" stylesheets="@../css/edit.css">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-download-40.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>

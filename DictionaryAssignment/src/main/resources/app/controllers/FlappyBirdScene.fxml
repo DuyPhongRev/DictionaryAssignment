@@ -6,54 +6,54 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#pressed" prefHeight="480.0" prefWidth="1720.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.FlappyBirdController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#pressed" prefHeight="750.0" prefWidth="2666.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.FlappyBirdController">
    <children>
-      <ImageView fx:id="layer1Background" fitHeight="490.0" fitWidth="860.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="layer1Background" fitHeight="750.0" fitWidth="1350.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="layer1Background1" fitHeight="490.0" fitWidth="860.0" layoutX="860.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="layer1Background1" fitHeight="750.0" fitWidth="1350.0" layoutX="1333.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="layer2Background" fitHeight="490.0" fitWidth="860.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="layer2Background" fitHeight="750.0" fitWidth="1350.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="layer2Background1" fitHeight="490.0" fitWidth="860.0" layoutX="860.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="layer2Background1" fitHeight="750.0" fitWidth="1350.0" layoutX="1333.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="layer3Background" fitHeight="490.0" fitWidth="860.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="layer3Background" fitHeight="750.0" fitWidth="1350.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="layer4Background" fitHeight="490.0" fitWidth="860.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="layer3Background1" fitHeight="750.0" fitWidth="1350.0" layoutX="1333.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="layer4Background" fitHeight="750.0" fitWidth="1350.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/4.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="layer5Background" fitHeight="490.0" fitWidth="860.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="layer4Background1" fitHeight="750.0" fitWidth="1350.0" layoutX="1333.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="layer5Background" fitHeight="750.0" fitWidth="1350.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/5.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="layer4Background1" fitHeight="490.0" fitWidth="860.0" layoutX="860.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/4.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="layer3Background1" fitHeight="490.0" fitWidth="860.0" layoutX="860.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/3.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="layer5Background1" fitHeight="490.0" fitWidth="860.0" layoutX="860.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="layer5Background1" fitHeight="750.0" fitWidth="1350.0" layoutX="1333.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/5.png" />
          </image>

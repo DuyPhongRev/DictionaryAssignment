@@ -12,12 +12,12 @@
 
 <AnchorPane prefHeight="750.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.TranslateSceneController">
    <children>
-      <TextArea fx:id="SrcTextArea" layoutX="150.0" layoutY="160.0" onKeyReleased="#handleEvent" onMouseReleased="#getCurrentSrcLang" prefHeight="210.0" prefWidth="700.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
+      <TextArea fx:id="SrcTextArea" layoutX="150.0" layoutY="143.0" onKeyReleased="#handleEvent" onMouseReleased="#getCurrentSrcLang" prefHeight="210.0" prefWidth="700.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
       <TextArea fx:id="DesTextArea" editable="false" layoutX="150.0" layoutY="480.0" prefHeight="210.0" prefWidth="700.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
       <Button fx:id="textRecognizeButton" layoutX="250.0" layoutY="705.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleTextRecognition" prefHeight="30.0" prefWidth="120.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Text Recognition" />
       <Button fx:id="tranButton" layoutX="150.0" layoutY="705.0" mnemonicParsing="false" onAction="#handleTranslateButton" prefHeight="30.0" prefWidth="90.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Translate" />
-      <ChoiceBox fx:id="SrcLangChoiceBox" accessibleRole="TAB_PANE" layoutX="150.0" layoutY="110.0" onMouseReleased="#getCurrentSrcLang" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
-      <Button fx:id="SrcSoundButton" layoutX="150.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
+      <ChoiceBox fx:id="SrcLangChoiceBox" accessibleRole="TAB_PANE" layoutX="150.0" layoutY="93.0" onMouseReleased="#getCurrentSrcLang" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
+      <Button fx:id="SrcSoundButton" layoutX="150.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -31,13 +31,22 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <ProgressIndicator fx:id="progressIndicator" prefHeight="40.0" prefWidth="42.0" visible="false" />
+      <ProgressIndicator fx:id="progressIndicator" layoutX="475.0" layoutY="300.0" prefHeight="80.0" prefWidth="80.0" visible="false" />
       <ChoiceBox fx:id="DesLangChoiceBox" cache="true" layoutX="150.0" layoutY="430.0" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
       <Button fx:id="DesSoundButton" layoutX="150.0" layoutY="650.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/icons8-speaker-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="switchButton" layoutX="475.0" layoutY="368.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#switchText" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-refresh-188.png" />
                </image>
             </ImageView>
          </graphic>

@@ -1,12 +1,16 @@
+* {
+    -fx-font-family: "Roboto Thin";
+}
+
 .label-title {
-    -fx-font-size: 40px;
+    -fx-font-size: 60px;
     -fx-font-weight: bold;
     -fx-alignment: center;
     -fx-text-fill: #ffffff;
 }
 
 .label-subtitle {
-    -fx-font-size: 18px;
+    -fx-font-size: 25px;
     -fx-alignment: center;
     -fx-text-fill: #c2bfbf;
 }
