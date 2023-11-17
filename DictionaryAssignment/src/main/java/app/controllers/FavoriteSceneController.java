@@ -34,6 +34,10 @@ public class FavoriteSceneController extends ThreeController {
             } else {
                 arrayWords = myController.getDictionaryManagement().getDictFavourite().getFavouriteList();
                 SearchListView.getItems().setAll(arrayWords);
+
+                webEngine = webView.getEngine();
+                webEngine.loadContent("");
+                currentLoadWord = "";
             }
         }
     }
@@ -107,6 +111,14 @@ public class FavoriteSceneController extends ThreeController {
                 showPopup("Please Select the word first");
             }
 
+        }
+    }
+
+    @FXML
+    public void handleFavButton(ActionEvent event) throws SQLException {
+        if (event.getSource() == favoriteButton) {
+            showPopup("All words in this list are already in favorite!" +
+                    " If you want to delete a word from this list, please click Delete button!");
         }
     }
 

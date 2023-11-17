@@ -32,11 +32,6 @@ public class AddSceneController {
 
     public void initData(ContainerController containerController) {
         this.myController = containerController;
-        txtAdd.setPromptText("Type word...");
-        txtType.setPromptText("Type word type...");
-        txtPronunciation.setPromptText("Type pronunciation...");
-        txtDescription.setPromptText("Type description...");
-
     }
 
     public void handleAddButton(ActionEvent event ) throws SQLException {

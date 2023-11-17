@@ -31,7 +31,7 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <ProgressIndicator fx:id="progressIndicator" layoutX="475.0" layoutY="300.0" prefHeight="80.0" prefWidth="80.0" visible="false" />
+      <ProgressIndicator fx:id="progressIndicator" layoutX="475.0" layoutY="68.0" prefHeight="298.0" prefWidth="99.0" visible="false" />
       <ChoiceBox fx:id="DesLangChoiceBox" cache="true" layoutX="150.0" layoutY="430.0" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
       <Button fx:id="DesSoundButton" layoutX="150.0" layoutY="650.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
          <graphic>

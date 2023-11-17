@@ -1,6 +1,7 @@
 package app.controllers;
 
 import app.connections.TranslateVoiceAPIs;
+import app.helper.GetSynonyms;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -17,6 +18,10 @@ import javazoom.jl.decoder.JavaLayerException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
+
+import static app.controllers.PopUp.showPopup;
 
 public class ThreeController {
     protected ContainerController myController;
@@ -40,6 +45,8 @@ public class ThreeController {
     protected String currentLoadWord = "";
     @FXML
     protected ListView<String> SynonymListView = new ListView<>();
+    @FXML
+    protected Button favoriteButton;
 
     public ThreeController() {
 
@@ -73,7 +80,23 @@ public class ThreeController {
             if (txtSearch.getText().isEmpty()) {
                 PopUp.showPopup("Search text is blank!");
             } else {
-                TranslateVoiceAPIs.getAudio(txtSearch.getText(), "en");
+//                TranslateVoiceAPIs.getAudio(txtSearch.getText(), "en");
+                var executor = Executors.newSingleThreadExecutor();
+                CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+                    try {
+                        TranslateVoiceAPIs.getAudio(txtSearch.getText(), "en");
+                    } catch (IOException | JavaLayerException e) {
+                        System.err.println("Cannot get audio");
+                    }
+                }, executor);
+                future.thenRun(() -> {
+                    try {
+                        executor.shutdown();
+                    } catch (Exception e) {
+                        System.err.println("Cannot shutdown executor");
+                    }
+                });
+
             }
         }
     }
@@ -103,6 +126,27 @@ public class ThreeController {
     public void deleteTextSearch(Event event) {
         if (event.getSource() == deleteSearchButton) {
             txtSearch.setText("");
+        }
+
+        webEngine = webView.getEngine();
+        webEngine.loadContent("");
+    }
+
+    @FXML
+    public void handleFavouriteButton(ActionEvent event) throws SQLException {
+        if (event.getSource() == favoriteButton) {
+            boolean hasContent = webView.getEngine().getDocument() != null;
+            if (hasContent) {
+                boolean checkContains = myController.getDictionaryManagement().getDictFavourite().getFavouriteList().contains(currentLoadWord);
+                if (!checkContains) {
+                    myController.getDictionaryManagement().addToFavourite(currentLoadWord);
+                    showPopup("Added to favorite!");
+                } else {
+                    showPopup("This word is already in favorite!");
+                }
+            } else {
+                showPopup("Please search a word first!");
+            }
         }
     }
 }
