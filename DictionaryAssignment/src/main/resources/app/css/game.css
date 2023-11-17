@@ -34,7 +34,6 @@
     -fx-border-radius: 15px;
     -fx-background-color: white;
     -fx-background-radius: 15px;
-    -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.2), 10, 0, 1, 1);
 }
 
 .select-game-button :hover {
@@ -46,5 +45,5 @@
 
 .title {
     -fx-border-width: 0 0 1 0;
-    -fx-border-color: #414a5e;
+    -fx-border-color: linear-gradient(to right, #4CCDF1, #1645BD);
 }

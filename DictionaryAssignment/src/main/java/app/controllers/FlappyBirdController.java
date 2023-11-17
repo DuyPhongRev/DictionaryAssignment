@@ -19,7 +19,6 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -39,18 +38,29 @@ public class FlappyBirdController implements Initializable {
     @FXML
     private ImageView startImage, gameOverImage, firstScoreImage, secondScoreImage, correctCloudImage, wrongCloudImage;
     private AnimationTimer gameLoop;
-    private double yDelta = 0.05;
     private double time = 0;
-    private int jumpHeight = 50;
-    private final int WIDTH = 1333;
     private int score = 0;
-    private boolean checkPoint = true;
+    private boolean isCanFly = true;
+    private boolean isPassedCheckPoint = false;
     private boolean isGameStarted = false;
     private ContainerController myController;
     private ArrayList<String> correctWordList = new ArrayList<>();
     private ArrayList<String> wrongWordList = new ArrayList<>();
-
     private ArrayList<String> meaningWordList = new ArrayList<>();
+    private final int BACKGROUND_WIDTH = 1333;
+    private final double BACKGROUND_LAYER1_SPEED = 0.14;
+    private final double BACKGROUND_LAYER2_SPEED = 0.12;
+    private final double BACKGROUND_LAYER3_SPEED = 0.16;
+    private final double BACKGROUND_LAYER4_SPEED = 0.4;
+    private final double BACKGROUND_LAYER5_SPEED = 0.1;
+    private final double BIRD_JUMP_HEIGHT = 60;
+    private final double BIRD_ROTATE = 0.012;
+    private final double BIRD_DROP = 0.05;
+    private final double BIRD_POSITION_Y = 200;
+    private final int CLOUD_POSITION1 = 400;
+    private final int CLOUD_POSITION2 = 200;
+    private final double CLOUD_SPEED = 1.8;
+    private final int CLOUD_REGENERATE_POSITION = -200;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -75,7 +85,10 @@ public class FlappyBirdController implements Initializable {
         int countWords = 0;
         ArrayList<String> sourceList = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
         for (String s : sourceList) {
-            if (s.length() >= 3 && s.length() <= 8 && !s.contains(" ") && !s.contains("-") && countWords <= 10 && Math.random() < 0.2) {
+            if (countWords > 15) {
+                break;
+            }
+            if (s.length() >= 3 && s.length() <= 8 && !s.contains(" ") && !s.contains("-") && Math.random() < 0.2) {
                 countWords++;
                 if (Math.random() < 0.5) {
                     correctWordList.add(s.toUpperCase());
@@ -91,33 +104,36 @@ public class FlappyBirdController implements Initializable {
     private void update() throws IOException {
         if (isGameStarted) {
             time ++;
-            moveBird(yDelta * time);
+            moveBird(BIRD_DROP * time);
             moveCloud();
             if (correctCloud.getBoundsInParent().intersects(bird.getBoundsInParent())) {
                 chooseRightAnswer();
             }
-            if (correctCloud.getLayoutX() < -200) {
+            if (correctCloud.getLayoutX() < CLOUD_REGENERATE_POSITION) {
                 generateCloud();
             }
-            if(isBirdDead()){
+            if(isDead()){
                 gameOverImage.setVisible(true);
-                correctCloud.setLayoutX(-WIDTH);
-                wrongCloud.setLayoutX(-WIDTH);
-                correctCloudImage.setLayoutX(-WIDTH);
-                wrongCloudImage.setLayoutX(-WIDTH);
+                correctCloud.setLayoutX(-BACKGROUND_WIDTH);
+                wrongCloud.setLayoutX(-BACKGROUND_WIDTH);
+                correctCloudImage.setLayoutX(-BACKGROUND_WIDTH);
+                wrongCloudImage.setLayoutX(-BACKGROUND_WIDTH);
                 gameLoop.stop();
             }
         }
     }
 
     @FXML
-    public void pressed(KeyEvent event) throws IOException {
-        if(event.getCode() == KeyCode.SPACE){
-            if (isBirdDead()) {
+    public void pressed(KeyEvent event) {
+        if (event.getCode() == KeyCode.SPACE) {
+            if (isDead()) {
                 gameLoop.start();
                 reset();
             } else if (isGameStarted) {
-                fly();
+                if (isCanFly) {
+                    fly();
+                    isCanFly = false;
+                }
             } else {
                 isGameStarted = true;
                 startGame();
@@ -126,13 +142,18 @@ public class FlappyBirdController implements Initializable {
     }
 
     @FXML
-    public void clicked(MouseEvent event) throws IOException {
-        if (isBirdDead()) {
+    void released(KeyEvent event) {
+        isCanFly = true;
+    }
+
+    @FXML
+    public void clicked(MouseEvent event) {
+        if (isDead()) {
             gameLoop.start();
             reset();
         } else if (isGameStarted) {
             fly();
-        } else {
+        } else if (!isGameStarted) {
             isGameStarted = true;
             startGame();
         }
@@ -147,20 +168,20 @@ public class FlappyBirdController implements Initializable {
 
     private void fly() {
         bird.setRotate(325);
-        if(bird.getLayoutY() <= jumpHeight){
+        if(bird.getLayoutY() <= BIRD_JUMP_HEIGHT){
             moveBird(-bird.getLayoutY());
             time = 0;
             return;
         }
-        moveBird(-jumpHeight);
+        moveBird(-BIRD_JUMP_HEIGHT);
         time = 0;
     }
 
     private void chooseRightAnswer() {
         correctCloud.setVisible(false);
         correctCloudImage.setVisible(false);
-        if (checkPoint) {
-            checkPoint = false;
+        if (!isPassedCheckPoint) {
+            isPassedCheckPoint = true;
             score++;
             firstScoreImage.setImage(getImage(score % 10));
             if(score > 9) {
@@ -176,11 +197,11 @@ public class FlappyBirdController implements Initializable {
     }
 
     private void generateCloud() {
-        checkPoint = true;
+        isPassedCheckPoint = false;
         correctCloud.setVisible(true);
         correctCloudImage.setVisible(true);
-        correctCloud.setLayoutX(WIDTH);
-        wrongCloud.setLayoutX(WIDTH);
+        correctCloud.setLayoutX(BACKGROUND_WIDTH);
+        wrongCloud.setLayoutX(BACKGROUND_WIDTH);
 
         correctCloud.setText(correctWordList.get(0));
         wrongCloud.setText(wrongWordList.get(0));
@@ -190,72 +211,72 @@ public class FlappyBirdController implements Initializable {
         meaningWordList.remove(0);
 
         if (Math.ceil(Math.random() * 100) % 2 == 0) {
-            wrongCloud.setLayoutY(225);
-            correctCloud.setLayoutY(425);
-            wrongCloudImage.setLayoutY(210);
-            correctCloudImage.setLayoutY(410);
+            wrongCloud.setLayoutY(CLOUD_POSITION1);
+            correctCloud.setLayoutY(CLOUD_POSITION2);
+            wrongCloudImage.setLayoutY(CLOUD_POSITION1);
+            correctCloudImage.setLayoutY(CLOUD_POSITION2);
         } else {
-            wrongCloud.setLayoutY(425);
-            correctCloud.setLayoutY(225);
-            wrongCloudImage.setLayoutY(410);
-            correctCloudImage.setLayoutY(210);
+            wrongCloud.setLayoutY(CLOUD_POSITION2);
+            correctCloud.setLayoutY(CLOUD_POSITION1);
+            wrongCloudImage.setLayoutY(CLOUD_POSITION2);
+            correctCloudImage.setLayoutY(CLOUD_POSITION1);
         }
     }
 
     private void moveCloud() {
-        correctCloud.setLayoutX(correctCloud.getLayoutX() - 0.8);
-        wrongCloud.setLayoutX(wrongCloud.getLayoutX() - 0.8);
-        correctCloudImage.setLayoutX(correctCloud.getLayoutX() - 0.8);
-        wrongCloudImage.setLayoutX(wrongCloud.getLayoutX() - 0.8);
+        correctCloud.setLayoutX(correctCloud.getLayoutX() - CLOUD_SPEED);
+        wrongCloud.setLayoutX(wrongCloud.getLayoutX() - CLOUD_SPEED);
+        correctCloudImage.setLayoutX(correctCloud.getLayoutX() - CLOUD_SPEED);
+        wrongCloudImage.setLayoutX(wrongCloud.getLayoutX() - CLOUD_SPEED);
     }
 
     private void moveBird(double positionChange){
-        bird.setRotate(bird.getRotate() + 0.012 * time);
+        bird.setRotate(bird.getRotate() + BIRD_ROTATE * time);
         bird.setLayoutY(bird.getLayoutY() + positionChange);
     }
 
-    private boolean isBirdDead(){
+    private boolean isDead(){
         double birdY = bird.getLayoutY();
-        if (wrongCloud.getBoundsInParent().intersects(bird.getBoundsInParent()) && checkPoint) {
+        if (wrongCloud.getBoundsInParent().intersects(bird.getBoundsInParent()) && !isPassedCheckPoint) {
             return true;
         }
-        if (correctCloud.getLayoutX() + 140 < bird.getLayoutX() && checkPoint) {
+        if (correctCloud.getLayoutX() + 140 < bird.getLayoutX() && !isPassedCheckPoint) {
             return true;
         }
         return birdY >= anchorPane.getHeight();
     }
 
-    private void reset() throws IOException {
+    private void reset() {
         isGameStarted = false;
         startImage.setVisible(true);
         gameOverImage.setVisible(false);
         score = 0;
+        time = 0;
         firstScoreImage.setImage(getImage(0));
         secondScoreImage.setImage(getImage(0));
-        generateCloud();
-        bird.setLayoutY(200);
+        meaningLabel.setText("");
+        bird.setLayoutY(BIRD_POSITION_Y);
         bird.setRotate(0);
-        time = 0;
     }
 
     private void updateBackground() {
-        updateBackgroundPosition(layer1Background, 0.14);
-        updateBackgroundPosition(layer2Background, 0.12);
-        updateBackgroundPosition(layer3Background, 0.16);
-        updateBackgroundPosition(layer4Background, 0.4);
-        updateBackgroundPosition(layer5Background, 0.1);
-        updateBackgroundPosition(layer1Background1, 0.14);
-        updateBackgroundPosition(layer2Background1, 0.12);
-        updateBackgroundPosition(layer3Background1, 0.16);
-        updateBackgroundPosition(layer4Background1, 0.4);
-        updateBackgroundPosition(layer5Background1, 0.1);
+        updateBackgroundPosition(layer1Background, BACKGROUND_LAYER1_SPEED);
+        updateBackgroundPosition(layer2Background, BACKGROUND_LAYER2_SPEED);
+        updateBackgroundPosition(layer3Background, BACKGROUND_LAYER3_SPEED);
+        updateBackgroundPosition(layer4Background, BACKGROUND_LAYER4_SPEED);
+        updateBackgroundPosition(layer5Background, BACKGROUND_LAYER5_SPEED);
+        updateBackgroundPosition(layer1Background1, BACKGROUND_LAYER1_SPEED);
+        updateBackgroundPosition(layer2Background1, BACKGROUND_LAYER2_SPEED);
+        updateBackgroundPosition(layer3Background1, BACKGROUND_LAYER3_SPEED);
+        updateBackgroundPosition(layer4Background1, BACKGROUND_LAYER4_SPEED);
+        updateBackgroundPosition(layer5Background1, BACKGROUND_LAYER5_SPEED);
     }
 
     private void updateBackgroundPosition(ImageView imageView, double speed) {
         double currentX = imageView.getLayoutX();
         double newX = currentX - speed;
-        if (newX + WIDTH <= 0) {
-            newX += WIDTH * 2;
+        if (newX + BACKGROUND_WIDTH <= 0) {
+            newX += BACKGROUND_WIDTH * 2;
         }
         imageView.setLayoutX(newX);
     }
