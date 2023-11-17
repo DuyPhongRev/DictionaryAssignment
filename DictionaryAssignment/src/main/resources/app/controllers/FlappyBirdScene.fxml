@@ -60,34 +60,12 @@
             <Image url="@../img/5.png" />
          </image>
       </ImageView>
-      <Label fx:id="wrongCloud" layoutX="1050.0" layoutY="425.0" prefHeight="150.0" prefWidth="300.0" text="Label" textFill="WHITE">
-         <graphic>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/icons8-cloud-100.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font></Label>
-      <Label fx:id="rightCloud" layoutX="1050.0" layoutY="225.0" prefHeight="150.0" prefWidth="300.0" text="Label" textFill="WHITE">
-         <graphic>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../img/icons8-cloud-100.png" />
-               </image>
-            </ImageView>
-         </graphic>
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font></Label>
-      <ImageView fx:id="bird" fitHeight="50.0" fitWidth="50.0" layoutX="154.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="bird" fitHeight="60.0" fitWidth="60.0" layoutX="154.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/bird2.png" />
          </image>
       </ImageView>
-      <Label fx:id="meaningLabel" layoutX="515.0" layoutY="101.0" prefHeight="50.0" prefWidth="130.0" style="-fx-background-color: white; -fx-border-width: 3; -fx-border-color: black;" text="Meaning">
+      <Label fx:id="meaningLabel" layoutX="492.0" layoutY="25.0" prefHeight="50.0" prefWidth="180.0" style="-fx-background-color: white; -fx-border-width: 3; -fx-border-color: black; -fx-alignment: center;">
          <font>
             <Font name="Roboto" size="24.0" />
          </font>
@@ -105,15 +83,42 @@
          </image>
       </ImageView>
       <Button fx:id="restartButton" layoutX="404.0" layoutY="274.0" mnemonicParsing="false" text="Restart" visible="false" />
-      <ImageView fx:id="firstScoreImage" fitHeight="50.0" fitWidth="50.0" layoutX="461.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="firstScoreImage" fitHeight="50.0" fitWidth="50.0" layoutX="438.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@num0.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="secondScoreImage" fitHeight="50.0" fitWidth="50.0" layoutX="427.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="secondScoreImage" fitHeight="50.0" fitWidth="50.0" layoutX="404.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@num0.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="correctCloudImage" fitHeight="150.0" fitWidth="150.0" layoutX="1020.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icons8-cloud-100.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="wrongCloudImage" fitHeight="150.0" fitWidth="150.0" layoutX="1020.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/icons8-cloud-100.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="wrongCloud" layoutX="1020.0" layoutY="425.0" prefHeight="120.0" prefWidth="150.0" style="-fx-alignment: center;" text="Label" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Label fx:id="correctCloud" layoutX="1020.0" layoutY="225.0" prefHeight="120.0" prefWidth="150.0" style="-fx-alignment: center;" text="Label" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font></Label>
+      <Button fx:id="leaveButton" layoutX="940.0" layoutY="25.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#handleLeaveButton" prefHeight="40.0" prefWidth="40.0" styleClass="stimulate-button" stylesheets="@../css/game.css">
+         <graphic>
+            <ImageView fx:id="LeaveButton" fitHeight="36.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 90%;">
+               <image>
+                  <Image url="@../img/icons8-redo-100.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
