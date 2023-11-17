@@ -1,5 +1,5 @@
 * {
-    -fx-font-family: "Yu Gothic UI Semibold";
+    -fx-font-family: "Segoe UI Semibold";
 }
 
 .text-field, .text-area, .button, .list-view, .stack-pane, .choice-box, .tab-pane{
@@ -7,7 +7,7 @@
     -fx-font-size: 13px;
     -fx-background-color: white;
     -fx-background-radius: 10px;
-    -fx-effect: dropshadow(three-pass-box, rgb(49, 72, 116, 0.2), 10, 0, 1, 1);
+    -fx-effect: dropshadow(three-pass-box, rgba(76, 205, 241, 0.1), 10, 0, 1, 1);
 }
 
 .vBox {
@@ -17,6 +17,7 @@
 .button {
     -fx-background-color: linear-gradient(to right, #4CCDF1, #1645BD);
     -fx-text-fill: white;
+    -fx-font-weight: bold;
     -fx-cursor: hand;
 }
 
@@ -48,7 +49,7 @@
 }
 
 .scroll-bar:vertical .thumb {
-    -fx-background-color: #3c5079;
+    -fx-background-color: linear-gradient(to right, rgba(51, 199, 239, 0.5), rgba(9, 59, 189, 0.5));
     -fx-background-radius: 5px;
 }
 

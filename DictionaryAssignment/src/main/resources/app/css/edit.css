@@ -28,3 +28,7 @@
 .label {
     -fx-font-size: 45px;
 }
+
+.button {
+    -fx-font-size: 20;
+}

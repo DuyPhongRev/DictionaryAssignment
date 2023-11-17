@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="750.0" prefWidth="1000.0" stylesheets="@../css/search.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.HistorySceneController">
    <children>
-      <ListView fx:id="SearchListView" layoutX="75.0" layoutY="193.0" onMouseClicked="#SelectSearchListItem" prefHeight="250.0" prefWidth="425.0" stylesheets="@../css/search.css" />
+      <ListView fx:id="SearchListView" layoutX="75.0" layoutY="193.0" onMouseClicked="#SelectSearchListItem" prefHeight="522.0" prefWidth="426.0" stylesheets="@../css/search.css" />
       <StackPane layoutX="535.0" layoutY="193.0" prefHeight="522.0" prefWidth="390.0" styleClass="stack-pane" stylesheets="@../css/search.css">
          <children>
             <WebView fx:id="webView" prefHeight="370.0" prefWidth="360.0" stylesheets="@../css/search.css">

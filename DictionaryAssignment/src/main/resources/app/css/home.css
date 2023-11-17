@@ -15,6 +15,13 @@
     -fx-text-fill: #c2bfbf;
 }
 
+.label-instruction {
+    -fx-font-size: 35px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+    -fx-text-fill: #ffffff;
+}
+
 .button-start {
     -fx-text-fill: #333333;
     -fx-background-color: white;

@@ -2,6 +2,7 @@ package app.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -12,6 +13,8 @@ import javafx.scene.web.WebView;
 public class HomeSceneController {
     @FXML
     private Button learningMoreButton, getStartButton;
+    @FXML
+    private Label escapeLabel;
     private WebView learningMoreWebView = new WebView();
     private ContainerController myController = null;
     private AnchorPane homeAnchorPane = null;
@@ -34,6 +37,7 @@ public class HomeSceneController {
 
     public void handleLearningMoreButton(MouseEvent event) {
         homeAnchorPane.getChildren().add(learningMoreWebView);
+        escapeLabel.setVisible(true);
     }
 
     public void handleGetStartButton(MouseEvent event) {
@@ -42,6 +46,7 @@ public class HomeSceneController {
 
     public void handleReturnHome(KeyEvent event) {
         if (event.getCode() == KeyCode.ESCAPE) {
+            escapeLabel.setVisible(false);
             homeAnchorPane.getChildren().remove(learningMoreWebView);
         }
     }
