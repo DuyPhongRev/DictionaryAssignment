@@ -41,9 +41,10 @@ public class GameSceneController implements Initializable {
         }
     }
 
-    public void initData(ContainerController containerController) {
+    public void initData(ContainerController containerController) throws IOException {
         this.myController = containerController;
         wordleController.initData(this.myController);
+        flappyBirdController.initData(this.myController);
     }
 
     @FXML
