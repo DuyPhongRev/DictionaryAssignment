@@ -6,19 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f65ca595-6220-40cd-8bdb-ae5d2ccb7c65" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ContainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ContainerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/FavoriteSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/FavoriteSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/HistorySceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/HistorySceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/SearchSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/SearchSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ThreeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ThreeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/TranslateSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/TranslateSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/AddScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/AddScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FavoriteScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FavoriteScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HistoryScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HistoryScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/SearchScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/SearchScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/TranslateScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/TranslateScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/result.png" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/result.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dictionary_database.db" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary_database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,20 +40,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Dzung__OCR__test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Dzung__OCR__test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\DictionaryAssignment\DictionaryAssignment\src\main\resources\app\controllers" />
@@ -93,6 +81,7 @@
       <workItem from="1700100705749" duration="9969000" />
       <workItem from="1700137734322" duration="17964000" />
       <workItem from="1700158718261" duration="7095000" />
+      <workItem from="1700190870089" duration="2011000" />
     </task>
     <servers />
   </component>

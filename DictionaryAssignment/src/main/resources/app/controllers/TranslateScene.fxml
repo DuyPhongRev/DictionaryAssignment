@@ -14,7 +14,7 @@
    <children>
       <TextArea fx:id="SrcTextArea" layoutX="150.0" layoutY="143.0" onKeyReleased="#handleEvent" onMouseReleased="#getCurrentSrcLang" prefHeight="210.0" prefWidth="700.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
       <TextArea fx:id="DesTextArea" editable="false" layoutX="150.0" layoutY="480.0" prefHeight="210.0" prefWidth="700.0" styleClass="text_area" stylesheets="@../css/translate.css" wrapText="true" />
-      <Button fx:id="textRecognizeButton" layoutX="250.0" layoutY="705.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleTextRecognition" prefHeight="30.0" prefWidth="120.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Text Recognition" />
+      <Button fx:id="textRecognizeButton" layoutX="250.0" layoutY="705.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleTextRecognition" prefHeight="30.0" prefWidth="146.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Text Recognition" />
       <Button fx:id="tranButton" layoutX="150.0" layoutY="705.0" mnemonicParsing="false" onAction="#handleTranslateButton" prefHeight="30.0" prefWidth="90.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Translate" />
       <ChoiceBox fx:id="SrcLangChoiceBox" accessibleRole="TAB_PANE" layoutX="150.0" layoutY="93.0" onMouseReleased="#getCurrentSrcLang" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
       <Button fx:id="SrcSoundButton" layoutX="150.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">

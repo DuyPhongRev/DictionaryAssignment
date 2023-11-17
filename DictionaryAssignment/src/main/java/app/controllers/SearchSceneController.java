@@ -1,6 +1,7 @@
 package app.controllers;
 
 import app.helper.GetSynonyms;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -30,6 +31,7 @@ public class SearchSceneController extends ThreeController {
     ArrayList<String> arrayWordsDefault = new ArrayList<>();
     @FXML
     public ProgressIndicator progressIndicator;
+    private static AtomicBoolean checking = new AtomicBoolean(false);
     @Override
     @FXML
     public void SelectSearchListItem (MouseEvent event) throws SQLException, IOException {
@@ -165,14 +167,12 @@ public class SearchSceneController extends ThreeController {
                 // thì sẽ lấy currentloadword, đồng thời txtsearch được set lại = currentloadword
                 String currentLoadWord = txtSearch.getText();
                 txtSearch.setText(currentLoadWord);
-                AtomicBoolean ret = new AtomicBoolean(false);
                 // Chạy hàm trên một luồng khác để tránh khựng lại giao diện người dùng
                 var executor = Executors.newSingleThreadExecutor();
                 CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
                     try {
                         progressIndicator.setVisible(true);
-                        arraySynonyms = (ArrayList<String>) GetSynonyms.getSynonyms(currentLoadWord);
-                        ret.set(true);
+                        arraySynonyms = (ArrayList<String>) GetSynonyms.getSynonyms(currentLoadWord);;
                     } catch (IOException e) {
                         System.err.println("Cannot get synonyms");
                     }
@@ -180,25 +180,24 @@ public class SearchSceneController extends ThreeController {
 
                 future.thenRun(() -> {
                     try {
+                        checking.set(true);
                         progressIndicator.setVisible(false);
+
+                        // dùng platformer do synonymlist thuộc luồng chính
+                        Platform.runLater(() -> {
+                            SynonymListView.setItems(FXCollections.observableArrayList(arraySynonyms));
+                            SynonymListView.getItems().setAll(arraySynonyms);
+                        });
+
                         executor.shutdown();
                     } catch (Exception e) {
                         System.err.println("Cannot shutdown executor");
+                        showPopup("No synonyms found");
                     }
                 });
-
-                if (ret.get()) {
-                    if (arraySynonyms.isEmpty()) {
-                        showPopup("No synonyms found!");
-                    } else {
-                        SynonymListView.setItems(FXCollections.observableArrayList(arraySynonyms));
-                        SynonymListView.getItems().setAll(arraySynonyms);
-                    }
-                }
             }
         }
     }
-
 
     public void reload() {
         txtSearch.setText("");
