@@ -5,47 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f65ca595-6220-40cd-8bdb-ae5d2ccb7c65" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ContainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ContainerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/EditSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/EditSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/FlappyBirdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/FlappyBirdController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/GameSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/GameSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/HomeSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/WordleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/WordleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/helper/ImageEncode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/helper/ImageRequestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/helper/ImageRequestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/container.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/container.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/EditScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/EditScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FavoriteScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FavoriteScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FlappyBirdScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FlappyBirdScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HistoryScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HistoryScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HomeScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/SearchScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/SearchScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/WordleScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/WordleScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/container.css" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/game.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-bin-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-book-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-clock-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-delete-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-download-40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-edit-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-enter-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-favourite-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-game-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-game-94.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-give-up-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-magnifying-glass-64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-magnifying-glass-68.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-reload-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-star-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-translate-100.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/img/icons8-user-manual-48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/loadingData.gif" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/loadingData.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dictionary_database.db" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary_database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +34,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2YDnw0tK9Mx9a4SnGJfjpB2rdt9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -82,7 +47,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Dzung__OCR__test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -94,6 +59,15 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\DictionaryAssignment\DictionaryAssignment\src\main\resources\app\controllers" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.App" />
+      <module name="DictionaryAssignment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -108,6 +82,7 @@
       <workItem from="1700100705749" duration="9969000" />
       <workItem from="1700137734322" duration="17964000" />
       <workItem from="1700158718261" duration="7095000" />
+      <workItem from="1700190870089" duration="3338000" />
     </task>
     <servers />
   </component>

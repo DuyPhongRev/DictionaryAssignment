@@ -171,8 +171,8 @@ public class TranslateSceneController implements Initializable {
                 FileService.saveImageToFile(selectedFile, destinationPath);
 
                 ImageView ClientImageView = new ImageView(orignalImage);
-                ClientImageView.setFitWidth(400);
-                ClientImageView.setFitHeight(400);
+                ClientImageView.setFitWidth(600);
+                ClientImageView.setFitHeight(600);
                 ClientImageView.setPreserveRatio(true);
                 ClientImageView.setSmooth(true);
 
@@ -207,8 +207,8 @@ public class TranslateSceneController implements Initializable {
                                 throw new RuntimeException(e);
                             }
                             ImageView resultImageView = new ImageView(resultImage);
-                            resultImageView.setFitWidth(400);
-                            resultImageView.setFitHeight(400);
+                            resultImageView.setFitWidth(600);
+                            resultImageView.setFitHeight(600);
                             resultImageView.setPreserveRatio(true);
                             resultImageView.setSmooth(true);
 

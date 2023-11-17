@@ -1,7 +1,7 @@
 package app.controllers;
 
-import app.connections.TranslateVoiceAPIs;
 import app.helper.GetSynonyms;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -15,6 +15,9 @@ import javazoom.jl.decoder.JavaLayerException;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static app.controllers.PopUp.showConfirmationPopup;
 import static app.controllers.PopUp.showPopup;
@@ -22,12 +25,13 @@ import static app.controllers.PopUp.showPopup;
 public class SearchSceneController extends ThreeController {
     @FXML
     private Button loadSynonym;
-    @FXML
-    private Button favoriteButton;
     public SearchSceneController() {
         super();
     }
     ArrayList<String> arrayWordsDefault = new ArrayList<>();
+    @FXML
+    public ProgressIndicator progressIndicator;
+    private static AtomicBoolean checking = new AtomicBoolean(false);
     @Override
     @FXML
     public void SelectSearchListItem (MouseEvent event) throws SQLException, IOException {
@@ -56,6 +60,7 @@ public class SearchSceneController extends ThreeController {
                 webEngine = webView.getEngine();
                 webEngine.loadContent("");
                 SearchListView.setItems(FXCollections.observableArrayList(arrayWordsDefault));
+                currentLoadWord = "";
             }
         }
     }
@@ -93,24 +98,6 @@ public class SearchSceneController extends ThreeController {
         });
     }
 
-    @FXML
-    public void handleFavouriteButton(ActionEvent event) throws SQLException {
-        if (event.getSource() == favoriteButton) {
-            boolean hasContent = webView.getEngine().getDocument() != null;
-            if (hasContent) {
-                boolean checkContains = myController.getDictionaryManagement().getDictFavourite().getFavouriteList().contains(currentLoadWord);
-                if (!checkContains) {
-                    myController.getDictionaryManagement().addToFavourite(currentLoadWord);
-                    showPopup("Added to favorite!");
-                } else {
-                    showPopup("This word is already in favorite!");
-                }
-            } else {
-                showPopup("Please search a word first!");
-            }
-        }
-    }
-
     public void handleDeleteButton(ActionEvent event) throws SQLException {
         if (event.getSource() == deleteButton) {
             boolean hasContent = webView.getEngine().getDocument() != null;
@@ -137,9 +124,7 @@ public class SearchSceneController extends ThreeController {
                 try {
                     searchAction(searchText);
 
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                } catch (IOException ex) {
+                } catch (SQLException | IOException ex) {
                     throw new RuntimeException(ex);
                 }
             }
@@ -178,13 +163,38 @@ public class SearchSceneController extends ThreeController {
             if (txtSearch.getText().isEmpty()) {
                 showPopup("Please search a word");
             } else {
-                arraySynonyms = (ArrayList<String>) GetSynonyms.getSynonyms(txtSearch.getText());
-                if (arraySynonyms.isEmpty()) {
-                    showPopup("No synonyms found!");
-                } else {
-                    SynonymListView.setItems(FXCollections.observableArrayList(arraySynonyms));
-                    SynonymListView.getItems().setAll(arraySynonyms);
-                }
+                // trong trường hợp người dùng đã xóa 1, 2 ký tự trong txtsearch nhưng vẫn bấm load synonym
+                // thì sẽ lấy currentloadword, đồng thời txtsearch được set lại = currentloadword
+                String currentLoadWord = txtSearch.getText();
+                txtSearch.setText(currentLoadWord);
+                // Chạy hàm trên một luồng khác để tránh khựng lại giao diện người dùng
+                var executor = Executors.newSingleThreadExecutor();
+                CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+                    try {
+                        progressIndicator.setVisible(true);
+                        arraySynonyms = (ArrayList<String>) GetSynonyms.getSynonyms(currentLoadWord);;
+                    } catch (IOException e) {
+                        System.err.println("Cannot get synonyms");
+                    }
+                }, executor);
+
+                future.thenRun(() -> {
+                    try {
+                        checking.set(true);
+                        progressIndicator.setVisible(false);
+
+                        // dùng platformer do synonymlist thuộc luồng chính
+                        Platform.runLater(() -> {
+                            SynonymListView.setItems(FXCollections.observableArrayList(arraySynonyms));
+                            SynonymListView.getItems().setAll(arraySynonyms);
+                        });
+
+                        executor.shutdown();
+                    } catch (Exception e) {
+                        System.err.println("Cannot shutdown executor");
+                        showPopup("No synonyms found");
+                    }
+                });
             }
         }
     }

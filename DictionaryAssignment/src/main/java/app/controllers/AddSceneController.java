@@ -1,13 +1,18 @@
 package app.controllers;
 
 import app.helper.GeneratePhonetics;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static app.controllers.PopUp.showConfirmationPopup;
 import static app.controllers.PopUp.showPopup;
@@ -26,17 +31,14 @@ public class AddSceneController {
     private Button addButton;
     @FXML
     private Button genPhonetics;
+    @FXML
+    private ProgressIndicator progressIndicator;
     public AddSceneController() {
 
     }
 
     public void initData(ContainerController containerController) {
         this.myController = containerController;
-        txtAdd.setPromptText("Type word...");
-        txtType.setPromptText("Type word type...");
-        txtPronunciation.setPromptText("Type pronunciation...");
-        txtDescription.setPromptText("Type description...");
-
     }
 
     public void handleAddButton(ActionEvent event ) throws SQLException {
@@ -70,9 +72,34 @@ public class AddSceneController {
         if (event.getSource() == genPhonetics) {
             String word = txtAdd.getText();
             if (!word.isEmpty()) {
-                String phonetics = GeneratePhonetics.getPhonetics(word);
-                txtPronunciation.clear();
-                txtPronunciation.setText(phonetics);
+                AtomicReference<String> phonetics = new AtomicReference<>("");
+                // Chạy hàm trên một luồng khác để tránh khựng lại giao diện người dùng
+                var executor = Executors.newSingleThreadExecutor();
+                CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+                    try {
+                        progressIndicator.setVisible(true);
+                        phonetics.set(GeneratePhonetics.getPhonetics(word));
+                        progressIndicator.setVisible(true);
+
+                    } catch (IOException e) {
+                        System.err.println("Cannot get pronunciation");
+                    }
+                }, executor);
+
+                future.thenRun(() -> {
+                    try {
+                        progressIndicator.setVisible(false);
+                        // dùng platformer do synonymlist thuộc luồng chính
+                        Platform.runLater(() -> {
+                            txtPronunciation.clear();
+                            txtPronunciation.setText(phonetics.get());
+                        });
+                        executor.shutdown();
+                    } catch (Exception e) {
+                        System.err.println("Cannot shutdown executor");
+//                        showPopup("No pronunciation found");
+                    }
+                });
             } else {
                 showPopup("Please type the word first!");
             }

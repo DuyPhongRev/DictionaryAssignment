@@ -33,6 +33,10 @@ public class HistorySceneController extends ThreeController {
             } else {
                 arrayWords = myController.getDictionaryManagement().getDicHistory().getDefault_history();
                 SearchListView.getItems().setAll(arrayWords);
+
+                webEngine = webView.getEngine();
+                webEngine.loadContent("");
+                currentLoadWord = "";
             }
         }
     }
@@ -93,15 +97,14 @@ public class HistorySceneController extends ThreeController {
     public void handleDeleteButton(ActionEvent event) throws SQLException {
         if (event.getSource() == deleteButton) {
             boolean hasContent = webView.getEngine().getDocument() != null;
-            if (hasContent) {
-                if (showConfirmationPopup("Are you sure you want to delete this word from the history list?")) {
-                    return ;
-                } else {
+            if (hasContent && !currentLoadWord.isEmpty()) {
+                if (showConfirmationPopup("Are you sure you want to delete this word from the favourite?")) {
                     showPopup("Successfully!");
                     myController.getDictionaryManagement().getDicHistory().deleteWordFromHistoryDatabase(currentLoadWord);
                     reload();
                     webEngine = webView.getEngine();
-                    webEngine.loadContent("This word has been deleted from the history!");
+                    webEngine.loadContent("This word has been deleted from the favourite!");
+                    currentLoadWord = "";
                 }
             } else {
                 showPopup("Please Select the word first");
@@ -109,6 +112,7 @@ public class HistorySceneController extends ThreeController {
 
         }
     }
+
 
     public void reload() {
         txtSearch.setText("");

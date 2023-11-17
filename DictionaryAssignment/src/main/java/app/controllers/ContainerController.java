@@ -64,7 +64,7 @@ public class ContainerController implements Initializable {
     @FXML
     private Button menuButton;
     private Button lastButton;
-    private DictionaryManagement dictionaryManagement = new DictionaryManagement();
+    private final DictionaryManagement dictionaryManagement = new DictionaryManagement();
 
     public AnchorPane getAnchorHomeScene() {
         return anchorHomeScene;
@@ -78,6 +78,7 @@ public class ContainerController implements Initializable {
             anchorHomeScene = fxmlLoader.load();
             homeSceneController = fxmlLoader.getController();
             homeSceneController.initData(this);
+            System.out.println("success home scene");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -86,6 +87,8 @@ public class ContainerController implements Initializable {
             anchorAddScene = fxmlLoader.load();
             addSceneController = fxmlLoader.getController();
             addSceneController.initData(this);
+
+            System.out.println("success add scene");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -178,7 +181,7 @@ public class ContainerController implements Initializable {
         } else if (e.getSource() == addButton) {
             title.setText("Add a word");
             pressedButton(addButton);
-            showEditScene();
+            showAddScene();
         } else if (e.getSource() == translateButton) {
             title.setText("Online translate");
             pressedButton(translateButton);
@@ -237,6 +240,10 @@ public class ContainerController implements Initializable {
     private void showHomeScene() {
 
         setContentScene(anchorHomeScene);
+    }
+
+    public void showAddScene() {
+        setContentScene(anchorAddScene);
     }
 
     public void reset() {
