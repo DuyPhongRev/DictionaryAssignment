@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -21,12 +22,15 @@ import javazoom.jl.decoder.JavaLayerException;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
+import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
+
+import static app.connections.VoiceRecognition.APIVoiceRecognitionRequest;
 
 public class TranslateSceneController implements Initializable {
     @FXML
@@ -234,7 +238,47 @@ public class TranslateSceneController implements Initializable {
                 System.err.println("Error loading image: " + e.getMessage());
 //                e.printStackTrace();
             }
+        }
+    }
+    public void handleVoiceRecognitionButton(MouseEvent event) {
+        try {
+            // Mở microphone
+            AudioFormat format = new AudioFormat(16000, 16, 1, true, false);
+            DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
+            TargetDataLine line = (TargetDataLine) AudioSystem.getLine(info);
+            line.open(format);
+            line.start();
 
+            System.out.println("Start recording...");
+
+            Thread thread = new Thread(() -> {
+                AudioInputStream ais = new AudioInputStream(line);
+
+                try {
+                    AudioSystem.write(ais, AudioFileFormat.Type.WAVE,
+                            new java.io.File("DictionaryAssignment/src/main/java/app/connections/recordedAudio.wav"));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+
+            thread.start();
+            Thread.sleep(4000);
+
+            line.stop();
+            line.close();
+
+            System.out.println("Stop recording");
+
+            SrcTextArea.setText(APIVoiceRecognitionRequest());
+            SrcLangChoiceBox.setValue(LANGUAGE.ENGLISH);
+            getCurrentSrcLang();
+            DesTextArea.setText(TranslateTextAPIs.translate(SrcTextArea.getText(), currentSrcLang, currentDesLang));
+
+        } catch (LineUnavailableException | InterruptedException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 }

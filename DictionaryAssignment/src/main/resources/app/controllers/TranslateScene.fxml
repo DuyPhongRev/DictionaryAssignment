@@ -17,27 +17,27 @@
       <Button fx:id="textRecognizeButton" layoutX="250.0" layoutY="705.0" minWidth="22.0" mnemonicParsing="false" onAction="#handleTextRecognition" prefHeight="30.0" prefWidth="146.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Text Recognition" />
       <Button fx:id="tranButton" layoutX="150.0" layoutY="705.0" mnemonicParsing="false" onAction="#handleTranslateButton" prefHeight="30.0" prefWidth="90.0" styleClass="tran-button" stylesheets="@../css/translate.css" text="Translate" />
       <ChoiceBox fx:id="SrcLangChoiceBox" accessibleRole="TAB_PANE" layoutX="150.0" layoutY="93.0" onMouseReleased="#getCurrentSrcLang" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
-      <Button fx:id="SrcSoundButton" layoutX="150.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
+      <Button fx:id="SrcSoundButton" layoutX="150.0" layoutY="320.0" maxHeight="35.0" maxWidth="50.0" minHeight="35.0" minWidth="50.0" mnemonicParsing="false" onAction="#handleVoiceButton" prefHeight="50.0" prefWidth="50.0" styleClass="button-voice" stylesheets="@../css/translate.css">
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-speaker-64.png" />
+                  <Image url="@../img/icons8-sound-100.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Text fx:id="waitText" strokeType="OUTSIDE" strokeWidth="0.0" text="Please wait..." visible="false">
+      <ProgressIndicator fx:id="progressIndicator" layoutX="475.0" layoutY="68.0" prefHeight="300.0" prefWidth="100.0" visible="false" />
+      <Text fx:id="waitText" layoutX="450.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please wait..." visible="false" wrappingWidth="100.12518310546875">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <ProgressIndicator fx:id="progressIndicator" layoutX="475.0" layoutY="68.0" prefHeight="298.0" prefWidth="99.0" visible="false" />
       <ChoiceBox fx:id="DesLangChoiceBox" cache="true" layoutX="150.0" layoutY="430.0" prefHeight="40.0" prefWidth="180.0" stylesheets="@../css/translate.css" />
-      <Button fx:id="DesSoundButton" layoutX="150.0" layoutY="650.0" mnemonicParsing="false" onAction="#handleVoiceButton" styleClass="button-voice" stylesheets="@../css/translate.css">
+      <Button fx:id="DesSoundButton" layoutX="150.0" layoutY="655.0" maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onAction="#handleVoiceButton" prefHeight="35.0" prefWidth="35.0" styleClass="button-voice" stylesheets="@../css/translate.css">
          <graphic>
             <ImageView fitHeight="26.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/icons8-speaker-64.png" />
+                  <Image url="@../img/icons8-sound-100.png" />
                </image>
             </ImageView>
          </graphic>
@@ -47,6 +47,15 @@
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/icons8-refresh-188.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button fx:id="SrcSoundButton1" layoutX="185.0" layoutY="320.0" maxHeight="35.0" maxWidth="35.0" minHeight="35.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#handleVoiceRecognitionButton" prefHeight="35.0" prefWidth="35.0" styleClass="button-voice" stylesheets="@../css/translate.css">
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/icons8-mic-100.png" />
                </image>
             </ImageView>
          </graphic>
