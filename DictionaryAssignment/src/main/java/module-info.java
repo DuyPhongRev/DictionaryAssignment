@@ -13,6 +13,7 @@ module app.DictionaryFX {
     requires AnimateFX;
     requires java.net.http;
     requires java.desktop;
+    requires com.google.gson;
 
     opens app to javafx.fxml;
     exports app;

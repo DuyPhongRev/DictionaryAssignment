@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f65ca595-6220-40cd-8bdb-ae5d2ccb7c65" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_12_2023_3_09_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_12_2023_3_09_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ContainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ContainerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/connections/VoiceRecognition.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/connections/VoiceRecognition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/connections/test.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/TranslateSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/TranslateSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/TranslateScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/TranslateScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dictionary_database.db" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary_database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +88,7 @@
       <workItem from="1700137734322" duration="17964000" />
       <workItem from="1700158718261" duration="7095000" />
       <workItem from="1700190870089" duration="3338000" />
+      <workItem from="1700205418924" duration="1923000" />
     </task>
     <servers />
   </component>

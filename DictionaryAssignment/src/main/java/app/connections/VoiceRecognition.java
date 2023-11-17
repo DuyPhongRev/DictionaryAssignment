@@ -1,5 +1,9 @@
 package app.connections;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+
 import java.net.URI;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -7,13 +11,10 @@ import java.nio.file.Paths;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import javax.sound.sampled.*;
-import java.io.File;
-import java.io.IOException;
 
 public class VoiceRecognition {
-    public static void main(String[] args) throws Exception {
-        String filePath = "test.mp4a";
+    public static String APIVoiceRecognitionRequest() throws Exception {
+        String filePath = "DictionaryAssignment/src/main/java/app/connections/recordedAudio.wav";
         String apiKey = "AIzaSyALFroO5S4PF2NwHM26bSO2MqDc823PQhM";
 
         Path path = Paths.get(filePath);
@@ -42,6 +43,22 @@ public class VoiceRecognition {
 
         System.out.println("Response Code: " + response.statusCode());
         System.out.println("Response Body: " + response.body());
+        return processJsonResponse(response.body());
+    }
 
+    private static String processJsonResponse(String jsonResponse) {
+        Gson gson = new Gson();
+        JsonObject jsonObject = gson.fromJson(jsonResponse, JsonObject.class);
+        JsonArray resultsArray = jsonObject.getAsJsonArray("results");
+        if (resultsArray != null && resultsArray.size() > 0) {
+            JsonObject firstResult = resultsArray.get(0).getAsJsonObject();
+            JsonArray alternativesArray = firstResult.getAsJsonArray("alternatives");
+            if (alternativesArray != null && alternativesArray.size() > 0) {
+                JsonObject firstAlternative = alternativesArray.get(0).getAsJsonObject();
+                String transcript = firstAlternative.get("transcript").getAsString();
+                return transcript;
+            }
+        }
+        return "";
     }
 }
