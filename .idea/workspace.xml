@@ -5,18 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f65ca595-6220-40cd-8bdb-ae5d2ccb7c65" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_3_33_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_3_33_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_3_33_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_3_33_PM__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]/input.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]/recordedAudio.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]/result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]1/input.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]1/recordedAudio.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]1/result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM__Changes_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/input.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/recordedAudio.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/result.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/FlappyBirdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/FlappyBirdController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/HomeSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/HomeSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FavoriteScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FavoriteScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FlappyBirdScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/FlappyBirdScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HistoryScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HistoryScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HomeScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/HomeScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/popUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/popUp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/container.css" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/edit.css" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/edit.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/game.css" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/game.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/css/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/helper/GeneratePhonetics.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/helper/GeneratePhonetics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/AddScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/AddScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dictionary_database.db" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary_database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +104,8 @@
       <workItem from="1700158718261" duration="7095000" />
       <workItem from="1700190870089" duration="3338000" />
       <workItem from="1700205418924" duration="12472000" />
+      <workItem from="1700264263186" duration="176000" />
+      <workItem from="1700264637439" duration="4234000" />
     </task>
     <servers />
   </component>

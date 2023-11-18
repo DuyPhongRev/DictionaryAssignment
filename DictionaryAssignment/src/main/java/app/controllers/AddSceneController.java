@@ -33,6 +33,7 @@ public class AddSceneController {
     private Button genPhonetics;
     @FXML
     private ProgressIndicator progressIndicator;
+    private String tempPhonetics;
     public AddSceneController() {
 
     }
@@ -72,14 +73,12 @@ public class AddSceneController {
         if (event.getSource() == genPhonetics) {
             String word = txtAdd.getText();
             if (!word.isEmpty()) {
-                AtomicReference<String> phonetics = new AtomicReference<>("");
-                // Chạy hàm trên một luồng khác để tránh khựng lại giao diện người dùng
                 var executor = Executors.newSingleThreadExecutor();
                 CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
                     try {
                         progressIndicator.setVisible(true);
-                        phonetics.set(GeneratePhonetics.getPhonetics(word));
-                        progressIndicator.setVisible(true);
+                        tempPhonetics = GeneratePhonetics.getPhonetics(word);
+                        System.out.println(tempPhonetics);
 
                     } catch (IOException e) {
                         System.err.println("Cannot get pronunciation");
@@ -89,15 +88,14 @@ public class AddSceneController {
                 future.thenRun(() -> {
                     try {
                         progressIndicator.setVisible(false);
-                        // dùng platformer do synonymlist thuộc luồng chính
                         Platform.runLater(() -> {
                             txtPronunciation.clear();
-                            txtPronunciation.setText(phonetics.get());
+                            txtPronunciation.setText(tempPhonetics);
                         });
                         executor.shutdown();
                     } catch (Exception e) {
+                        e.printStackTrace();
                         System.err.println("Cannot shutdown executor");
-//                        showPopup("No pronunciation found");
                     }
                 });
             } else {
