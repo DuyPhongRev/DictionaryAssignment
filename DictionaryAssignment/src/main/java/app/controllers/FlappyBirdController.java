@@ -61,6 +61,7 @@ public class FlappyBirdController implements Initializable {
     private final int CLOUD_POSITION2 = 200;
     private final double CLOUD_SPEED = 1.8;
     private final int CLOUD_REGENERATE_POSITION = -200;
+    private final int NUMBER_OF_QUESTIONS = 20;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -84,18 +85,20 @@ public class FlappyBirdController implements Initializable {
         this.myController = containerController;
         int countWords = 0;
         ArrayList<String> sourceList = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
-        for (String s : sourceList) {
-            if (countWords > 15) {
+        for (String word : sourceList) {
+            if (countWords > NUMBER_OF_QUESTIONS) {
                 break;
             }
-            if (s.length() >= 3 && s.length() <= 8 && !s.contains(" ") && !s.contains("-") && Math.random() < 0.2) {
-                countWords++;
-                if (Math.random() < 0.5) {
-                    correctWordList.add(s.toUpperCase());
-                    meaningWordList.add(TranslateTextAPIs.translate(s, "en", "vi").toUpperCase());
-                } else {
-                    wrongWordList.add(s.toUpperCase());
+            if (word.length() >= 3 && word.length() <= 8 && !word.contains(" ") && !word.contains("-") && Math.random() < 0.1) {
+                String translatedWord = TranslateTextAPIs.translate(word, "en", "vi");
+                if (!translatedWord.toUpperCase().trim().equals(word.toUpperCase().trim())) {
+                    countWords++;
+                    System.out.println(word + "   " + translatedWord);
+                    correctWordList.add(word.toUpperCase());
+                    meaningWordList.add(translatedWord.toUpperCase());
                 }
+            } else  if (word.length() >= 3 && word.length() <= 8 && !word.contains(" ") && !word.contains("-") && Math.random() < 0.1) {
+                wrongWordList.add(word.toUpperCase());
             }
         }
     }
@@ -254,6 +257,8 @@ public class FlappyBirdController implements Initializable {
         time = 0;
         firstScoreImage.setImage(getImage(0));
         secondScoreImage.setImage(getImage(0));
+        correctCloud.setLayoutX(BACKGROUND_WIDTH);
+        wrongCloud.setLayoutX(BACKGROUND_WIDTH);
         meaningLabel.setText("");
         bird.setLayoutY(BIRD_POSITION_Y);
         bird.setRotate(0);

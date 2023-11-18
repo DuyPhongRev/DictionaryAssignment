@@ -2,10 +2,10 @@ package app.connections;
 
 import java.sql.*;
 
-public class databaseConnection {
+public class DatabaseConnection {
     public static Connection connection;
 
-    public databaseConnection() {connectDatabase();}
+    public DatabaseConnection() {connectDatabase();}
 
     public static void connectDatabase() {
         try {
