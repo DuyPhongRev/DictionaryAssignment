@@ -48,6 +48,7 @@ public class FlappyBirdController implements Initializable {
     private ArrayList<String> wrongWordList = new ArrayList<>();
     private ArrayList<String> meaningWordList = new ArrayList<>();
     private final int BACKGROUND_WIDTH = 1333;
+    ArrayList<String> sourceList = new ArrayList<>();
     private final double BACKGROUND_LAYER1_SPEED = 0.14;
     private final double BACKGROUND_LAYER2_SPEED = 0.12;
     private final double BACKGROUND_LAYER3_SPEED = 0.16;
@@ -83,24 +84,8 @@ public class FlappyBirdController implements Initializable {
 
     public void initData(ContainerController containerController) throws IOException {
         this.myController = containerController;
-        int countWords = 0;
-        ArrayList<String> sourceList = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
-        for (String word : sourceList) {
-            if (countWords > NUMBER_OF_QUESTIONS) {
-                break;
-            }
-            if (word.length() >= 3 && word.length() <= 8 && !word.contains(" ") && !word.contains("-") && Math.random() < 0.1) {
-                String translatedWord = TranslateTextAPIs.translate(word, "en", "vi");
-                if (!translatedWord.toUpperCase().trim().equals(word.toUpperCase().trim())) {
-                    countWords++;
-                    System.out.println(word + "   " + translatedWord);
-                    correctWordList.add(word.toUpperCase());
-                    meaningWordList.add(translatedWord.toUpperCase());
-                }
-            } else  if (word.length() >= 3 && word.length() <= 8 && !word.contains(" ") && !word.contains("-") && Math.random() < 0.1) {
-                wrongWordList.add(word.toUpperCase());
-            }
-        }
+        this.sourceList = myController.getDictionaryManagement().getDictMain().getDefault_dictionary();
+        loadQuestions();
     }
 
 
@@ -127,7 +112,8 @@ public class FlappyBirdController implements Initializable {
     }
 
     @FXML
-    public void pressed(KeyEvent event) {
+    public void pressed(KeyEvent event) throws IOException
+    {
         if (event.getCode() == KeyCode.SPACE) {
             if (isDead()) {
                 gameLoop.start();
@@ -150,7 +136,7 @@ public class FlappyBirdController implements Initializable {
     }
 
     @FXML
-    public void clicked(MouseEvent event) {
+    public void clicked(MouseEvent event) throws IOException {
         if (isDead()) {
             gameLoop.start();
             reset();
@@ -159,6 +145,25 @@ public class FlappyBirdController implements Initializable {
         } else if (!isGameStarted) {
             isGameStarted = true;
             startGame();
+        }
+    }
+
+    public void loadQuestions() throws IOException {
+        int countWords = 0;
+        for (String word : sourceList) {
+            if (countWords > NUMBER_OF_QUESTIONS) {
+                break;
+            }
+            if (word.length() >= 3 && word.length() <= 8 && !word.contains(" ") && !word.contains("-") && Math.random() < 0.1) {
+                String translatedWord = TranslateTextAPIs.translate(word, "en", "vi");
+                if (!translatedWord.toUpperCase().trim().equals(word.toUpperCase().trim())) {
+                    countWords++;
+                    correctWordList.add(word.toUpperCase());
+                    meaningWordList.add(translatedWord.toUpperCase());
+                }
+            } else  if (word.length() >= 3 && word.length() <= 8 && !word.contains(" ") && !word.contains("-") && Math.random() < 0.1) {
+                wrongWordList.add(word.toUpperCase());
+            }
         }
     }
 
@@ -249,7 +254,10 @@ public class FlappyBirdController implements Initializable {
         return birdY >= anchorPane.getHeight();
     }
 
-    private void reset() {
+    private void reset() throws IOException {
+        if (this.sourceList.size() < 10) {
+            loadQuestions();
+        }
         isGameStarted = false;
         startImage.setVisible(true);
         gameOverImage.setVisible(false);

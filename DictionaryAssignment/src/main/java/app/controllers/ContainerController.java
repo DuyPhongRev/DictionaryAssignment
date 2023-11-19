@@ -115,7 +115,6 @@ public class ContainerController implements Initializable {
             anchorHomeScene = fxmlLoader.load();
             homeSceneController = fxmlLoader.getController();
             homeSceneController.initData(this);
-            System.out.println("success home scene");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -124,8 +123,6 @@ public class ContainerController implements Initializable {
             anchorAddScene = fxmlLoader.load();
             addSceneController = fxmlLoader.getController();
             addSceneController.initData(this);
-
-            System.out.println("success add scene");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
