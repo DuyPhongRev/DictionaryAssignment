@@ -41,6 +41,8 @@ public class HomeSceneController {
     }
 
     public void handleGetStartButton(MouseEvent event) {
+        myController.getTitle().setText("Search in Database");
+        myController.pressedButton(myController.getSearchButton());
         myController.showSearchScene();
     }
 

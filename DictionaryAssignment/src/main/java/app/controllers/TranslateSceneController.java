@@ -242,7 +242,6 @@ public class TranslateSceneController implements Initializable {
     }
     public void handleVoiceRecognitionButton(MouseEvent event) {
         try {
-            // Mở microphone
             AudioFormat format = new AudioFormat(16000, 16, 1, true, false);
             DataLine.Info info = new DataLine.Info(TargetDataLine.class, format);
             TargetDataLine line = (TargetDataLine) AudioSystem.getLine(info);

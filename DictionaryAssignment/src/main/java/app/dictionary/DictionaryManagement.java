@@ -1,6 +1,6 @@
 package app.dictionary;
 
-import app.connections.databaseConnection;
+import app.connections.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,8 +16,8 @@ public class DictionaryManagement {
         dic_history = new DictionaryHistory();
         dict_favourite = new DictionaryFavourite();
 
-        databaseConnection.connectDatabase();
-        this.connection = databaseConnection.connection;
+        DatabaseConnection.connectDatabase();
+        this.connection = DatabaseConnection.connection;
 
         dict_main.setConnection(this.connection);
         dic_history.setConnection(this.connection);

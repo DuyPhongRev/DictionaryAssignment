@@ -64,6 +64,43 @@ public class ContainerController implements Initializable {
     @FXML
     private Button menuButton;
     private Button lastButton;
+
+    public Button getSearchButton() {
+        return searchButton;
+    }
+
+    public Button getEditButton() {
+        return editButton;
+    }
+
+    public Button getFavouriteButton() {
+        return favouriteButton;
+    }
+
+    public Button getHistoryButton() {
+        return historyButton;
+    }
+
+    public Button getHomeButton() {
+        return homeButton;
+    }
+
+    public Button getTranslateButton() {
+        return translateButton;
+    }
+
+    public Button getGameButton() {
+        return gameButton;
+    }
+
+    public Button getAddButton() {
+        return addButton;
+    }
+
+    public Label getTitle() {
+        return title;
+    }
+
     private final DictionaryManagement dictionaryManagement = new DictionaryManagement();
 
     public AnchorPane getAnchorHomeScene() {
