@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import static app.dictionary.HelperAlgorithm.convertToHTML;
+
 public class DictionaryHistory {
     private Connection connection;
     private ArrayList<String> default_history = new ArrayList<>();
@@ -61,6 +63,25 @@ public class DictionaryHistory {
             e.printStackTrace();
         }
         return word_list;
+    }
+
+    public void changeWord(String wordOld, String wordNew, String wordType, String pronunciation,
+                           String description) {
+        String html = convertToHTML(wordNew, pronunciation, description, wordType);
+        String sql = "UPDATE avHistory SET description = ?, html = ?, pronounce = ?, word = ? WHERE word = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, description);
+            preparedStatement.setString(2, html);
+            preparedStatement.setString(3, pronunciation);
+            preparedStatement.setString(4, wordNew);
+            preparedStatement.setString(5, wordOld);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        insertHistoryListFromDB();
     }
 
     public void saveWordToHistoryDatabase(String foundWord) {

@@ -38,10 +38,12 @@ public class  GeneratePhonetics {
         for (int i = 0; i < phoneticsArray.length(); i++) {
             JSONObject phoneticObject = phoneticsArray.getJSONObject(i);
             if (phoneticObject.has("text")) {
+                System.out.println(phoneticObject.getString("text"));
                 return phoneticObject.getString("text");
 
             }
         }
+        System.out.println("Phonetics not found!");
         return "Pronunciation not found!";
     }
 
