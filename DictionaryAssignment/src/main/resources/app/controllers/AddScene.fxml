@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="750.0" prefWidth="1000.0" stylesheets="@../css/edit.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.AddSceneController">
     <children>
-        <TextField fx:id="txtAdd" layoutX="236.0" layoutY="193.0" prefHeight="50.0" prefWidth="500.0" promptText="Type the word here...." stylesheets="@../css/edit.css" />
+        <TextField fx:id="txtWord" layoutX="236.0" layoutY="193.0" prefHeight="50.0" prefWidth="500.0" promptText="Type the word here...." stylesheets="@../css/edit.css" />
         <TextField fx:id="txtType" layoutX="236.0" layoutY="262.0" prefHeight="50.0" prefWidth="235.0" promptText="Word type" stylesheets="@../css/edit.css" />
         <TextField fx:id="txtPronunciation" layoutX="501.0" layoutY="262.0" prefHeight="50.0" prefWidth="235.0" promptText="Pronunciation" stylesheets="@../css/edit.css">
          <tooltip>

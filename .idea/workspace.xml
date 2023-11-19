@@ -5,29 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f65ca595-6220-40cd-8bdb-ae5d2ccb7c65" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_3_33_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_3_33_PM_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_3_33_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_3_33_PM__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]/input.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]/recordedAudio.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]/result.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]1/input.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]1/recordedAudio.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]1/result.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM_[Changes]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_4_24_PM__Changes_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/input.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/recordedAudio.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/result.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/UpdateWordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/AddSceneController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/helper/GeneratePhonetics.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/helper/GeneratePhonetics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ContainerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/ContainerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/EditSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/EditSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/FlappyBirdController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/controllers/FlappyBirdController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/Dictionary.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/Dictionary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/DictionaryFavourite.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/DictionaryFavourite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/DictionaryHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/DictionaryHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/DictionaryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/DictionaryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/HelperAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/java/app/dictionary/HelperAlgorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/AddScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/AddScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/EditScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/DictionaryAssignment/src/main/resources/app/controllers/EditScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dictionary_database.db" beforeDir="false" afterPath="$PROJECT_DIR$/dictionary_database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +58,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Dzung__OCR__test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DZUNG NGUYEN/eclipse-workspace/eclipse workspace 2/Dictionary_Optimize&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -106,6 +97,8 @@
       <workItem from="1700205418924" duration="12472000" />
       <workItem from="1700264263186" duration="176000" />
       <workItem from="1700264637439" duration="4234000" />
+      <workItem from="1700275659718" duration="1206000" />
+      <workItem from="1700358779380" duration="9977000" />
     </task>
     <servers />
   </component>
