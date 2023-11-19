@@ -18,4 +18,25 @@ public class HelperAlgorithm {
         }
         return false;
     }
+
+    public static String convertToHTML(String addWord, String addPron, String addDescription, String type) {
+        if (addPron.isEmpty()) {
+            addPron = "/No pronunciation/";
+        }
+        if (addDescription.isEmpty()) {
+            addDescription = "/No description/";
+        }
+        if (type.isEmpty()) {
+            type = "/No type/";
+        }
+        if (addWord.isEmpty()) {
+            addWord = "no word";
+        }
+        StringBuilder convertHTML = new StringBuilder();
+        convertHTML.append("<h1>").append(addWord).append("</h1>");
+        convertHTML.append("<h3><i>/").append(addPron).append("/</i></h3>");
+        convertHTML.append("<h2>").append(type).append("</h2>");
+        convertHTML.append("<ul><li>").append(addDescription).append("</li></ul>");
+        return convertHTML.toString();
+    }
 }

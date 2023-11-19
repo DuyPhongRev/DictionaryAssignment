@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import static app.dictionary.HelperAlgorithm.BinarySearch;
+import static app.dictionary.HelperAlgorithm.convertToHTML;
 
 
 public class Dictionary {
@@ -30,16 +31,23 @@ public class Dictionary {
     }
 
 
-    public void changeWord(String key, String explain) {
-        try{
-            PreparedStatement stmt = connection.prepareStatement("UPDATE av SET html = ? WHERE word = ?");
-            stmt.setString(1, explain);
-            stmt.setString(2, key);
-            stmt.executeUpdate();
-
-        } catch(SQLException e) {
+    public void changeWord(String wordOld, String wordNew, String wordType, String pronunciation,
+                           String description) {
+        String html = convertToHTML(wordNew, pronunciation, description, wordType);
+        String sql = "UPDATE av SET description = ?, html = ?, pronounce = ?, word = ? WHERE word = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, description);
+            preparedStatement.setString(2, html);
+            preparedStatement.setString(3, pronunciation);
+            preparedStatement.setString(4, wordNew);
+            preparedStatement.setString(5, wordOld);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        insertWordListFromDB();
     }
 
     public void deleteWordFromDictionaryDatabase(String foundWord) {
@@ -76,26 +84,6 @@ public class Dictionary {
         return true;
     }
 
-    public String convertToHTML(String addWord, String addPron, String addDescription, String type) {
-        if (addPron.isEmpty()) {
-            addPron = "/No pronunciation/";
-        }
-        if (addDescription.isEmpty()) {
-            addDescription = "/No description/";
-        }
-        if (type.isEmpty()) {
-            type = "/No type/";
-        }
-        if (addWord.isEmpty()) {
-            addWord = "no word";
-        }
-        StringBuilder convertHTML = new StringBuilder();
-        convertHTML.append("<h1>").append(addWord).append("</h1>");
-        convertHTML.append("<h3><i>/").append(addPron).append("/</i></h3>");
-        convertHTML.append("<h2>").append(type).append("</h2>");
-        convertHTML.append("<ul><li>").append(addDescription).append("</li></ul>");
-        return convertHTML.toString();
-    }
 
     public boolean checkContains(String word) {
         word = word.toLowerCase();

@@ -133,6 +133,7 @@ public class ContainerController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("EditScene.fxml"));
             anchorEditScene = fxmlLoader.load();
             editSceneController = fxmlLoader.getController();
+            editSceneController.initData(this);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]" date="1700232176064" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/17/2023 9:42 PM [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="DictionaryAssignment/src/main/java/app/connections/recordedAudio.wav" />
+    <option name="AFTER_PATH" value="DictionaryAssignment/src/main/java/app/connections/recordedAudio.wav" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/recordedAudio.wav" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="DictionaryAssignment/src/main/resources/app/result.png" />
+    <option name="AFTER_PATH" value="DictionaryAssignment/src/main/resources/app/result.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/result.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="DictionaryAssignment/src/main/resources/app/input.png" />
+    <option name="AFTER_PATH" value="DictionaryAssignment/src/main/resources/app/input.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_17_2023_9_42_PM_[Changes]/input.png" />
+  </binary>
+</changelist>

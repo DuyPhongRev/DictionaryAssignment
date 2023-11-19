@@ -44,6 +44,21 @@ public class DictionaryManagement {
         return ans;
     }
 
+    public void editAct(String wordOld, String wordNew, String wordType, String pronunciation,
+                        String description) throws SQLException {
+        try {
+            connection.setAutoCommit(false);
+            dict_main.changeWord(wordOld, wordNew, wordType, pronunciation, description);
+            dic_history.changeWord(wordOld, wordNew, wordType, pronunciation, description);
+            dict_favourite.changeWord(wordOld, wordNew, wordType, pronunciation, description);
+            connection.commit();
+        } catch (SQLException e) {
+            connection.rollback();
+        } finally {
+            connection.setAutoCommit(true);
+        }
+    }
+
     public void deleteAct(String word) throws SQLException {
         try {
             connection.setAutoCommit(false);
@@ -61,34 +76,7 @@ public class DictionaryManagement {
         dict_favourite.saveWordToFavouriteDB(word);
     }
 
-    public boolean addNewWord(String target, String explain) {
-        target = target.toLowerCase();
-        explain = explain.toLowerCase();
-        try {
-            PreparedStatement stmt = connection.prepareStatement(
-                    "INSERT INTO av (word, html) VALUES (?, ?)");
-            stmt.setString(1, target);
-            stmt.setString(2, explain);
-            stmt.executeUpdate();
-            System.out.println("Added word successfully!");
-            return true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
 
-    public void removeWord(String key) {
-        try{
-            PreparedStatement stmt = connection.prepareStatement("DELETE FROM av WHERE word = ?");
-            stmt.setString(1, key);
-            stmt.executeUpdate();
-
-        } catch(SQLException e) {
-            e.printStackTrace();
-            System.err.println("Cannot delete the word due to some errors");
-        }
-    }
 
     public Dictionary getDictMain() {
         return dict_main;
