@@ -65,6 +65,18 @@ public class ContainerController implements Initializable {
     private Button menuButton;
     private Button lastButton;
 
+    public void setMenuButtonVisible() {
+        if (!menuButton.isVisible()) {
+            menuButton.setVisible(true);
+        }
+    }
+
+    public void setMenuButtonInvisible() {
+        if (menuButton.isVisible()) {
+            menuButton.setVisible(false);
+        }
+    }
+
     public Button getSearchButton() {
         return searchButton;
     }

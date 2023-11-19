@@ -12,7 +12,7 @@ import javafx.scene.web.WebView;
 
 public class HomeSceneController {
     @FXML
-    private Button learningMoreButton, getStartButton;
+    private Button learningMoreButton, getStartButton, leaveButton;
     @FXML
     private Label escapeLabel;
     private WebView learningMoreWebView = new WebView();
@@ -29,15 +29,17 @@ public class HomeSceneController {
         }
         this.webEngine = learningMoreWebView.getEngine();
         this.webEngine.load("https://github.com/DuyPhongRev/DictionaryAssignment");
-        this.learningMoreWebView.setLayoutX(100);
-        this.learningMoreWebView.setLayoutY(100);
-        this.learningMoreWebView.setMinWidth(800);
-        this.learningMoreWebView.setMinHeight(500);
+        this.learningMoreWebView.setLayoutX(0);
+        this.learningMoreWebView.setLayoutY(0);
+        this.learningMoreWebView.setMinWidth(1000);
+        this.learningMoreWebView.setMinHeight(750);
     }
 
     public void handleLearningMoreButton(MouseEvent event) {
         homeAnchorPane.getChildren().add(learningMoreWebView);
-        escapeLabel.setVisible(true);
+        this.myController.setMenuButtonInvisible();
+        leaveButton.toFront();
+        leaveButton.setVisible(true);
     }
 
     public void handleGetStartButton(MouseEvent event) {
@@ -46,10 +48,9 @@ public class HomeSceneController {
         myController.showSearchScene();
     }
 
-    public void handleReturnHome(KeyEvent event) {
-        if (event.getCode() == KeyCode.ESCAPE) {
-            escapeLabel.setVisible(false);
-            homeAnchorPane.getChildren().remove(learningMoreWebView);
-        }
+    public void handleLeaveButton(MouseEvent event) {
+        leaveButton.setVisible(false);
+        this.myController.setMenuButtonVisible();
+        homeAnchorPane.getChildren().remove(learningMoreWebView);
     }
 }

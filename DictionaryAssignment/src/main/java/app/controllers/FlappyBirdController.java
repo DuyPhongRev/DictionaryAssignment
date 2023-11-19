@@ -58,8 +58,8 @@ public class FlappyBirdController implements Initializable {
     private final double BIRD_ROTATE = 0.012;
     private final double BIRD_DROP = 0.05;
     private final double BIRD_POSITION_Y = 200;
-    private final int CLOUD_POSITION1 = 400;
-    private final int CLOUD_POSITION2 = 200;
+    private final int CLOUD_POSITION1 = 390;
+    private final int CLOUD_POSITION2 = 190;
     private final double CLOUD_SPEED = 1.8;
     private final int CLOUD_REGENERATE_POSITION = -200;
     private final int NUMBER_OF_QUESTIONS = 20;
@@ -193,7 +193,7 @@ public class FlappyBirdController implements Initializable {
             score++;
             firstScoreImage.setImage(getImage(score % 10));
             if(score > 9) {
-                secondScoreImage.setImage(getImage((score - score % 10) / 10));
+                secondScoreImage.setImage(getImage(score / 10));
             }
         }
     }
