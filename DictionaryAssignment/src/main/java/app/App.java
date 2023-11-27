@@ -59,9 +59,10 @@ public class App extends Application {
                     Platform.runLater(() -> {
                         primaryStage.setIconified(false);
                         primaryStage.toFront();
+                        primaryStage.setMaxHeight(HEIGHT);
+                        primaryStage.setMaxWidth(WIDTH);
                         primaryStage.setResizable(false);
                         primaryStage.show();
-
                     });
                 }
             }
