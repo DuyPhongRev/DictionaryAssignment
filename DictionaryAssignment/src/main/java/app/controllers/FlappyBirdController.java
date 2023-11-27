@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -149,20 +150,25 @@ public class FlappyBirdController implements Initializable {
     }
 
     public void loadQuestions() throws IOException {
-        int countWords = 0;
+        String input = "";
         for (String word : sourceList) {
-            if (countWords > NUMBER_OF_QUESTIONS) {
-                break;
+            if (word.length() >= 3 && word.length() <= 8 && !word.contains(" ") && !word.contains(".") && !word.contains("-") && Math.random() < 0.025) {
+                input += word + ", ";
             }
-            if (word.length() >= 3 && word.length() <= 8 && !word.contains(" ") && !word.contains("-") && Math.random() < 0.1) {
-                String translatedWord = TranslateTextAPIs.translate(word, "en", "vi");
-                if (!translatedWord.toUpperCase().trim().equals(word.toUpperCase().trim())) {
-                    countWords++;
-                    correctWordList.add(word.toUpperCase());
-                    meaningWordList.add(translatedWord.toUpperCase());
-                }
-            } else  if (word.length() >= 3 && word.length() <= 8 && !word.contains(" ") && !word.contains("-") && Math.random() < 0.1) {
-                wrongWordList.add(word.toUpperCase());
+        }
+        String[] rawList = input.split(",");
+        String translatedInput = TranslateTextAPIs.translate(input, "en", "vi");
+        String[] translatedList = translatedInput.split(",");
+        for (int i = 0; i < rawList.length && i < translatedList.length; i++) {
+            System.out.print(rawList[i].trim().toUpperCase() + "   ");
+            System.out.println(translatedList[i].trim().toUpperCase());
+        }
+        for (int i = 0; i < rawList.length && i < translatedList.length; i++) {
+            if (rawList[i].trim().toUpperCase() != translatedList[i].trim().toUpperCase() && Math.random() < 0.75) {
+                correctWordList.add(rawList[i].trim().toUpperCase());
+                meaningWordList.add(translatedList[i].trim().toUpperCase());
+            } else {
+                wrongWordList.add(rawList[i].trim().toUpperCase());
             }
         }
     }

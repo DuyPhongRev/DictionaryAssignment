@@ -38,6 +38,7 @@ public class HomeSceneController {
     public void handleLearningMoreButton(MouseEvent event) {
         homeAnchorPane.getChildren().add(learningMoreWebView);
         this.myController.setMenuButtonInvisible();
+        this.myController.setMenuBoxInvisible();
         leaveButton.toFront();
         leaveButton.setVisible(true);
     }
@@ -51,6 +52,7 @@ public class HomeSceneController {
     public void handleLeaveButton(MouseEvent event) {
         leaveButton.setVisible(false);
         this.myController.setMenuButtonVisible();
+        this.myController.setMenuBoxVisible();
         homeAnchorPane.getChildren().remove(learningMoreWebView);
     }
 }
