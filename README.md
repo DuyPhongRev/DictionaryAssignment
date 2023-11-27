@@ -25,29 +25,29 @@ The application itself has been built using JavaFX and SceneBuilder. In addition
 
 ### Search Word
 
-![](search.gif)
+![](Resources/search.gif)
 
 ### Adding Word
 
-![](add.gif)
+![](Resources/add.gif)
 
 
 ### Online Translate
 We use the Google Translate API to translate the text. The following is a demo of the text translation feature. You can translate the word back and forth between English, Spanish, French, Vietnames.
-![](online_trans.gif)
+![](Resources/online_trans.gif)
 
 ### Translate Voice
 We use the Whisper Model and then fine-tuning to make it faster. We use model type Base.en.
-![](voice_recg.gif)
+![](Resources/voice_recg.gif)
 
 ### Translate Image
 We write a simple api based on flask that runs locally. We use pytesseract libarary in Python to detect text, then write the translated text back to the image.
-![](text_recog.gif)
+![](Resources/text_recog.gif)
 
 ### Wordle Game
-![](game1.gif)
+![](Resources/game1.gif)
 
 ### Modified Flappy Bird Game
-![](game2.png)
+![](Resources/game2.png)
 
 
